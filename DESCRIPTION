@@ -15,4 +15,5 @@ LazyData: true
 Remotes:
     curso-r/puBuild
 Imports: 
-  puBuild
+  puBuild,
+  tutorial
