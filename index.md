@@ -1,7 +1,7 @@
 <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 ---
-title: R como calculadora
+title: Introdução
 ---
 
 
@@ -256,7 +256,7 @@ my_function
 ## function(x){
 ##   x/2
 ## }
-## <environment: 0x325b380>
+## <environment: 0x276eb20>
 ```
 
 ## Controles de Fluxo
