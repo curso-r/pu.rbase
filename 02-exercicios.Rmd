@@ -8,9 +8,7 @@ date: 2016-12-27
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-```{r, include=FALSE}
-tutorial::go_interactive()
-```
+<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 1. Calcule o número de ouro no R.
 
