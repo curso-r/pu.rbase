@@ -1,5 +1,3 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
-
 ---
 title: Introdução
 ---
@@ -256,7 +254,7 @@ my_function
 ## function(x){
 ##   x/2
 ## }
-## <environment: 0x276eb20>
+## <environment: 0x25cbb20>
 ```
 
 ## Controles de Fluxo
@@ -421,45 +419,117 @@ x
 **Esses exercícios possuem resposta [aqui](https://curso-r.github.io/verao2017/r-como-calculadora/respostas)**
 
 
+
+
+
 <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
-
-
-
-
-
 
 1. Calcule o número de ouro no R.
 
 $$ \frac{1 + \sqrt{5}}{2} $$
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERpZ2l0ZSBhIGV4cHJlc3NcdTAwZTNvIHF1ZSBjYWxjdWxhIG8gblx1MDBmYW1lcm8gZGUgb3Vyby5cbiIsInNvbHV0aW9uIjoiIyBEaWdpdGUgYSBleHByZXNzXHUwMGUzbyBxdWUgY2FsY3VsYSBvIG5cdTAwZmFtZXJvIGRlIG91cm8uXG4oMSArIHNxcnQoNSkpLzIiLCJzY3QiOiJ0ZXN0X291dHB1dF9jb250YWlucyhcIjEuNjE4MDM0XCIsIGluY29ycmVjdF9tc2cgPSBcIlRlbSBjZXJ0ZXphIGRlIHF1ZSBpbmRpY291IGEgZXhwcmVzc1x1MDBlM28gY29ycmV0YW1lbnRlP1wiKVxuc3VjY2Vzc19tc2coXCJDb3JyZXRvIVwiKSJ9</div>
+
+```r
+# Digite a expressão que calcula o número de ouro.
+
+```
 
 
+```r
+# Digite a expressão que calcula o número de ouro.
+(1 + sqrt(5))/2
+## [1] 1.618034
+```
 
 
+```r
+test_output_contains("1.618034", incorrect_msg = "Tem certeza de que indicou a expressão corretamente?")
+## Error in eval(expr, envir, enclos): could not find function "test_output_contains"
+success_msg("Correto!")
+## Error in eval(expr, envir, enclos): could not find function "success_msg"
+```
 
 2. O que dá divisão de 1 por 0 no R? E -1 por 0? 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIxLzBcbi0xLzAiLCJzY3QiOiJ0ZXN0X291dHB1dF9jb250YWlucyhcIkluZlwiLCBpbmNvcnJlY3RfbXNnID0gXCJUZW0gY2VydGV6YSBkZSBxdWUgaW5kaWNvdSBhIGV4cHJlc3NcdTAwZTNvIGNvcnJldGFtZW50ZT9cIilcbnRlc3Rfb3V0cHV0X2NvbnRhaW5zKFwiLUluZlwiLCBpbmNvcnJlY3RfbXNnID0gXCJUZW0gY2VydGV6YSBkZSBxdWUgaW5kaWNvdSBhIGV4cHJlc3NcdTAwZTNvIGNvcnJldGFtZW50ZT9cIilcbnN1Y2Nlc3NfbXNnKFwiQ29ycmV0byFcIikifQ==</div>
+
+```r
+1/0
+## [1] Inf
+-1/0
+## [1] -Inf
+```
 
 
+```r
+test_output_contains("Inf", incorrect_msg = "Tem certeza de que indicou a expressão corretamente?")
+## Error in eval(expr, envir, enclos): could not find function "test_output_contains"
+test_output_contains("-Inf", incorrect_msg = "Tem certeza de que indicou a expressão corretamente?")
+## Error in eval(expr, envir, enclos): could not find function "test_output_contains"
+success_msg("Correto!")
+## Error in eval(expr, envir, enclos): could not find function "success_msg"
+```
 
 3. Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que
 retornam cada um desses resultados.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIE5hTlxuXG4jIE5VTExcblxuIyBOQVxuXG4jIEluZlxuIiwic29sdXRpb24iOiIjIE5hTiBcdTAwZTkgbyByZXN1bHRhZG8gZGUgdW1hIG9wZXJhXHUwMGU3XHUwMGUzbyBtYXRlbVx1MDBlMXRpY2EgaW52XHUwMGUxbGlkYS4gU2lnbmlmaWNhIE5vdCBBIE51bWJlclxuMC8wXG4jIE5VTEwgXHUwMGU5IG8gdmF6aW8gZG8gUi4gXHUwMGM5IGNvbW8gc2UgbyBvYmpldG8gblx1MDBlM28gZXhpc3Rpc3NlXG5OVUxMXG5hID0gTlVMTFxuaXMubnVsbChpbnRlZ2VyKGxlbmd0aCA9IDApKSAjIHZlamEgcXVlIHVtIHZldG9yLCBtZXNtbyBzZW0gZWxlbWVudG9zIG5cdTAwZTNvIFx1MDBlOSBOVUxMXG4jIE5BIFx1MDBlOSB1bWEgY29uc3RhbnRlIGxcdTAwZjNnaWNhIGRvIFIuIFNpZ2luaWZpY2EgTm90IEF2YWlsbGFibGUuIE5BIHBvZGUgc2VyIFxuIyBjb252ZXJ0aWRvIHBhcmEgcXVhc2UgdG9kb3Mgb3MgdGlwb3MgZGUgdmV0b3JlcyBkbyBSLiBcdTAwYzkgdXNhZG8gcHJpbmNpcGFsbWVudGUgcGFyYVxuIyBpbmRpY2FyIHZhbG9yZXMgZmFsdGFudGVzLlxuTkFcbiMgSW5mIFx1MDBlOSBzaWduaWZpY2EgaW5maW5pdG8uIFx1MDBjOSBvIHJlc3VsdGFkbyBkZSBvcGVyYVx1MDBlN1x1MDBmNWVzIG1hdGVtXHUwMGUxdGljYXMgY3VqbyBsaW1pdGUgXHUwMGU5IGluZmluaXRvLlxuMS8wXG4xL0luZiJ9</div>
+
+```r
+# NaN
+
+# NULL
+
+# NA
+
+# Inf
+
+```
 
 
+```r
+# NaN é o resultado de uma operação matemática inválida. Significa Not A Number
+0/0
+## [1] NaN
+# NULL é o vazio do R. É como se o objeto não existisse
+NULL
+## NULL
+a = NULL
+is.null(integer(length = 0)) # veja que um vetor, mesmo sem elementos não é NULL
+## [1] FALSE
+# NA é uma constante lógica do R. Siginifica Not Availlable. NA pode ser 
+# convertido para quase todos os tipos de vetores do R. É usado principalmente para
+# indicar valores faltantes.
+NA
+## [1] NA
+# Inf é significa infinito. É o resultado de operações matemáticas cujo limite é infinito.
+1/0
+## [1] Inf
+1/Inf
+## [1] 0
+```
 
 4. Tente mentalmente calcular o que dá a conta `5 + 3 * 10 %/% 3 == 15` no R, sem rodar.
 
 5. Adicionando apenas parênteses, faça a expressão acima retornar o resultado contrário.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiI1ICsgMyAqIDEwICUvJSAzID09IDE1Iiwic29sdXRpb24iOiI1ICsgKDMgKiAxMCkgJS8lIDMgPT0gMTUiLCJzY3QiOiJ0ZXN0X291dHB1dF9jb250YWlucyhcIlRSVUVcIiwgaW5jb3JyZWN0X21zZyA9IFwiVGVtIGNlcnRlemEgZGUgcXVlIGluZGljb3UgYSBleHByZXNzXHUwMGUzbyBjb3JyZXRhbWVudGU/XCIpXG5zdWNjZXNzX21zZyhcIkNvcnJldG8hXCIpIn0=</div>
+
+```r
+5 + 3 * 10 %/% 3 == 15
+## [1] FALSE
+```
 
 
+```r
+5 + (3 * 10) %/% 3 == 15
+## [1] TRUE
+```
 
 
+```r
+test_output_contains("TRUE", incorrect_msg = "Tem certeza de que indicou a expressão corretamente?")
+## Error in eval(expr, envir, enclos): could not find function "test_output_contains"
+success_msg("Correto!")
+## Error in eval(expr, envir, enclos): could not find function "success_msg"
+```
 
 6. O que acontece se você rodar:
 
@@ -474,80 +544,234 @@ x
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIDRcbmlmKHggPSA0KSB7XG4gICdpc3NvIGFxdWkgYXBhcmVjZXUnXG59XG54In0=</div>
+
+```r
+x <- 4
+if(x = 4) {
+  'isso aqui apareceu'
+}
+x
+## Error: <text>:2:6: unexpected '='
+## 1: x <- 4
+## 2: if(x =
+##         ^
+```
 
 7. Como você faria para que o código da pergunta anterior fizesse com que `'isso aqui apareceu'` fosse impresso no console mas nenhum erro aparecesse?
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIDRcbmlmKHggPSA0KSB7XG4gICdpc3NvIGFxdWkgYXBhcmVjZXUnXG59XG54Iiwic29sdXRpb24iOiJ4IDwtIDRcbmlmKHggPT0gNCkge1xuICAnaXNzbyBhcXVpIGFwYXJlY2V1J1xufVxueCIsInNjdCI6InRlc3Rfb3V0cHV0X2NvbnRhaW5zKFwiaXNzbyBhcXVpIGFwYXJlY2V1XCIsIGluY29ycmVjdF9tc2cgPSBcIlRlbSBjZXJ0ZXphIGRlIHF1ZSBpbmRpY291IGEgZXhwcmVzc1x1MDBlM28gY29ycmV0YW1lbnRlP1wiKVxudGVzdF9lcnJvcigpXG5zdWNjZXNzX21zZyhcIkNvcnJldG8hXCIpIn0=</div>
+
+```r
+x <- 4
+if(x = 4) {
+  'isso aqui apareceu'
+}
+x
+## Error: <text>:2:6: unexpected '='
+## 1: x <- 4
+## 2: if(x =
+##         ^
+```
 
 
+```r
+x <- 4
+if(x == 4) {
+  'isso aqui apareceu'
+}
+## [1] "isso aqui apareceu"
+x
+## [1] 4
+```
 
 
+```r
+test_output_contains("isso aqui apareceu", incorrect_msg = "Tem certeza de que indicou a expressão corretamente?")
+## Error in eval(expr, envir, enclos): could not find function "test_output_contains"
+test_error()
+## Error in eval(expr, envir, enclos): could not find function "test_error"
+success_msg("Correto!")
+## Error in eval(expr, envir, enclos): could not find function "success_msg"
+```
 
-
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
 
 
 1. 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIoMSArIHNxcnQoNSkpLzIifQ==</div>
+
+```r
+(1 + sqrt(5))/2
+## [1] 1.618034
+```
 
 2. 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIxLzBcbi0xLzAifQ==</div>
+
+```r
+1/0
+## [1] Inf
+-1/0
+## [1] -Inf
+```
 
 3. 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIE5hTiBcdTAwZTkgbyByZXN1bHRhZG8gZGUgdW1hIG9wZXJhXHUwMGU3XHUwMGUzbyBtYXRlbVx1MDBlMXRpY2EgaW52XHUwMGUxbGlkYS4gU2lnbmlmaWNhIE5vdCBBIE51bWJlclxuMC8wXG4jIE5VTEwgXHUwMGU5IG8gdmF6aW8gZG8gUi4gXHUwMGM5IGNvbW8gc2UgbyBvYmpldG8gblx1MDBlM28gZXhpc3Rpc3NlXG5OVUxMXG5hID0gTlVMTFxuaXMubnVsbChpbnRlZ2VyKGxlbmd0aCA9IDApKSAjIHZlamEgcXVlIHVtIHZldG9yLCBtZXNtbyBzZW0gZWxlbWVudG9zIG5cdTAwZTNvIFx1MDBlOSBOVUxMXG4jIE5BIFx1MDBlOSB1bWEgY29uc3RhbnRlIGxcdTAwZjNnaWNhIGRvIFIuIFNpZ2luaWZpY2EgTm90IEF2YWlsbGFibGUuIE5BIHBvZGUgc2VyIFxuIyBjb252ZXJ0aWRvIHBhcmEgcXVhc2UgdG9kb3Mgb3MgdGlwb3MgZGUgdmV0b3JlcyBkbyBSLiBcdTAwYzkgdXNhZG8gcHJpbmNpcGFsbWVudGUgcGFyYVxuIyBpbmRpY2FyIHZhbG9yZXMgZmFsdGFudGVzLlxuTkFcbiMgSW5mIFx1MDBlOSBzaWduaWZpY2EgaW5maW5pdG8uIFx1MDBjOSBvIHJlc3VsdGFkbyBkZSBvcGVyYVx1MDBlN1x1MDBmNWVzIG1hdGVtXHUwMGUxdGljYXMgY3VqbyBsaW1pdGUgXHUwMGU5IGluZmluaXRvLlxuMS8wXG4xL0luZiJ9</div>
+
+```r
+# NaN é o resultado de uma operação matemática inválida. Significa Not A Number
+0/0
+## [1] NaN
+# NULL é o vazio do R. É como se o objeto não existisse
+NULL
+## NULL
+a = NULL
+is.null(integer(length = 0)) # veja que um vetor, mesmo sem elementos não é NULL
+## [1] FALSE
+# NA é uma constante lógica do R. Siginifica Not Availlable. NA pode ser 
+# convertido para quase todos os tipos de vetores do R. É usado principalmente para
+# indicar valores faltantes.
+NA
+## [1] NA
+# Inf é significa infinito. É o resultado de operações matemáticas cujo limite é infinito.
+1/0
+## [1] Inf
+1/Inf
+## [1] 0
+```
 
 5.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiI1ICsgKDMgKiAxMCkgJS8lIDMgPT0gMTUifQ==</div>
+
+```r
+5 + (3 * 10) %/% 3 == 15
+## [1] TRUE
+```
 
 6. 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiI+IHggPC0gNFxuPiBpZih4ID0gNCkge1xuRXJybzogJz0nIGluZXNwZXJhZG8gaW4gXCJpZih4ID1cIlxuPiAgICdpc3NvIGFxdWkgYXBhcmVjZXUnXG5bMV0gXCJpc3NvIGFxdWkgYXBhcmVjZXVcIlxuPiB9XG5FcnJvOiAnfScgaW5lc3BlcmFkbyBpbiBcIn1cIlxuPiB4XG5bMV0gNCJ9</div>
+
+```r
+> x <- 4
+> if(x = 4) {
+Erro: '=' inesperado in "if(x ="
+>   'isso aqui apareceu'
+[1] "isso aqui apareceu"
+> }
+Erro: '}' inesperado in "}"
+> x
+[1] 4
+```
 
 7.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIDRcbmlmKHggPT0gNCkge1xuICAnaXNzbyBhcXVpIGFwYXJlY2V1J1xufVxueCJ9</div>
+
+```r
+x <- 4
+if(x == 4) {
+  'isso aqui apareceu'
+}
+## [1] "isso aqui apareceu"
+x
+## [1] 4
+```
 
 8.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJmb3IgKGkgaW4gMTo0KXtcbiAgaWYoaSAlJSAyID09IDApe1xuICAgIHByaW50KHBhc3RlKGksIFwiZWxlZmFudGUocylcIiwgcGFzdGUocmVwKFwiaW5jb21vZGEobSlcIiwgdGltZXMgPSBpKSwgY29sbGFwc2UgPSBcIiBcIiksIFwibXVpdG8gbWFpc1wiKSlcbiAgfSBlbHNlIHtcbiAgIHByaW50KHBhc3RlKGksIFwiZWxlZmFudGUocykgaW5jb21vZGEobSkgbXVpdGEgZ2VudGVcIikpIFxuICB9XG59In0=</div>
+
+```r
+for (i in 1:4){
+  if(i %% 2 == 0){
+    print(paste(i, "elefante(s)", paste(rep("incomoda(m)", times = i), collapse = " "), "muito mais"))
+  } else {
+   print(paste(i, "elefante(s) incomoda(m) muita gente")) 
+  }
+}
+## [1] "1 elefante(s) incomoda(m) muita gente"
+## [1] "2 elefante(s) incomoda(m) incomoda(m) muito mais"
+## [1] "3 elefante(s) incomoda(m) muita gente"
+## [1] "4 elefante(s) incomoda(m) incomoda(m) incomoda(m) incomoda(m) muito mais"
+```
 
 9.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIGMoMSwgMjAsIDQwLCA1MCwgNjApIn0=</div>
+
+```r
+x <- c(1, 20, 40, 50, 60)
+```
 
 10.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIHJ1bmlmKDEwMCkifQ==</div>
+
+```r
+x <- runif(100)
+```
 
 11.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtZWFuKHgpIn0=</div>
+
+```r
+mean(x)
+## [1] 0.5010589
+```
 
 12.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIGMocnVuaWYoOTkpLCBOQSlcbm1lYW4oeCwgbmEucm0gPSBUKSJ9</div>
+
+```r
+x <- c(runif(99), NA)
+mean(x, na.rm = T)
+## [1] 0.5052289
+```
 
 13.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtZWRpYSA8LSBmdW5jdGlvbih4KXtcbiAgaSA8LSAxXG4gIHRhbWFuaG8gPC0gbGVuZ3RoKHgpXG4gIHNvbWEgPC0gMFxuICBmb3IoaSBpbiAxOnRhbWFuaG8pe1xuICAgIHNvbWEgPC0gc29tYSArIHhbaV1cbiAgfVxuICByZXR1cm4oc29tYS90YW1hbmhvKVxufSJ9</div>
+
+```r
+media <- function(x){
+  i <- 1
+  tamanho <- length(x)
+  soma <- 0
+  for(i in 1:tamanho){
+    soma <- soma + x[i]
+  }
+  return(soma/tamanho)
+}
+```
 
 14.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJkYWRvIDwtIGZ1bmN0aW9uKCl7XG4gIHNhbXBsZSgxOjYsIDEpXG59In0=</div>
+
+```r
+dado <- function(){
+  sample(1:6, 1)
+}
+```
 
 15.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJzb21hX2RhZG9zIDwtIGZ1bmN0aW9uKG4pe1xuICBzb21hIDwtIDBcbiAgZm9yKGkgaW4gMTpuKXtcbiAgICBzb21hIDwtIHNvbWEgKyBzYW1wbGUoMTo2LCAxKVxuICB9XG4gIHJldHVybihzb21hKVxufSJ9</div>
+
+```r
+soma_dados <- function(n){
+  soma <- 0
+  for(i in 1:n){
+    soma <- soma + sample(1:6, 1)
+  }
+  return(soma)
+}
+```
 
 16.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJyZXN1bHRhZG9zIDwtIGludGVnZXIobGVuZ3RoID0gMTAwMClcbmZvcihpIGluIDE6MTAwMCl7XG4gIHJlc3VsdGFkb3NbaV0gPC0gc29tYV9kYWRvcygzKVxufVxuaGlzdChyZXN1bHRhZG9zKSJ9</div>
+
+```r
+resultados <- integer(length = 1000)
+for(i in 1:1000){
+  resultados[i] <- soma_dados(3)
+}
+hist(resultados)
+```
+
+![plot of chunk resp16](figures//resp16-1.png)
 
 
