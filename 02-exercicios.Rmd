@@ -2,6 +2,9 @@
 title: "Exercícios: R como calculadora"
 author: "Athos Damiani, Daniel Falbel"
 date: 2016-12-27
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 ```{r, include=FALSE}
@@ -9,6 +12,11 @@ knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+
+```{r, include=FALSE}
+tutorial::go_interactive()
+```
+
 
 1. Calcule o número de ouro no R.
 
