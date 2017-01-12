@@ -254,7 +254,7 @@ my_function
 ## function(x){
 ##   x/2
 ## }
-## <environment: 0x2537980>
+## <environment: 0x1a12980>
 ```
 
 ## Controles de Fluxo
