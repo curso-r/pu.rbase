@@ -22,3 +22,5 @@ lm(minha_formula, data = iris)
 No caso específico das regressões lineares, são nas fórmulas que conseguimos descrever as variáveis explicativas e suas interações. A fórmula `y ~ x1 * x2` significa "y regredido por x1, x2 e a interação entre x1 e x2". Fórmulas aparecem frequentemente em tarefas de modelagem.
 
 Demais usos de fórmulas aparecerão em outras funções (como o `ggplot`) com outros significados e a documentação nos dirá como usá-las.
+
+--------------------------------------------------------------------------------

@@ -52,3 +52,4 @@ Atente-se que o argumento `y` possui um valor padrão `0`. Isso quer dizer que e
 
 O [Advanced-R](http://adv-r.had.co.nz/) é um excelente livro para quem quiser masterizar a arte de se fazer funções. 
 
+--------------------------------------------------------------------------------

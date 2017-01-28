@@ -45,3 +45,5 @@ op_logico <- data.frame(
                   "x ou y são verdadeiros (apenas um deles)?"))
 knitr::kable(op_logico)
 ```
+
+--------------------------------------------------------------------------------

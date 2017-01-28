@@ -55,3 +55,5 @@ install.packages("C:/caminho/para/o/arquivo/zipapo/pacote.zip", repos = NULL)
 A aba ***Packages*** do RStudio ajuda a administrar seus pacotes também.
 
 `r knitr::include_graphics("figures/instalar_pacote_rstudio.png")`
+
+--------------------------------------------------------------------------------

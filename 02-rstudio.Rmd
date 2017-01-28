@@ -49,6 +49,8 @@ project/
 
 Assim que abrir o RStudio você verá 4 quadrantes do jeito que a figura abaixo mostra
 
-`r knitr::include_graphics("imagens/rstudio-editor.png")`
+`r knitr::include_graphics("figures/rstudio-editor.png")`
 
 Nela estão dispostos **editor**, **console**, **environment** e **output**.  Normalmente eles vêm nesta ordem, depois você pode organizá-los da forma que preferir. O R vive no quadrante **console**!
+
+--------------------------------------------------------------------------------

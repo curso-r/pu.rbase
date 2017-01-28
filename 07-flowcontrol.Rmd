@@ -74,3 +74,6 @@ for(i in indices){
 ```
 
 No trecho de código acima, preste atenção no resultado individual de cada uma das operações para entender como o R funciona.
+
+--------------------------------------------------------------------------------
+

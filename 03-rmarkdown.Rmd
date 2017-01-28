@@ -14,14 +14,12 @@ isto é um chunk.
 ```")
 ```
 
-
-
 <div class='admonition note'>
 <p class='admonition-title'>
 Nota
 </p>
 <p>
-Este site foi escrito em RMarkdown. Toda vez que aparecer exemplos de código de R é porque havia um *chunk* alí no `.Rmd` original.
+Este site foi escrito em RMarkdown. Toda vez que aparecer exemplos de código de R é porque havia um chunk no .Rmd original.
 </p>
 </div>
 
@@ -39,3 +37,5 @@ knitr::include_graphics("figures/criar_rmarkdown.png")
 ```
 
 Para detalhes sobre como utilizar o RMarkdown, leia  [aqui](http://r4ds.had.co.nz/r-markdown.html) e [ aqui](http://rmarkdown.rstudio.com/lesson-1.html).
+
+--------------------------------------------------------------------------------

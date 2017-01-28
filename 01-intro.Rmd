@@ -14,6 +14,8 @@ A linguagem `R` é intuitiva. Muita coisa sai do jeito certo no chute! Para ver 
 
 Mas antes disso, vamos aprender a mexer no RStudio.
 
+--------------------------------------------------------------------------------
+
 <!-- ## Exercícios -->
 <!-- Pratique! Será que você consegue resolver os exercícios abaixo? -->
 <!-- 1. Calcule o número de ouro no R. -->
