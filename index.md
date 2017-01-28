@@ -13,6 +13,8 @@ A linguagem `R` é intuitiva. Muita coisa sai do jeito certo no chute! Para ver 
 
 Mas antes disso, vamos aprender a mexer no RStudio.
 
+--------------------------------------------------------------------------------
+
 <!-- ## Exercícios -->
 <!-- Pratique! Será que você consegue resolver os exercícios abaixo? -->
 <!-- 1. Calcule o número de ouro no R. -->
@@ -101,9 +103,11 @@ project/
 
 Assim que abrir o RStudio você verá 4 quadrantes do jeito que a figura abaixo mostra
 
-![](imagens/rstudio-editor.png)
+![](figures/rstudio-editor.png)
 
 Nela estão dispostos **editor**, **console**, **environment** e **output**.  Normalmente eles vêm nesta ordem, depois você pode organizá-los da forma que preferir. O R vive no quadrante **console**!
+
+--------------------------------------------------------------------------------
 
 
 
@@ -121,14 +125,12 @@ O *markdown* nada mais é do que um documento de texto com alguns padrões bási
 ## ```
 ```
 
-
-
 <div class='admonition note'>
 <p class='admonition-title'>
 Nota
 </p>
 <p>
-Este site foi escrito em RMarkdown. Toda vez que aparecer exemplos de código de R é porque havia um *chunk* alí no `.Rmd` original.
+Este site foi escrito em RMarkdown. Toda vez que aparecer exemplos de código de R é porque havia um chunk no .Rmd original.
 </p>
 </div>
 
@@ -149,6 +151,8 @@ knitr::include_graphics("figures/criar_rmarkdown.png")
 ![plot of chunk unnamed-chunk-20](figures/criar_rmarkdown.png)
 
 Para detalhes sobre como utilizar o RMarkdown, leia  [aqui](http://r4ds.had.co.nz/r-markdown.html) e [ aqui](http://rmarkdown.rstudio.com/lesson-1.html).
+
+--------------------------------------------------------------------------------
 
 
 
@@ -202,7 +206,7 @@ Error: unexpected input in "5 % 5"
 [1] 0
 ```
 
-
+--------------------------------------------------------------------------------
 
 
 
@@ -268,6 +272,7 @@ Porém, no caso do R há outro requisito que vai aumentar muito sua chance de te
 
 - Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Em vez disso, use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
 
+--------------------------------------------------------------------------------
 
 
 
@@ -325,6 +330,8 @@ install.packages("C:/caminho/para/o/arquivo/zipapo/pacote.zip", repos = NULL)
 A aba ***Packages*** do RStudio ajuda a administrar seus pacotes também.
 
 ![](figures/instalar_pacote_rstudio.png)
+
+--------------------------------------------------------------------------------
 
 
 
@@ -417,6 +424,9 @@ for(i in indices){
 ```
 
 No trecho de código acima, preste atenção no resultado individual de cada uma das operações para entender como o R funciona.
+
+--------------------------------------------------------------------------------
+
 
 
 
@@ -790,6 +800,8 @@ str(iris)
 ##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
+--------------------------------------------------------------------------------
+
 
 
 ## Funções
@@ -850,6 +862,7 @@ Atente-se que o argumento `y` possui um valor padrão `0`. Isso quer dizer que e
 
 O [Advanced-R](http://adv-r.had.co.nz/) é um excelente livro para quem quiser masterizar a arte de se fazer funções. 
 
+--------------------------------------------------------------------------------
 
 
 
@@ -973,6 +986,7 @@ barplot(VADeaths)
 
 ![plot of chunk unnamed-chunk-66](figures//unnamed-chunk-66-1.png)
 
+--------------------------------------------------------------------------------
 
 
 
@@ -1007,6 +1021,8 @@ lm(minha_formula, data = iris)
 No caso específico das regressões lineares, são nas fórmulas que conseguimos descrever as variáveis explicativas e suas interações. A fórmula `y ~ x1 * x2` significa "y regredido por x1, x2 e a interação entre x1 e x2". Fórmulas aparecem frequentemente em tarefas de modelagem.
 
 Demais usos de fórmulas aparecerão em outras funções (como o `ggplot`) com outros significados e a documentação nos dirá como usá-las.
+
+--------------------------------------------------------------------------------
 
 
 
@@ -1052,6 +1068,8 @@ LETTERS
 |x &#124; y |x ou y são verdadeiros?                   |
 |x & y      |x e y são verdadeiros?                    |
 |xor(x, y)  |x ou y são verdadeiros (apenas um deles)? |
+
+--------------------------------------------------------------------------------
 
 
 <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
@@ -1118,6 +1136,9 @@ x
 
 
 
+
+
+--------------------------------------------------------------------------------
 
 
 
