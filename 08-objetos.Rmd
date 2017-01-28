@@ -1,0 +1,300 @@
+---
+author: "Athos Petri Damiani"
+---
+
+## Objetos
+
+```{r}
+a <- 1
+a
+```
+
+O R permite que você salve dados guardando estes dentro de um objeto. 
+
+No exemplo acima, salvamos o valor `1` em `a` e sempre que o R encontrar o nome `a` ele vai substituir por `1`.
+
+<div class='admonition note'>
+<p class='admonition-title'>
+Atenção!
+</p>
+<p>
+O R entende letras maiúsculas e minúsculas, isto é `a` é considerado um objeto diferente de `A`.
+</p>
+</div>
+
+### Objetos atômicos
+
+Existem cinco classes básicas ou "atômicas" no R:
+
+- character `"UAH!"` (é o varchar do SQL)
+- numeric `0.95` (números reais)
+- integer `100515` (inteiros)
+- complex `2 + 5i` (números complexos, a + bi)
+- logical `TRUE` (booleanos, TRUE/FALSE)
+
+### Vetores
+
+Vetores no R são os objetos mais simples que podem guardar objetos atômicos.
+
+```{r}
+vetor <- c(1, 2, 3, 4)
+class(vetor)
+```
+
+De forma bastante intuitiva você pode fazer operações com vetores.
+
+```{r}
+vetor - 1
+```
+
+Quando você faz `vetor - 1`, o R subtrai `1` de cada um dos elementos do vetor. O mesmo acontece quando você faz qualquer operação aritmética com vetores no R. Tente jogar no console
+
+```{r, eval=FALSE}
+vetor / 2
+vetor * 10
+```
+
+Você também pode fazer operações que envolvem mais de um vetor:
+
+```{r}
+vetor * vetor
+```
+
+Neste caso, o R irá alinhar os dois vetores e multiplicar elemento por elemento. Isso pode ficar um pouco confuso quando os dois vetores não possuem o mesmo tamanho:
+
+```{r}
+vetor2 <- 1:3
+vetor * vetor2
+```
+
+Agora o R alinhou os dois vetores, e como eles não possuiam o mesmo tamanho, ele foi repetindo o menor vetor até completar o vetor maior. 
+
+Esse comportamento é chamado de **reciclagem**. Isso é útil para fazer operações com os vetores elementos por elementos (vetorizadamente), mas as vezes pode ser confuso. Com o tempo você aprenderá a se aproveitar desse comportamento.
+
+### Misturando objetos
+
+<div class='admonition note'>
+<p class='admonition-title'>
+Vetores são homogêneos
+</p>
+<p>
+Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character e assim por diante. Não dá para ter um número e um character no mesmo vetor, por exemplo.
+</p>
+
+```{r, eval=FALSE}
+y <- c(1.7, "a")  ## character
+y <- c(TRUE, 2)   ## numeric
+y <- c(TRUE, "a") ## character
+```
+
+Se colocarmos duas ou mais classes diferentes dentro de um mesmo vetor, o R vai forçar que todos os elementos passem a pertencer à mesma classe. O número `1.7` viraria `"1.7"` se fosse colocado ao lado de um `"a"`.
+
+A ordem de precedência é 
+
+**DOMINANTE** `character > complex > numeric > integer > logical` **RECESSIVO**
+
+### Forçando classes explicitamente
+
+Assim como o `convert()` do SQL faz, você pode coagir um objeto a ser de uma classe da sua escolha com as funções `as.character()`, `as.numeric()`, `as.integer()` e `as.logical()`. 
+
+```{r}
+x <- 0:4
+class(x)
+as.numeric(x)
+as.logical(x)
+as.character(x)
+```
+
+Se o R não entender como coagir uma classe na outra ele soltará um `warning` informado que colocou `NA` no lugar.
+
+```{r}
+x <- c("a", "b", "c")
+as.numeric(x)
+```
+
+<div class='admonition note'>
+<p class='admonition-title'>
+Observação
+</p>
+<p>
+O `NA` tem o mesmo papel que o `null` do SQL. Porém, há um `NULL` no R também, com diferenças sutis que vamos abordar mais adiante. Năo confundir!
+</p>
+</div>
+
+### Matrizes
+
+Matrizes săo vetores com duas dimensőes (e por isso só possuem elementos de uma mesma classe).
+
+```{r}
+m <- matrix(1:6, nrow = 2, ncol = 3)
+m
+dim(m) # funçăo dim() retorna a dimensăo do objeto.
+```
+
+Repare que os números de 1 a 6 foram dispostos na matriz de coluna a coluna (*column-wise*), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita.
+
+**Utilidades**
+
+```{r, eval=FALSE}
+m[3,  ]   # seleciona uma linha
+m[ , 2]   # seleciona uma coluna
+m[1, 2]   # seleciona um elemento
+t(m)      # matriz transposta
+m %*% n   # multiplicação matricial
+solve(m)  # matriz inversa
+```
+
+### Fatores
+
+Fatores podem ser vistos como vetores de inteiros que possuem rótulos (labels).
+
+```{r}
+sexo <- c("M", "H", "H", "H", "M", "M", "H")
+fator <- as.factor(sexo)
+fator
+as.numeric(fator)
+```
+
+Eles são úteis para representar uma variável categórica (nominal e ordinal) e têm relevância em modelagem, onde serão tratados de maneira especial em funções como `glm()`. 
+
+A funçăo `levels()` retorna os rótulos do fator:
+
+```{r}
+levels(fator)
+```
+
+A ordem das categorias de um fator pode importar. Como exemplo, temos as caselas de referência de modelos estatísticos e a ordem das barras de um gráfico. Para ajudar nesta tarefa, consulte o pacote [forcats](https://github.com/tidyverse/forcats).
+
+<div class='admonition note'>
+<p class='admonition-title'>
+Um erro comum e desastroso
+</p>
+<p>
+Quando um vetor de números está como `factor`. Ao tentar transformar o vetor em `numeric`, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
+</p>
+</div>
+
+```{r, eval=FALSE}
+numeros <- factor(c("10", "55", "55", "12", "10", "-5", "-90"))
+```
+
+```
+as.numeric(numeros)
+## [1] 3 5 5 4 3 1 2    # <-- Por essa eu năo esperava!
+```
+
+Para evitar isso, use `as.character()` antes de transformar para número.
+
+```
+as.numeric(as.character(numeros))
+## [1]  10  55  55  12  10  -5 -90   # <-- Agora está OK
+```
+
+### Valores especiais
+
+Existem valores reservados para representar dados faltantes, infinitos, e indefiniçőes matemáticas.
+
+- **NA** (Not Available) significa dado faltante/indisponível. É o `null` do SQL ou o `.` do SAS. O `NA` tem uma classe, podemos ter `NA` numeric, `NA` character e etc.
+- **NaN** (Not a Number) representa indefinições matemáticas, como `0/0` e `log(-1)`. Um `NaN` é um `NA`, mas a recíproca não é verdadeira.
+- **Inf** (Infinito) é um número muito grande ou o limite matemático, por exemplo, `1/0` e `10^310`. Aceita sinal negativo `-Inf`. 
+- **NULL** representa a ausęncia de informação. Conceitualmente, a diferença entre `NA` e `NULL` é sutil, mas no R o `NA` está mais alinhado com os conceitos de estatística (ou como gostaríamos que os dados faltantes se comportassem em análise de dados) e o `NULL` está em sintonia com comportamentos de lógica de programação.
+- Use as funções `is.na()`, `is.nan()`, `is.infinite()` e `is.null()` para testar se um objeto é um desses valores.
+
+```{r}
+x <- c(NaN, Inf, 1, 2, 3, NA)
+is.na(x)
+is.nan(x)
+```
+
+### Listas
+
+Listas são um tipo especial de vetor que aceita elementos de classes diferentes.
+
+```{r}
+x <- list(1:5, "Z", TRUE, c("a", "b"))
+x
+```
+
+É um dos objetos mais importantes para armazenar dados e vale a pena saber manuseá-los bem. Existem muitas funçães que fazem das listas objetos incrivelmente úteis.
+
+Criamos uma lista pela função `list()`, que aceita um número arbitrário de elementos. Listas aceitam QUALQUER tipo de objeto. Podemos ter listas dentro de listas, por exemplo. Como para quase todos os objetos no R, as funçőes `is.list()` e `as.list()` também existem.
+
+Na lista `pedido` abaixo temos `numeric`, `Date`, `character`, vetor de `character` e `list` contida em uma lista:
+
+```{r}
+pedido <- list(pedido_id = 8001406,
+               pedido_registro = as.Date("2016-12-12"),
+               nome = "Athos", 
+               sobrenome = "Petri Damiani", 
+               cpf = "12345678900", 
+               email = "athos.damiani@gmail.com", 
+               qualidades = c("incrível", "impressionante"),
+               itens = list(
+                 list(descricao = "Ferrari", 
+                      frete = 0, 
+                      valor = 500000),
+                 list(descricao = "Dolly", 
+                      frete = 1.5, 
+                      valor = 3.90)
+               ), 
+               endereco = list(entrega = list(logradouro = "Rua da Glória", 
+                                              numero = "123",
+                                              complemento = "apto 71"),
+                               cobranca = list(logradouro = "Rua Jose de Oliveira Coutinho",
+                                               numero = "151",
+                                               complemento = "5o andar")
+               )
+)
+```
+
+**Utilidades**
+
+```{r, eval=FALSE}
+pedido$cpf     # elemento chamado 'cpf'
+pedido[1]      # nova lista com apenas o primeiro elemento
+pedido[[2]]    # segundo elemento
+pedido["nome"] # nova lista com apenas o elemento chamado 'nome'
+```
+
+Certamente você se deparará com listas quando for fazer análise de dados com o R, nos tópicos mais aplicados iremos aprofundar sobre o tema.
+
+```{block, type = "dica"}
+O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
+```
+
+### `data.frame`
+
+Um `data.frame` é o mesmo que uma tabela do SQL ou um spreadsheet do Excel, por isso são objetos muito importantes. 
+
+Usualmente seus dados serão importados para um objeto `data.frame` e em grande parte do curso os teremos como principal objeto de estudo.
+
+`data.frame`s são listas especiais em que todos os seus elementos possuem **o mesmo comprimento**. Cada elemento dessa lista pode ser pensado como uma coluna da tabela e seu comprimento representa o número de linhas. 
+
+Já que são listas, essas colunas podem ser de classes diferentes. Essa é a grande diferença entre `data.frame`s e matrizes. Algumas funções úteis:
+
+- `head()` Mostra as primeiras 6 linhas.
+- `tail()` Mostra as últimas 6 linhas.
+- `dim()` Número de linhas e de colunas.
+- `names()` Os nomes das colunas (variáveis).
+- `str()` Estrutura do data.frame. Mostra, entre outras coisas, as classes de cada coluna.
+- `cbind()` Acopla duas tabelas lado a lado.
+- `rbind()` Empilha duas tabelas.
+
+O exemplo abaixo mostra que uma lista pode virar `data.frame` se todos os elementos tiverem o mesmo comprimento.
+
+```{r, error=TRUE}
+minha_lista <- list(x = c(1, 2, 3), y = c("a", "b"))
+as.data.frame(minha_lista)
+```
+
+```{r}
+minha_lista <- list(x = c(1, 2, 3), y = c("a", "b", "c"))
+as.data.frame(minha_lista)
+```
+
+#### Exemplo de data.frame: iris {-}
+
+```{r}
+head(iris)  
+str(iris)
+```
