@@ -1,0 +1,54 @@
+---
+author: "Athos Petri Damiani"
+---
+
+## RStudio
+
+O RStudio é o melhor ambiente de desenvolvimento de R disponível. Você pode [baixar aqui](https://www.rstudio.com/products/rstudio/download/preview/).
+
+Há muitas ferramentas nele que se aprende conforme o uso e há bons materiais sobre na internet (por exemplo [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante que vale citar é a criação de projetos. Uma estrutura sugerida de organização de um projeto é
+
+**Estrutura 1**: Por extensão de arquivo.
+
+```{r, engine='bash', eval=FALSE}
+nome_do_projeto/
+  - .Rprofile   # códigos para rodar assim que abrir o projeto
+  - R/          # Código R, organizado com a-carrega.R, b-prepara bd.R, c-vis.R, d-modela, ...
+  - RData/      # Dados em formato .RData
+  - csv/        # Dados em .csv
+  - png/        # gráficos em PNG
+  - nome_do_projeto.Rproj
+```
+
+**Estrutura 2**: Típico projeto de análise estatística.
+
+```{r, engine='bash', eval = FALSE}
+project/
+  - README.Rmd   # Descrição do pacote
+  - set-up.R     # Pacotes etc
+  - R/           # Código R, organizado com 0-load.R, 1-tidy.R, 2-vis.R, ...
+  - data/        # Dados (estruturados ou não)
+  - figures/     # gráficos (pode ficar dentro de output/)
+  - output/      # Relatórios em .Rmd, .tex etc
+  - project.Rproj
+```
+
+**Estrutura 3**: Pacote do R (avançado).
+
+```{r, engine='bash', eval = FALSE}
+project/
+  - README.md    # Descrição do pacote
+  - DESCRIPTION  # Metadados estruturados do pacote e dependências
+  - NAMESPACE    # importações e exportações do pacote
+  - vignettes/   # Relatórios em .Rmd
+  - R/           # Funções do R
+  - data/        # Dados estruturados (tidy data)
+  - data-raw/    # Dados não estruturados e arqs 0-load.R, 1-tidy.R, 2-vis.R, ...
+  - project.Rproj
+```
+
+Assim que abrir o RStudio você verá 4 quadrantes do jeito que a figura abaixo mostra
+
+`r knitr::include_graphics("imagens/rstudio-editor.png")`
+
+Nela estão dispostos **editor**, **console**, **environment** e **output**.  Normalmente eles vêm nesta ordem, depois você pode organizá-los da forma que preferir. O R vive no quadrante **console**!
