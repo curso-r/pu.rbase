@@ -1,0 +1,52 @@
+---
+author: "Athos Petri Damiani"
+---
+
+## R como calculadora
+
+Pelo console é possível executar qualquer comando do R.
+
+```{r}
+1:30
+```
+
+Esse comando é uma forma simplificada de criar um vetor de inteiros de 1 a 30.
+Você pode ignorar esses números que aparecem entre parênteses. Na verdade eles 
+só indicam o índice do primeiro elemento impresso nessa linha.
+
+<div class='admonition note'>
+<p class='admonition-title'>
+Quando compilamos?
+</p>
+<p>
+Quem vem de linguagens como o C ou Java, espera que seja necessário compilar o código em texto para o código de máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
+</p>
+</div>
+
+Tente jogar no console `2 * 2 - (4 + 4) / 2`. Pronto. Com essa simples expressão você já é capaz de imaginar (e certeiramente) como pedir ao R para fazer qualquer tipo de operação aritmética. Lição aprendida!
+
+Além do mais, as operações e suas precedências são mantidas como na matemática, ou seja, divisão e multiplicação são calculadas antes da adição e subtração. E os parênteses nunca são demais!
+
+Agora que você já conhece o RStudio, digite a expressão `2 * 2 - (4 + 4) / 2` no
+**console** e tecle `Enter`. Uma outra forma de chamar uma expressão é escrever
+o código no **editor** e teclar `Ctrl + Enter` ou `Ctrl + R`. Assim o comando é enviado para o **console** onde é diretamente executado.
+
+Se você digitar um comando incompleto, como `5 + ` e apertar `Enter`, o R irá mostrar um `+`, o que não tem nada a ver com somar alguma coisa, e sim significa que o R está esperando que vocę complete o seu comando. Termine o seu comando ou aperte `Esc` para recomeçar.
+
+```
+> 5 -
++ 
++ 5
+[1] 0
+```
+
+Se você digitar um comando que o R não reconhecer, ele irá retornar uma mensagem de erro. Não entre em pânico. Ele só está avisando que não conseguiu interpretar o comando. Depois você já pode digitar mais um comando.
+
+```
+> 5 % 5
+Error: unexpected input in "5 % 5"
+> 5 - 5
+[1] 0
+```
+
+
