@@ -1,0 +1,57 @@
+---
+author: "Athos Petri Damiani"
+---
+
+## Instalar pacotes
+
+O grande trunfo do R são seus pacotes então é uma boa você ficar bastante à vontade em instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.
+
+Existem três principais maneiras de instalar pacotes. Em ordem de frequência, são:
+
+- Via CRAN (Comprehensive R Archive Network) `install.packages("magrittr")`
+- Via Github `devtools::install_github("rstudio/shiny")`
+- Via arquivo .zip/.tar.gz `install.packages("C:/caminho/pacote.zip", repos = NULL)`
+
+### Via CRAN
+
+Quando quiser utilizar um pacote, instale usando a função `install.packages("nome_do_pacote")`. Por exemplo:
+
+```{r eval = FALSE}
+install.packages("magrittr")
+```
+
+```{r message=TRUE, warning=TRUE, echo=FALSE, eval = FALSE}
+install.packages("magrittr", repos = "https://cloud.r-project.org")
+```
+
+E de agora em diante basta carregar o pacote com `library(magrittr)`. Não precisa mais instalar.
+
+```{block, type='dica'}
+Dica! Escreva `nome_do_pacote::nome_da_funcao()` se quiser usar apenas uma função de um determinado pacote. O operador `::` serve para isso. Essa forma também é útil quando se tem duas funções com o mesmo nome e precisamos garantir que o código vá usar a função do pacote correto.
+```
+
+### Via Github
+
+Desenvolvedores costumam disponibilizar a última versão de seus pacotes no Github e alguns deles sequer estão no CRAN. Mesmo assim ainda é possível utilizá-los instalando diretamente pelo github. O comando é igualmente simples:
+
+```{r, eval=FALSE}
+devtools::install_github("rstudio/shiny")
+```
+
+O que será necessário é o username e o nome do repositório. No exemplo o username foi "rstudio" e o pacote foi "shiny". 
+
+Não se preocupe, geralmente esses pacotes que ficam no github possuem um `README` cuja primeira instrução é de como instalar o pacote via github. Se não tiver, provavelmente este pacote não te merece =)!
+
+### Via arquivo .zip/.tar.gz
+
+Se você precisar instalar um pacote que está zipado no seu computador (ou em algum servidor) há a opção de assim o fazer sem maiores problemas. 
+
+```{r, eval=FALSE}
+install.packages("C:/caminho/para/o/arquivo/zipapo/pacote.zip", repos = NULL)
+```
+
+É quase igual a instalar pacotes via CRAN, com a diferença que agora o nome do pacote é o caminho inteiro até o arquivo, e com o parâmetro `repos = NULL` para informar que estamos instalando a partir da máquina local.
+
+A aba ***Packages*** do RStudio ajuda a administrar seus pacotes também.
+
+`r knitr::include_graphics("figures/instalar_pacote_rstudio.png")`
