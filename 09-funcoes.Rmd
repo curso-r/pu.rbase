@@ -19,9 +19,9 @@ round(mean(die))
 
 A ilustração abaixo mostra o que acontece quando você executa `round(mean(die))` no R.
 
-`r knitr::include_graphics("imagens/round.png")`
+`r knitr::include_graphics("figures/round.png")`
 
-Passamos dados para as funções por meio de argumentos. No R, esses argumentos estão [documentados][Documentaçăo do R] na página de ajuda de cada uma das funções, que pode ser acessada digitando `help(nome_da_funcao)` ou `?nome_da_funcao`.
+Passamos dados para as funções por meio de argumentos. No R, esses argumentos estão documentados na página de ajuda de cada uma das funções, que pode ser acessada digitando `help(nome_da_funcao)` ou `?nome_da_funcao`.
 
 ### Criando suas próprias funções
 

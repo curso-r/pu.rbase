@@ -258,11 +258,7 @@ pedido[[2]]    # segundo elemento
 pedido["nome"] # nova lista com apenas o elemento chamado 'nome'
 ```
 
-Certamente você se deparará com listas quando for fazer análise de dados com o R, nos tópicos mais aplicados iremos aprofundar sobre o tema.
-
-```{block, type = "dica"}
-O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
-```
+Certamente você se deparará com listas quando for fazer análise de dados com o R, nos tópicos mais aplicados iremos aprofundar sobre o tema. O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
 
 ### `data.frame`
 
