@@ -738,11 +738,7 @@ pedido[[2]]    # segundo elemento
 pedido["nome"] # nova lista com apenas o elemento chamado 'nome'
 ```
 
-Certamente você se deparará com listas quando for fazer análise de dados com o R, nos tópicos mais aplicados iremos aprofundar sobre o tema.
-
-<div class="dica">
-O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
-</div>
+Certamente você se deparará com listas quando for fazer análise de dados com o R, nos tópicos mais aplicados iremos aprofundar sobre o tema. O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
 
 ### `data.frame`
 
@@ -827,9 +823,9 @@ round(mean(die))
 
 A ilustração abaixo mostra o que acontece quando você executa `round(mean(die))` no R.
 
-![](imagens/round.png)
+![](figures/round.png)
 
-Passamos dados para as funções por meio de argumentos. No R, esses argumentos estão [documentados][Documentaçăo do R] na página de ajuda de cada uma das funções, que pode ser acessada digitando `help(nome_da_funcao)` ou `?nome_da_funcao`.
+Passamos dados para as funções por meio de argumentos. No R, esses argumentos estão documentados na página de ajuda de cada uma das funções, que pode ser acessada digitando `help(nome_da_funcao)` ou `?nome_da_funcao`.
 
 ### Criando suas próprias funções
 
@@ -901,7 +897,7 @@ y <- 5 + 2 * x + rnorm(n, sd = 30)
 plot(x, y)
 ```
 
-![plot of chunk unnamed-chunk-60](figures//unnamed-chunk-60-1.png)
+![plot of chunk unnamed-chunk-59](figures//unnamed-chunk-59-1.png)
 
 O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados por linhas.
 
@@ -910,7 +906,7 @@ O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados p
 plot(x, y, type = "l")
 ```
 
-![plot of chunk unnamed-chunk-61](figures//unnamed-chunk-61-1.png)
+![plot of chunk unnamed-chunk-60](figures//unnamed-chunk-60-1.png)
 
 ### Histograma
 
@@ -926,7 +922,7 @@ Parâmetros principais (ver `help(hist)` para mais detalhes):
 hist(rnorm(1000))
 ```
 
-![plot of chunk unnamed-chunk-62](figures//unnamed-chunk-62-1.png)
+![plot of chunk unnamed-chunk-61](figures//unnamed-chunk-61-1.png)
 
 ### Boxplot
 
@@ -941,7 +937,7 @@ Parâmetros principais (ver `help(boxplot)` para mais detalhes):
 boxplot(InsectSprays$count, col = "lightgray")
 ```
 
-![plot of chunk unnamed-chunk-63](figures//unnamed-chunk-63-1.png)
+![plot of chunk unnamed-chunk-62](figures//unnamed-chunk-62-1.png)
 
 **Duas variáveis** Usamos fórmula e o parâmetro `data`!
 
@@ -950,7 +946,7 @@ boxplot(InsectSprays$count, col = "lightgray")
 boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 ```
 
-![plot of chunk unnamed-chunk-64](figures//unnamed-chunk-64-1.png)
+![plot of chunk unnamed-chunk-63](figures//unnamed-chunk-63-1.png)
 
 ### Gráfico de barras
 
@@ -986,7 +982,7 @@ VADeaths
 barplot(VADeaths) 
 ```
 
-![plot of chunk unnamed-chunk-66](figures//unnamed-chunk-66-1.png)
+![plot of chunk unnamed-chunk-65](figures//unnamed-chunk-65-1.png)
 
 --------------------------------------------------------------------------------
 
