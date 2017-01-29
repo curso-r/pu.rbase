@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-01-28'
+date: '2017-01-29'
 ---
 
 
@@ -521,6 +521,8 @@ Vetores são homogêneos
 <p>
 Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character e assim por diante. Não dá para ter um número e um character no mesmo vetor, por exemplo.
 </p>
+</div>
+
 
 
 ```r
