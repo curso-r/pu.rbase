@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-01-29'
+date: '2017-01-30'
 ---
 
 
@@ -11,7 +11,7 @@ date: '2017-01-29'
 
 A linguagem `R` é intuitiva. Muita coisa sai do jeito certo no chute! Para ver um exemplo disso, é interessante começar fazendo do R uma grande calculadora.
 
-Mas antes disso, vamos aprender a mexer no RStudio.
+Mas antes disso, vamos aprender a mexer no RStudio!
 
 --------------------------------------------------------------------------------
 
