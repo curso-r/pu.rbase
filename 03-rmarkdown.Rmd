@@ -6,7 +6,7 @@ author: "Athos Damiani, Daniel Falbel"
 
 O RMarkdown é um tipo de documento especial que contém tanto textos quanto códigos de R, tudo escrito em um mesmo lugar. 
 
-O *markdown* nada mais é do que um documento de texto com alguns padrões básicos de formatação, como negrito, itálico, títulos, subtítulos, itens e referências cruzadas. Já os *chunks* são pedaços de códigos em R encapsulados por três crases "```". Os códigos são executados sempre que o documento é processado.
+O *markdown* nada mais é do que um documento de texto com alguns padrões básicos de formatação, como negrito, itálico, títulos, subtítulos, itens e referências cruzadas. Já os *chunks* são pedaços de códigos em R encapsulados por três crases (```). Os códigos são executados sempre que o documento é processado.
 
 ```{r, echo=FALSE}
 cat("```{r}\n
@@ -23,14 +23,14 @@ Este site foi escrito em RMarkdown. Toda vez que aparecer exemplos de código de
 </p>
 </div>
 
-Para produção de relatórios, o RMarkdown possui algumas vantagens, dentre as quais estão:
+Para produção de relatórios, o RMarkdown possui algumas vantagens, como:
 
-1. **Simplicidade e foco**. Permite o usuário a focar na análise e não na formatação do documento.
+1. **Simplicidade e foco**. Permite ao usuário o foco na análise e não na formatação do documento.
 1. **Versátil**. Pode ser utilizado para gerar documentos em $\LaTeX$, `Word`, `HTML` e apresentaçőes em `beamer`, `pptx` e `HTML` (de vários tipos). Pode ainda gerar sites, livros, dissertaçőes de mestrado e até mesmo dashboards interativos.
-1. **Reprodutível**. O RMarkdown nada mais é que um arquivo de texto. Além disso, ele tenta te obrigar a fazer o documento mais autocontido possível. Assim, um documento `.Rmd` é fácil de compartilhar e de ser utilizado pelo receptor. Lembre-se, o receptor pode ser o futuro você! Vale enfatizar que a reprodutibilidade é considerada como um dos princípios fundamentais da ciência. Então só de usar RMarkdown, você já está colaborando com a ciência :)
-1. **Flexível**. É possível configurar e criar templates de análises para quaisquer tipos de aplicações e clientes. Os textos podem ser parametrizados por números que variam de versão para versão, por exemplo mensalmente, tudo escrito somente em R. 
+1. **Reprodutível**. O RMarkdown nada mais é que um arquivo de texto. Além disso, ele tenta te obrigar a fazer o documento mais autocontido possível. Assim, um documento `.Rmd` é fácil de compartilhar e de ser utilizado pelo receptor. Lembre-se, o receptor pode ser o futuro você! Vale enfatizar que a reprodutibilidade é considerada como um dos princípios fundamentais da ciência. Então, só de usar RMarkdown, você já está colaborando com a ciência. :)
+1. **Flexível**. É possível configurar e criar templates de análises para quaisquer tipos de aplicações e clientes. Os textos podem ser parametrizados por números que variam de versão para versão, mensalmente, por exemplo, tudo escrito somente em R. 
 
-Para criar um RMarkdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione RMarkdown.
+Criar um RMarkdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione RMarkdown.
 
 ```{r}
 knitr::include_graphics("figures/criar_rmarkdown.png")
