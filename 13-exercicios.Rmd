@@ -24,7 +24,6 @@ $$ \frac{1 + \sqrt{5}}{2} $$
 
 ```{r ex="exercicio_01", type="sample-code"}
 # Digite a expressão que calcula o número de ouro.
-
 ```
 
 ```{r ex="exercicio_01", type="solution"}
@@ -40,7 +39,7 @@ success_msg("Correto!")
 2. O que dá divisão de 1 por 0 no R? E -1 por 0? 
 
 ```{r ex="exercicio_02", type="sample-code"}
-1/0
+ 1/0
 -1/0
 ```
 
@@ -106,8 +105,6 @@ if(x = 4) {
 }
 x
 ```
-
-
 
 ```{r ex="exercicio_06", type="sample-code"}
 x <- 4
