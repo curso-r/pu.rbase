@@ -57,7 +57,7 @@ Mas antes disso, vamos aprender a mexer no RStudio!
 
 O RStudio é o melhor ambiente de desenvolvimento de R disponível. Você pode [baixá-lo aqui](https://www.rstudio.com/products/rstudio/download/preview/).
 
-Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos. Uma estrutura sugerida para a organização de um projeto é:
+Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo, [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos. Uma estrutura sugerida para a organização de um projeto é:
 
 **Estrutura 1**. Por extensão de arquivo.
 
@@ -72,7 +72,7 @@ nome_do_projeto/
   - nome_do_projeto.Rproj
 ```
 
-**Estrutura 2**: Típico projeto de análise estatística.
+**Estrutura 2**. Típico projeto de análise estatística.
 
 
 ```bash
@@ -86,7 +86,7 @@ project/
   - project.Rproj
 ```
 
-**Estrutura 3**: Pacote do R (avançado).
+**Estrutura 3**. Pacote do R (avançado).
 
 
 ```bash
@@ -101,7 +101,7 @@ project/
   - project.Rproj
 ```
 
-Assim que abrir o RStudio, você verá 4 quadrantes, do jeito que a figura abaixo mostra.
+Ao abrir o RStudio, você verá 4 quadrantes. Observe a figura abaixo.
 
 ![](figures/rstudio-editor.png)
 
@@ -158,7 +158,7 @@ Para detalhes sobre como utilizar o RMarkdown, leia  [aqui](http://r4ds.had.co.n
 
 ## R como calculadora
 
-Pelo console é possível executar qualquer comando do R.
+Pelo console, é possível executar qualquer comando do R.
 
 
 ```r
@@ -168,7 +168,7 @@ Pelo console é possível executar qualquer comando do R.
 ```
 
 Esse comando é uma forma simplificada de criar um vetor de inteiros de 1 a 30.
-Os números que aparecem entre [] indicam o índice do primeiro elemento impresso nessa linha.
+Os números que aparecem entre colchetes ([1] e [24]) indicam o índice do primeiro elemento impresso nessa linha.
 
 <div class='admonition note'>
 <p class='admonition-title'>
@@ -179,7 +179,7 @@ Quem vem de linguagens como o C ou Java espera que seja necessário compilar o c
 </p>
 </div>
 
-Tente jogar no console `2 * 2 - (4 + 4) / 2`. Pronto. Com essa simples expressão você já é capaz de imaginar (certeiramente) como pedir ao R para fazer qualquer tipo de operação aritmética. Lição aprendida!
+Tente jogar no console `2 * 2 - (4 + 4) / 2`. Pronto! Com essa simples expressão você já é capaz de imaginar (certeiramente) como pedir ao R para fazer qualquer tipo de operação aritmética. Lição aprendida!
 
 Além do mais, as operações e suas precedências são mantidas como na matemática, ou seja, divisão e multiplicação são calculadas antes da adição e subtração. E os parênteses nunca são demais!
 
@@ -187,7 +187,7 @@ Agora que você já conhece o RStudio, digite a expressão `2 * 2 - (4 + 4) / 2`
 **console** e tecle `Enter`. Uma outra forma de chamar uma expressão é escrever
 o código no **editor** e teclar `Ctrl + Enter` ou `Ctrl + R`. Assim, o comando é enviado para o **console**, onde é diretamente executado.
 
-Se você digitar um comando incompleto, como `5 + ` e apertar `Enter`, o R mostrará um `+`, o que não tem nada a ver com somar alguma coisa. Isso significa que o R está esperando que você complete o seu comando. Termine o seu comando ou aperte `Esc` para recomeçar.
+Se você digitar um comando incompleto, como `5 + `, e apertar `Enter`, o R mostrará um `+`, o que não tem nada a ver com somar alguma coisa. Isso significa que o R está esperando que você complete o seu comando. Termine o seu comando ou aperte `Esc` para recomeçar.
 
 ```
 > 5 -
@@ -211,12 +211,14 @@ Error: unexpected input in "5 % 5"
 
 ## Pedindo Ajuda
 
-No R, há quatro principais entidades para recorrer quando se precisa de ajuda:
+No R, há quatro principais entidades para se pedir ajuda:
 
-- Help / documentação do R (comandos `help(funcao)` ou `?funcao`)
-- Stack Overflow
+- Help/documentação do R (comandos `help(nome_da_funcao)` ou `?nome_da_funcao`)
 - Google
+- Stack Overflow
 - Coleguinha
+
+A busca por ajuda é feita preferencialmente, mas não necessariamente, na ordem acima.
 
 ### Documentação do R
 
@@ -231,16 +233,16 @@ help(mean)
 Cinco dicas:
 
 - Os exemplos no final são particularmente úteis.
-- Atente-se na parte **Usage** para ter noção de como usar.
-- Os parâmetros estăo descritos na parte **Arguments**. Identifique quais tipos de objetos eles recebem.
+- Atente-se na seção **Usage** para ter noção de como usar.
+- Os parâmetros estăo descritos em **Arguments**. Identifique quais tipos de objetos eles recebem.
 - Caso essa função não atenda às suas necessidades, a seção **See Also** sugere funções relacionadas.
-- Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`
+- Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`.
 
 ### Google
 
-Há uma comunidade gigantesca de usuários de R que todos os dias geram infinidades de conteúdos e discussões. Não raro, você irá encontrar discussões sobre o seu problema simplesmente jogando o copiar/colar do seu erro no diretamente Google. Essa deve ser sua primeira tentativa!
+Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente jogando o copiar/colar do seu erro no Google. Essa deve ser sua primeira tentativa!
 
-Exemplo (repare no 'R' adicionado na busca, também ajuda):
+Exemplo (repare no 'r' adicionado na busca, também ajuda):
 
 
 ```r
@@ -252,24 +254,24 @@ log("5")
 
 ### Stack Overflow
 
-O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação e R é uma delas. É tão utilizado que nos EUA eles chegam a usar a reputaçăo dos usuários como diferenciais no currículo!
+O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e R é uma delas. Nos EUA, chegam até a usar a reputaçăo dos usuários como diferencial no currículo!
 
-Provavelmente o Google te indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem o Stack Overflow te dará o espaço para **criar sua própria pergunta**.
+Provavelmente, o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
 
-**Um ponto importante:** Como fazer uma **boa** pergunta no Stack Overflow?
+**Um ponto importante:** como fazer uma **boa** pergunta no Stack Overflow?
 
-No site tem um tutorial com uma lista de boas práticas, [que se encontra aqui](http://pt.stackoverflow.com/help/how-to-ask). Algumas dicas são
+No site, tem um tutorial com uma lista de boas práticas, [que se encontra aqui](http://pt.stackoverflow.com/help/how-to-ask). Algumas dicas são
 
-- Ser conciso
-- Ser específico
-- Ter mente aberta
-- Ser gentil
+- ser conciso;
+- ser específico;
+- ter mente aberta; e
+- ser gentil.
 
-Porém, no caso do R há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: **exemplinho minimal e reprodutível**.
+Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: **exemplinho minimal e reprodutível**.
 
 - Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para gerar o seu problema. Năo precisa de banco de dados de um milhăo de linhas e nem colocar o seu código inteiro para mostrar seu problema.
 
-- Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Em vez disso, use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
+- Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
 
 --------------------------------------------------------------------------------
 
@@ -277,17 +279,17 @@ Porém, no caso do R há outro requisito que vai aumentar muito sua chance de te
 
 ## Instalar pacotes
 
-O grande trunfo do R são seus pacotes então é uma boa você ficar bastante à vontade em instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.
+O grande trunfo do R são seus pacotes. Assim, fique bastante à vontade para instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.
 
 Existem três principais maneiras de instalar pacotes. Em ordem de frequência, são:
 
-- Via CRAN (Comprehensive R Archive Network) `install.packages("magrittr")`
-- Via Github `devtools::install_github("rstudio/shiny")`
-- Via arquivo .zip/.tar.gz `install.packages("C:/caminho/pacote.zip", repos = NULL)`
+- Via CRAN (Comprehensive R Archive Network): `install.packages("magrittr")`.
+- Via Github: `devtools::install_github("rstudio/shiny")`.
+- Via arquivo .zip/.tar.gz: `install.packages("C:/caminho/pacote.zip", repos = NULL)`.
 
 ### Via CRAN
 
-Quando quiser utilizar um pacote, instale usando a função `install.packages("nome_do_pacote")`. Por exemplo:
+Instale pacotes que não estão na sua biblioteca usando a função `install.packages("nome_do_pacote")`. Por exemplo:
 
 
 ```r
@@ -296,37 +298,42 @@ install.packages("magrittr")
 
 
 
-E de agora em diante basta carregar o pacote com `library(magrittr)`. Não precisa mais instalar.
+E, de agora em diante, basta carregar o pacote com `library(magrittr)`. Não precisa mais instalar.
 
-<div class="dica">
-Dica! Escreva `nome_do_pacote::nome_da_funcao()` se quiser usar apenas uma função de um determinado pacote. O operador `::` serve para isso. Essa forma também é útil quando se tem duas funções com o mesmo nome e precisamos garantir que o código vá usar a função do pacote correto.
+<div class='admonition note'>
+<p class='admonition-title'>
+Dica!
+</p>
+<p>
+Escreva `nome_do_pacote::nome_da_funcao()` se quiser usar apenas uma função de um determinado pacote. O operador `::` serve para isso. Essa forma também é útil quando se tem duas funções com o mesmo nome, e precisamos garantir que o código vá usar a função do pacote correto.
+</p>
 </div>
 
 ### Via Github
 
-Desenvolvedores costumam disponibilizar a última versão de seus pacotes no Github e alguns deles sequer estão no CRAN. Mesmo assim ainda é possível utilizá-los instalando diretamente pelo github. O comando é igualmente simples:
+Desenvolvedores costumam disponibilizar a última versão de seus pacotes no Github, e alguns deles sequer estão no CRAN. Mesmo assim ainda é possível utilizá-los instalando diretamente pelo github. O comando é igualmente simples:
 
 
 ```r
 devtools::install_github("rstudio/shiny")
 ```
 
-O que será necessário é o username e o nome do repositório. No exemplo o username foi "rstudio" e o pacote foi "shiny". 
+Apenas será necessário o username e o nome do repositório. No exemplo, o username foi "rstudio" e o pacote foi "shiny". 
 
-Não se preocupe, geralmente esses pacotes que ficam no github possuem um `README` cuja primeira instrução é de como instalar o pacote via github. Se não tiver, provavelmente este pacote não te merece =)!
+Não se preocupe! Os pacotes disponibilizados no github geralmente têm um `README` cuja primeira instrução é sobre a instalação. Se não tiver, provavelmente este pacote não te merece! =)
 
 ### Via arquivo .zip/.tar.gz
 
-Se você precisar instalar um pacote que está zipado no seu computador (ou em algum servidor) há a opção de assim o fazer sem maiores problemas. 
+Se você precisar instalar um pacote que está zipado no seu computador (ou em algum servidor), utilize o seguinte comando:
 
 
 ```r
 install.packages("C:/caminho/para/o/arquivo/zipapo/pacote.zip", repos = NULL)
 ```
 
-É quase igual a instalar pacotes via CRAN, com a diferença que agora o nome do pacote é o caminho inteiro até o arquivo, e com o parâmetro `repos = NULL` para informar que estamos instalando a partir da máquina local.
+É semelhante a instalar pacotes via CRAN, com a diferença que agora o nome do pacote é o caminho inteiro até o arquivo. O parâmetro `repos = NULL` informa que estamos instalando a partir da máquina local.
 
-A aba ***Packages*** do RStudio ajuda a administrar seus pacotes também.
+A aba ***Packages*** do RStudio também ajuda a administrar os seus pacotes.
 
 ![](figures/instalar_pacote_rstudio.png)
 
@@ -336,9 +343,9 @@ A aba ***Packages*** do RStudio ajuda a administrar seus pacotes também.
 
 ## Controles de Fluxo
 
-Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else`'s, `for`'s e etc. (os controles de fluxo) que são importantes na hora de programar. 
+Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else`'s, `for`'s, `while`'s etc. Esses **controles de fluxo** são importantes na hora de programar. 
 
-### `if` e `else`
+### IF e ELSE
 
 O seguinte trecho de código só será executado se o objeto `x` for igual a 1.
 
@@ -381,9 +388,11 @@ if(<condição1>) {
 Diferença entre SQL e R nas comparações lógicas
 </p>
 <p>
-- **Igualdade** no SQL é só um sinal de igual: `2 = 1`. No R são dois: `2 == 1`.
-- **Diferença** O teste de diferente no R é `!=` ao invés de de `<>`.
-- **Negação** ao invés de usar a palavra `not` que nem no SQL, usamos `!`. Por exemplo, `entidade_id not in ('100515')` fica `!entidade_id %in% c('100515')`.
+<b>Igualdade</b> no SQL é só um sinal de igual: 2 = 1. No R são dois: 2 == 1.
+
+<b>Diferença</b> O teste de diferente no R é != ao invés de de <>.
+
+<b>Negação</b> ao invés de usar a palavra "not" igual ao SQL, usamos !. Por exemplo, "entidade_id not in ('100515')" fica "!entidade_id %in% c('100515')".
 </p>
 </div>
 
@@ -896,7 +905,7 @@ y <- 5 + 2 * x + rnorm(n, sd = 30)
 plot(x, y)
 ```
 
-![plot of chunk unnamed-chunk-59](figures//unnamed-chunk-59-1.png)
+![plot of chunk unnamed-chunk-58](figures//unnamed-chunk-58-1.png)
 
 O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados por linhas.
 
@@ -905,7 +914,7 @@ O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados p
 plot(x, y, type = "l")
 ```
 
-![plot of chunk unnamed-chunk-60](figures//unnamed-chunk-60-1.png)
+![plot of chunk unnamed-chunk-59](figures//unnamed-chunk-59-1.png)
 
 ### Histograma
 
@@ -921,7 +930,7 @@ Parâmetros principais (ver `help(hist)` para mais detalhes):
 hist(rnorm(1000))
 ```
 
-![plot of chunk unnamed-chunk-61](figures//unnamed-chunk-61-1.png)
+![plot of chunk unnamed-chunk-60](figures//unnamed-chunk-60-1.png)
 
 ### Boxplot
 
@@ -936,7 +945,7 @@ Parâmetros principais (ver `help(boxplot)` para mais detalhes):
 boxplot(InsectSprays$count, col = "lightgray")
 ```
 
-![plot of chunk unnamed-chunk-62](figures//unnamed-chunk-62-1.png)
+![plot of chunk unnamed-chunk-61](figures//unnamed-chunk-61-1.png)
 
 **Duas variáveis** Usamos fórmula e o parâmetro `data`!
 
@@ -945,7 +954,7 @@ boxplot(InsectSprays$count, col = "lightgray")
 boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 ```
 
-![plot of chunk unnamed-chunk-63](figures//unnamed-chunk-63-1.png)
+![plot of chunk unnamed-chunk-62](figures//unnamed-chunk-62-1.png)
 
 ### Gráfico de barras
 
@@ -981,7 +990,7 @@ VADeaths
 barplot(VADeaths) 
 ```
 
-![plot of chunk unnamed-chunk-65](figures//unnamed-chunk-65-1.png)
+![plot of chunk unnamed-chunk-64](figures//unnamed-chunk-64-1.png)
 
 --------------------------------------------------------------------------------
 
