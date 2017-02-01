@@ -6,7 +6,7 @@ author: "Athos Petri Damiani"
 
 O RStudio é o melhor ambiente de desenvolvimento de R disponível. Você pode [baixá-lo aqui](https://www.rstudio.com/products/rstudio/download/preview/).
 
-Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos. Uma estrutura sugerida para a organização de um projeto é:
+Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo, [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos. Uma estrutura sugerida para a organização de um projeto é:
 
 **Estrutura 1**. Por extensão de arquivo.
 
@@ -20,7 +20,7 @@ nome_do_projeto/
   - nome_do_projeto.Rproj
 ```
 
-**Estrutura 2**: Típico projeto de análise estatística.
+**Estrutura 2**. Típico projeto de análise estatística.
 
 ```{r, engine='bash', eval = FALSE}
 project/
@@ -33,7 +33,7 @@ project/
   - project.Rproj
 ```
 
-**Estrutura 3**: Pacote do R (avançado).
+**Estrutura 3**. Pacote do R (avançado).
 
 ```{r, engine='bash', eval = FALSE}
 project/
@@ -47,7 +47,7 @@ project/
   - project.Rproj
 ```
 
-Assim que abrir o RStudio, você verá 4 quadrantes, do jeito que a figura abaixo mostra.
+Ao abrir o RStudio, você verá 4 quadrantes. Observe a figura abaixo.
 
 `r knitr::include_graphics("figures/rstudio-editor.png")`
 

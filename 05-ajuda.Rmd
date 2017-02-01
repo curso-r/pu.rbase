@@ -4,12 +4,14 @@ author: "Athos Petri Damiani"
 
 ## Pedindo Ajuda
 
-No R, há quatro principais entidades para recorrer quando se precisa de ajuda:
+No R, há quatro principais entidades para se pedir ajuda:
 
-- Help / documentação do R (comandos `help(funcao)` ou `?funcao`)
-- Stack Overflow
+- Help/documentação do R (comandos `help(nome_da_funcao)` ou `?nome_da_funcao`)
 - Google
+- Stack Overflow
 - Coleguinha
+
+A busca por ajuda é feita preferencialmente, mas não necessariamente, na ordem acima.
 
 ### Documentação do R
 
@@ -23,16 +25,16 @@ help(mean)
 Cinco dicas:
 
 - Os exemplos no final são particularmente úteis.
-- Atente-se na parte **Usage** para ter noção de como usar.
-- Os parâmetros estăo descritos na parte **Arguments**. Identifique quais tipos de objetos eles recebem.
+- Atente-se na seção **Usage** para ter noção de como usar.
+- Os parâmetros estăo descritos em **Arguments**. Identifique quais tipos de objetos eles recebem.
 - Caso essa função não atenda às suas necessidades, a seção **See Also** sugere funções relacionadas.
-- Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`
+- Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`.
 
 ### Google
 
-Há uma comunidade gigantesca de usuários de R que todos os dias geram infinidades de conteúdos e discussões. Não raro, você irá encontrar discussões sobre o seu problema simplesmente jogando o copiar/colar do seu erro no diretamente Google. Essa deve ser sua primeira tentativa!
+Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente jogando o copiar/colar do seu erro no Google. Essa deve ser sua primeira tentativa!
 
-Exemplo (repare no 'R' adicionado na busca, também ajuda):
+Exemplo (repare no 'r' adicionado na busca, também ajuda):
 
 ```{r error = TRUE}
 log("5")
@@ -42,23 +44,23 @@ log("5")
 
 ### Stack Overflow
 
-O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação e R é uma delas. É tão utilizado que nos EUA eles chegam a usar a reputaçăo dos usuários como diferenciais no currículo!
+O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e R é uma delas. Nos EUA, chegam até a usar a reputaçăo dos usuários como diferencial no currículo!
 
-Provavelmente o Google te indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem o Stack Overflow te dará o espaço para **criar sua própria pergunta**.
+Provavelmente, o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
 
-**Um ponto importante:** Como fazer uma **boa** pergunta no Stack Overflow?
+**Um ponto importante:** como fazer uma **boa** pergunta no Stack Overflow?
 
-No site tem um tutorial com uma lista de boas práticas, [que se encontra aqui](http://pt.stackoverflow.com/help/how-to-ask). Algumas dicas são
+No site, tem um tutorial com uma lista de boas práticas, [que se encontra aqui](http://pt.stackoverflow.com/help/how-to-ask). Algumas dicas são
 
-- Ser conciso
-- Ser específico
-- Ter mente aberta
-- Ser gentil
+- ser conciso;
+- ser específico;
+- ter mente aberta; e
+- ser gentil.
 
-Porém, no caso do R há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: **exemplinho minimal e reprodutível**.
+Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: **exemplinho minimal e reprodutível**.
 
 - Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para gerar o seu problema. Năo precisa de banco de dados de um milhăo de linhas e nem colocar o seu código inteiro para mostrar seu problema.
 
-- Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Em vez disso, use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
+- Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
 
 --------------------------------------------------------------------------------

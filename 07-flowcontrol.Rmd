@@ -4,9 +4,9 @@ author: "Athos Petri Damiani"
 
 ## Controles de Fluxo
 
-Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else`'s, `for`'s e etc. (os controles de fluxo) que são importantes na hora de programar. 
+Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else`'s, `for`'s, `while`'s etc. Esses **controles de fluxo** são importantes na hora de programar. 
 
-### `if` e `else`
+### IF e ELSE
 
 O seguinte trecho de código só será executado se o objeto `x` for igual a 1.
 
@@ -45,9 +45,11 @@ if(<condição1>) {
 Diferença entre SQL e R nas comparações lógicas
 </p>
 <p>
-- **Igualdade** no SQL é só um sinal de igual: `2 = 1`. No R são dois: `2 == 1`.
-- **Diferença** O teste de diferente no R é `!=` ao invés de de `<>`.
-- **Negação** ao invés de usar a palavra `not` que nem no SQL, usamos `!`. Por exemplo, `entidade_id not in ('100515')` fica `!entidade_id %in% c('100515')`.
+<b>Igualdade</b> no SQL é só um sinal de igual: 2 = 1. No R são dois: 2 == 1.
+
+<b>Diferença</b> O teste de diferente no R é != ao invés de de <>.
+
+<b>Negação</b> ao invés de usar a palavra "not" igual ao SQL, usamos !. Por exemplo, "entidade_id not in ('100515')" fica "!entidade_id %in% c('100515')".
 </p>
 </div>
 
