@@ -4,11 +4,11 @@ author: "Athos Petri Damiani"
 
 ## RStudio
 
-O RStudio é o melhor ambiente de desenvolvimento de R disponível. Você pode [baixar aqui](https://www.rstudio.com/products/rstudio/download/preview/).
+O RStudio é o melhor ambiente de desenvolvimento de R disponível. Você pode [baixá-lo aqui](https://www.rstudio.com/products/rstudio/download/preview/).
 
-Há muitas ferramentas nele que se aprende conforme o uso e há bons materiais sobre na internet (por exemplo [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante que vale citar é a criação de projetos. Uma estrutura sugerida de organização de um projeto é
+Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos. Uma estrutura sugerida para a organização de um projeto é:
 
-**Estrutura 1**: Por extensão de arquivo.
+**Estrutura 1**. Por extensão de arquivo.
 
 ```{r, engine='bash', eval=FALSE}
 nome_do_projeto/
@@ -47,10 +47,10 @@ project/
   - project.Rproj
 ```
 
-Assim que abrir o RStudio você verá 4 quadrantes do jeito que a figura abaixo mostra
+Assim que abrir o RStudio, você verá 4 quadrantes, do jeito que a figura abaixo mostra.
 
 `r knitr::include_graphics("figures/rstudio-editor.png")`
 
-Nela estão dispostos **editor**, **console**, **environment** e **output**.  Normalmente eles vêm nesta ordem, depois você pode organizá-los da forma que preferir. O R vive no quadrante **console**!
+Esses quadrantes representam o **editor**, o **console**, o **environment** e o **output**.  Eles vêm nesta ordem, e depois você pode organizá-los da forma que preferir. O R vive no quadrante **console**!
 
 --------------------------------------------------------------------------------
