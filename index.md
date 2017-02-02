@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-02-01'
+date: '2017-02-02'
 ---
 
 
@@ -388,7 +388,7 @@ if(<condição1>) {
 Diferença entre SQL e R nas comparações lógicas
 </p>
 <p>
-<b>Igualdade</b> no SQL é só um sinal de igual: 2 = 1. No R são dois: 2 == 1.
+<b>Igualdade</b> no SQL é só um sinal de igual: <2 = 1. No R são dois: 2 == 1.
 
 <b>Diferença</b> O teste de diferente no R é != ao invés de de <>.
 
@@ -447,16 +447,16 @@ a
 ## [1] 1
 ```
 
-O R permite que você salve dados guardando estes dentro de um objeto. 
+O R te permite salvar dados dentro de um objeto. 
 
-No exemplo acima, salvamos o valor `1` em `a` e sempre que o R encontrar o nome `a` ele vai substituir por `1`.
+No exemplo acima, salvamos o valor `1` em `a`, e sempre que o R encontrar o nome `a` ele vai substituir por `1`.
 
 <div class='admonition note'>
 <p class='admonition-title'>
 Atenção!
 </p>
 <p>
-O R entende letras maiúsculas e minúsculas, isto é `a` é considerado um objeto diferente de `A`.
+O R entende letras maiúsculas e minúsculas, isto é <b>a</b> é considerado um objeto diferente de <b>A</b>.
 </p>
 </div>
 
@@ -481,7 +481,7 @@ class(vetor)
 ## [1] "numeric"
 ```
 
-De forma bastante intuitiva você pode fazer operações com vetores.
+De forma bastante intuitiva, você pode fazer operações com vetores.
 
 
 ```r
@@ -489,7 +489,7 @@ vetor - 1
 ## [1] 0 1 2 3
 ```
 
-Quando você faz `vetor - 1`, o R subtrai `1` de cada um dos elementos do vetor. O mesmo acontece quando você faz qualquer operação aritmética com vetores no R. Tente jogar no console
+Quando você faz `vetor - 1`, o R subtrai `1` de cada um dos elementos do vetor. O mesmo acontece quando você faz qualquer operação aritmética com vetores no R. Tente jogar o código abaixo no console.
 
 
 ```r
@@ -516,9 +516,9 @@ vetor * vetor2
 ## [1] 1 4 9 4
 ```
 
-Agora o R alinhou os dois vetores, e como eles não possuiam o mesmo tamanho, ele foi repetindo o menor vetor até completar o vetor maior. 
+Agora, o R alinhou os dois vetores e, como eles não possuiam o mesmo tamanho, foi repetindo o vetor menor até completar o vetor maior. 
 
-Esse comportamento é chamado de **reciclagem**. Isso é útil para fazer operações com os vetores elementos por elementos (vetorizadamente), mas as vezes pode ser confuso. Com o tempo você aprenderá a se aproveitar desse comportamento.
+Esse comportamento é chamado de **reciclagem**. Isso é útil para fazer operações com os vetores elementos por elementos (vetorizadamente), mas às vezes pode ser confuso. Com o tempo, você aprenderá a se aproveitar desse comportamento.
 
 ### Misturando objetos
 
@@ -527,10 +527,12 @@ Esse comportamento é chamado de **reciclagem**. Isso é útil para fazer opera�
 Vetores são homogêneos
 </p>
 <p>
-Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character e assim por diante. Não dá para ter um número e um character no mesmo vetor, por exemplo.
+Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character, e assim por diante. Não dá para ter um número e um character no mesmo vetor, por exemplo.
 </p>
 </div>
 
+
+Se colocarmos duas ou mais classes diferentes dentro de um mesmo vetor, o R vai forçar que todos os elementos passem a pertencer à mesma classe. O número `1.7` viraria `"1.7"` se fosse colocado ao lado de um `"a"`.
 
 
 ```r
@@ -539,9 +541,7 @@ y <- c(TRUE, 2)   ## numeric
 y <- c(TRUE, "a") ## character
 ```
 
-Se colocarmos duas ou mais classes diferentes dentro de um mesmo vetor, o R vai forçar que todos os elementos passem a pertencer à mesma classe. O número `1.7` viraria `"1.7"` se fosse colocado ao lado de um `"a"`.
-
-A ordem de precedência é 
+A ordem de precedência é:
 
 **DOMINANTE** `character > complex > numeric > integer > logical` **RECESSIVO**
 
@@ -562,7 +562,7 @@ as.character(x)
 ## [1] "0" "1" "2" "3" "4"
 ```
 
-Se o R não entender como coagir uma classe na outra ele soltará um `warning` informado que colocou `NA` no lugar.
+Se o R não entender como coagir uma classe na outra, ele soltará um `warning` informado que colocou `NA` no lugar.
 
 
 ```r
@@ -577,7 +577,7 @@ as.numeric(x)
 Observação
 </p>
 <p>
-O `NA` tem o mesmo papel que o `null` do SQL. Porém, há um `NULL` no R também, com diferenças sutis que vamos abordar mais adiante. Năo confundir!
+O <b>NA</b> tem o mesmo papel que o <b>null</b> do SQL. Porém, há um <b>NULL</b> no R também, com diferenças sutis que vamos abordar mais adiante. Năo confundir!
 </p>
 </div>
 
@@ -625,7 +625,7 @@ as.numeric(fator)
 ## [1] 2 1 1 1 2 2 1
 ```
 
-Eles são úteis para representar uma variável categórica (nominal e ordinal) e têm relevância em modelagem, onde serão tratados de maneira especial em funções como `glm()`. 
+Eles são úteis para representar uma variável categórica (nominal e ordinal). Em modelagem, eles serão tratados de maneira especial ao utilizarmos funções como `lm()` e `glm()`. 
 
 A funçăo `levels()` retorna os rótulos do fator:
 
