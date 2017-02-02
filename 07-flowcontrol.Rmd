@@ -45,7 +45,7 @@ if(<condição1>) {
 Diferença entre SQL e R nas comparações lógicas
 </p>
 <p>
-<b>Igualdade</b> no SQL é só um sinal de igual: 2 = 1. No R são dois: 2 == 1.
+<b>Igualdade</b> no SQL é só um sinal de igual: <2 = 1. No R são dois: 2 == 1.
 
 <b>Diferença</b> O teste de diferente no R é != ao invés de de <>.
 
