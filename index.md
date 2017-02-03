@@ -642,7 +642,7 @@ A ordem das categorias de um fator pode importar. Como exemplo, temos as caselas
 Um erro comum e desastroso
 </p>
 <p>
-Quando um vetor de números está como **factor**, ao tentar transformar o vetor em **numeric**, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
+Quando um vetor de números está como <b>factor</b>, ao tentar transformar o vetor em <b>numeric</b>, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
 </p>
 </div>
 
@@ -893,7 +893,7 @@ Parâmetros principais (ver `help(hist)` para mais detalhes):
 Atenção!
 </p>
 <p> 
-Além de gerar gráficos de dispersão, tentar chamar a função `plot(objeto_diferentao)` para qualquer tipo de objeto do R geralmente sai um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um `data.frame` com milhares de colunas!!!
+Além de gerar gráficos de dispersão, tentar chamar a função <b>plot(objeto_diferentao)<b> para qualquer tipo de objeto do R geralmente sai um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um <b>data.frame<b> com milhares de colunas!!!
 </p>
 </div>
 
