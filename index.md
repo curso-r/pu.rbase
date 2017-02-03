@@ -967,14 +967,15 @@ Primeiro crie uma tabela de frequências (ou qualquer outro sumário). Então cr
 
 ```r
 data(diamonds, package = "ggplot2")
-## Error in find.package(package, lib.loc, verbose = verbose): there is no package called 'ggplot2'
 tabela <- table(diamonds$color)
-## Error in table(diamonds$color): object 'diamonds' not found
 tabela
-## Error in eval(expr, envir, enclos): object 'tabela' not found
+## 
+##     D     E     F     G     H     I     J 
+##  6775  9797  9542 11292  8304  5422  2808
 barplot(tabela)
-## Error in barplot(tabela): object 'tabela' not found
 ```
+
+![plot of chunk unnamed-chunk-63](figures//unnamed-chunk-63-1.png)
 
 **Tabela com duas variáveis** em uma tabela de dupla entrada.
 
