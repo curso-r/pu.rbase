@@ -172,7 +172,7 @@ A ordem das categorias de um fator pode importar. Como exemplo, temos as caselas
 Um erro comum e desastroso
 </p>
 <p>
-Quando um vetor de números está como **factor**, ao tentar transformar o vetor em **numeric**, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
+Quando um vetor de números está como <b>factor</b>, ao tentar transformar o vetor em <b>numeric</b>, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
 </p>
 </div>
 
