@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-02-02'
+date: '2017-02-03'
 ---
 
 
@@ -137,7 +137,7 @@ Este site foi escrito em RMarkdown. Toda vez que aparecer exemplos de código de
 Para produção de relatórios, o RMarkdown possui algumas vantagens, como:
 
 1. **Simplicidade e foco**. Permite ao usuário o foco na análise e não na formatação do documento.
-1. **Versátil**. Pode ser utilizado para gerar documentos em $\LaTeX$, `Word`, `HTML` e apresentaçőes em `beamer`, `pptx` e `HTML` (de vários tipos). Pode ainda gerar sites, livros, dissertaçőes de mestrado e até mesmo dashboards interativos.
+1. **Versátil**. Pode ser utilizado para gerar documentos em $\LaTeX$, `Word`, `HTML` e apresentações em `beamer`, `pptx` e `HTML` (de vários tipos). Pode ainda gerar sites, livros, dissertações de mestrado e até mesmo dashboards interativos.
 1. **Reprodutível**. O RMarkdown nada mais é que um arquivo de texto. Além disso, ele tenta te obrigar a fazer o documento mais autocontido possível. Assim, um documento `.Rmd` é fácil de compartilhar e de ser utilizado pelo receptor. Lembre-se, o receptor pode ser o futuro você! Vale enfatizar que a reprodutibilidade é considerada como um dos princípios fundamentais da ciência. Então, só de usar RMarkdown, você já está colaborando com a ciência. :)
 1. **Flexível**. É possível configurar e criar templates de análises para quaisquer tipos de aplicações e clientes. Os textos podem ser parametrizados por números que variam de versão para versão, mensalmente, por exemplo, tudo escrito somente em R. 
 
@@ -234,7 +234,7 @@ Cinco dicas:
 
 - Os exemplos no final são particularmente úteis.
 - Atente-se na seção **Usage** para ter noção de como usar.
-- Os parâmetros estăo descritos em **Arguments**. Identifique quais tipos de objetos eles recebem.
+- Os parâmetros estão descritos em **Arguments**. Identifique quais tipos de objetos eles recebem.
 - Caso essa função não atenda às suas necessidades, a seção **See Also** sugere funções relacionadas.
 - Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`.
 
@@ -254,7 +254,7 @@ log("5")
 
 ### Stack Overflow
 
-O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e R é uma delas. Nos EUA, chegam até a usar a reputaçăo dos usuários como diferencial no currículo!
+O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários como diferencial no currículo!
 
 Provavelmente, o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
 
@@ -269,7 +269,7 @@ No site, tem um tutorial com uma lista de boas práticas, [que se encontra aqui]
 
 Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: **exemplinho minimal e reprodutível**.
 
-- Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para gerar o seu problema. Năo precisa de banco de dados de um milhăo de linhas e nem colocar o seu código inteiro para mostrar seu problema.
+- Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para gerar o seu problema. Não precisa de banco de dados de um milhão de linhas e nem colocar o seu código inteiro para mostrar seu problema.
 
 - Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
 
@@ -389,9 +389,9 @@ Diferença entre SQL e R nas comparações lógicas
 </p>
 <p>
 <b>Igualdade</b> no SQL é só um sinal de igual: <2 = 1. No R são dois: 2 == 1.
-
+<br>
 <b>Diferença</b> O teste de diferente no R é != ao invés de de <>.
-
+<br>
 <b>Negação</b> ao invés de usar a palavra "not" igual ao SQL, usamos !. Por exemplo, "entidade_id not in ('100515')" fica "!entidade_id %in% c('100515')".
 </p>
 </div>
@@ -516,9 +516,9 @@ vetor * vetor2
 ## [1] 1 4 9 4
 ```
 
-Agora, o R alinhou os dois vetores e, como eles não possuiam o mesmo tamanho, foi repetindo o vetor menor até completar o vetor maior. 
+Agora o R alinhou os dois vetores. Como eles não possuíam o mesmo tamanho, foi repetindo o vetor menor até completar o vetor maior. 
 
-Esse comportamento é chamado de **reciclagem**. Isso é útil para fazer operações com os vetores elementos por elementos (vetorizadamente), mas às vezes pode ser confuso. Com o tempo, você aprenderá a se aproveitar desse comportamento.
+Esse comportamento é chamado de **reciclagem** e é útil para fazer operações *elemento por elemento* (vetorizadamente), mas às vezes pode ser confuso. Com o tempo, você aprenderá a se aproveitar dele.
 
 ### Misturando objetos
 
@@ -527,7 +527,7 @@ Esse comportamento é chamado de **reciclagem**. Isso é útil para fazer opera�
 Vetores são homogêneos
 </p>
 <p>
-Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character, e assim por diante. Não dá para ter um número e um character no mesmo vetor, por exemplo.
+Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character, ou todos são lógicos etc. Não dá para ter um número e um character no mesmo vetor, por exemplo.
 </p>
 </div>
 
@@ -577,13 +577,13 @@ as.numeric(x)
 Observação
 </p>
 <p>
-O <b>NA</b> tem o mesmo papel que o <b>null</b> do SQL. Porém, há um <b>NULL</b> no R também, com diferenças sutis que vamos abordar mais adiante. Năo confundir!
+O <b>NA</b> tem o mesmo papel que o <b>null</b> do SQL. Porém, há um <b>NULL</b> no R também, com diferenças sutis que vamos abordar mais adiante. Não confundir!
 </p>
 </div>
 
 ### Matrizes
 
-Matrizes săo vetores com duas dimensőes (e por isso só possuem elementos de uma mesma classe).
+Matrizes são vetores com duas dimensões (e por isso só possuem elementos de uma mesma classe).
 
 
 ```r
@@ -596,7 +596,7 @@ dim(m) # funçăo dim() retorna a dimensăo do objeto.
 ## [1] 2 3
 ```
 
-Repare que os números de 1 a 6 foram dispostos na matriz de coluna a coluna (*column-wise*), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita.
+Repare que os números de 1 a 6 foram dispostos na matriz coluna por coluna (*column-wise*), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita.
 
 **Utilidades**
 
@@ -625,9 +625,9 @@ as.numeric(fator)
 ## [1] 2 1 1 1 2 2 1
 ```
 
-Eles são úteis para representar uma variável categórica (nominal e ordinal). Em modelagem, eles serão tratados de maneira especial ao utilizarmos funções como `lm()` e `glm()`. 
+Eles são úteis para representar uma variável categórica (nominal e ordinal). Na modelagem, eles serão tratados de maneira especial em funções como `lm()` e `glm()`. 
 
-A funçăo `levels()` retorna os rótulos do fator:
+A função `levels()` retorna os rótulos do fator:
 
 
 ```r
@@ -642,7 +642,7 @@ A ordem das categorias de um fator pode importar. Como exemplo, temos as caselas
 Um erro comum e desastroso
 </p>
 <p>
-Quando um vetor de números está como `factor`. Ao tentar transformar o vetor em `numeric`, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
+Quando um vetor de números está como **factor**, ao tentar transformar o vetor em **numeric**, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
 </p>
 </div>
 
@@ -665,12 +665,12 @@ as.numeric(as.character(numeros))
 
 ### Valores especiais
 
-Existem valores reservados para representar dados faltantes, infinitos, e indefiniçőes matemáticas.
+Existem valores reservados para representar dados faltantes, infinitos, e indefinições matemáticas.
 
-- **NA** (Not Available) significa dado faltante/indisponível. É o `null` do SQL ou o `.` do SAS. O `NA` tem uma classe, podemos ter `NA` numeric, `NA` character e etc.
+- **NA** (Not Available) significa dado faltante/indisponível. É o `null` do SQL ou o `.` do SAS. O `NA` tem uma classe, ou seja, podemos ter `NA` numeric, `NA` character etc.
 - **NaN** (Not a Number) representa indefinições matemáticas, como `0/0` e `log(-1)`. Um `NaN` é um `NA`, mas a recíproca não é verdadeira.
 - **Inf** (Infinito) é um número muito grande ou o limite matemático, por exemplo, `1/0` e `10^310`. Aceita sinal negativo `-Inf`. 
-- **NULL** representa a ausęncia de informação. Conceitualmente, a diferença entre `NA` e `NULL` é sutil, mas no R o `NA` está mais alinhado com os conceitos de estatística (ou como gostaríamos que os dados faltantes se comportassem em análise de dados) e o `NULL` está em sintonia com comportamentos de lógica de programação.
+- **NULL** representa a ausência de informação. Conceitualmente, a diferença entre `NA` e `NULL` é sutil, mas, no R, o `NA` está mais alinhado com os conceitos de estatística (ou como gostaríamos que os dados faltantes se comportassem em análise de dados) e o `NULL` está em sintonia com comportamentos de lógica de programação.
 - Use as funções `is.na()`, `is.nan()`, `is.infinite()` e `is.null()` para testar se um objeto é um desses valores.
 
 
@@ -703,11 +703,11 @@ x
 ## [1] "a" "b"
 ```
 
-É um dos objetos mais importantes para armazenar dados e vale a pena saber manuseá-los bem. Existem muitas funçães que fazem das listas objetos incrivelmente úteis.
+É um dos objetos mais importantes para armazenar dados e vale a pena saber manuseá-los bem. Existem muitas funções que fazem das listas objetos incrivelmente úteis.
 
-Criamos uma lista pela função `list()`, que aceita um número arbitrário de elementos. Listas aceitam QUALQUER tipo de objeto. Podemos ter listas dentro de listas, por exemplo. Como para quase todos os objetos no R, as funçőes `is.list()` e `as.list()` também existem.
+Criamos uma lista pela função `list()`, que aceita um número arbitrário de elementos. Listas aceitam QUALQUER tipo de objeto. Podemos ter listas dentro de listas, por exemplo. Como para quase todos os objetos no R, as funções `is.list()` e `as.list()` também existem.
 
-Na lista `pedido` abaixo temos `numeric`, `Date`, `character`, vetor de `character` e `list` contida em uma lista:
+Na lista `pedido` abaixo, temos `numeric`, `Date`, `character`, vetor de `character` e `list` contida em uma lista:
 
 
 ```r
@@ -746,25 +746,25 @@ pedido[[2]]    # segundo elemento
 pedido["nome"] # nova lista com apenas o elemento chamado 'nome'
 ```
 
-Certamente você se deparará com listas quando for fazer análise de dados com o R, nos tópicos mais aplicados iremos aprofundar sobre o tema. O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
+Certamente você se deparará com listas quando for fazer análise de dados com o R. Nos tópicos mais aplicados, iremos aprofundar sobre o tema. O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
 
-### `data.frame`
+### data.frame
 
 Um `data.frame` é o mesmo que uma tabela do SQL ou um spreadsheet do Excel, por isso são objetos muito importantes. 
 
-Usualmente seus dados serão importados para um objeto `data.frame` e em grande parte do curso os teremos como principal objeto de estudo.
+Usualmente, seus dados serão importados para um objeto `data.frame`. Em grande parte do curso, eles serão o principal objeto de estudo.
 
-`data.frame`s são listas especiais em que todos os seus elementos possuem **o mesmo comprimento**. Cada elemento dessa lista pode ser pensado como uma coluna da tabela e seu comprimento representa o número de linhas. 
+`data.frame`'s são listas especiais em que todos os seus elementos possuem **o mesmo comprimento**. Cada elemento dessa lista pode ser pensado como uma coluna da tabela. Seu comprimento representa o número de linhas. 
 
-Já que são listas, essas colunas podem ser de classes diferentes. Essa é a grande diferença entre `data.frame`s e matrizes. Algumas funções úteis:
+Já que são listas, essas colunas podem ser de classes diferentes. Essa é a grande diferença entre `data.frame`'s e matrizes. Algumas funções úteis:
 
-- `head()` Mostra as primeiras 6 linhas.
-- `tail()` Mostra as últimas 6 linhas.
-- `dim()` Número de linhas e de colunas.
-- `names()` Os nomes das colunas (variáveis).
-- `str()` Estrutura do data.frame. Mostra, entre outras coisas, as classes de cada coluna.
-- `cbind()` Acopla duas tabelas lado a lado.
-- `rbind()` Empilha duas tabelas.
+- `head()` - Mostra as primeiras 6 linhas.
+- `tail()` - Mostra as últimas 6 linhas.
+- `dim()` - Número de linhas e de colunas.
+- `names()` - Os nomes das colunas (variáveis).
+- `str()` - Estrutura do data.frame. Mostra, entre outras coisas, as classes de cada coluna.
+- `cbind()` - Acopla duas tabelas lado a lado.
+- `rbind()` - Empilha duas tabelas.
 
 O exemplo abaixo mostra que uma lista pode virar `data.frame` se todos os elementos tiverem o mesmo comprimento.
 
@@ -812,7 +812,7 @@ str(iris)
 
 ## Funções
 
-O R vem com muitas funções implementadas com as quais você pode fazer muitas  tarefas complicadas, como gerar números aleatórios. Geralmente o nome das funções é bem intuitivo, por exemplo `mean` é a função que calcula a média, `round` é a função que arredonda um número, etc.
+O R vem com muitas funções implementadas com as quais você pode fazer muitas  tarefas complicadas, como gerar números aleatórios. Geralmente, o nome das funções é bem intuitivo, por exemplo, `mean` é a função que calcula a média, `round` é a função que arredonda um número etc.
 
 
 ```r
@@ -820,7 +820,7 @@ round(5.634)
 ## [1] 6
 ```
 
-Para entender melhor o funcionamento das funções no R considere o seguinte exemplo.
+Para entender melhor o funcionamento das funções no R, considere o seguinte exemplo:
 
 
 ```r
@@ -847,14 +847,14 @@ soma <- function(x, y = 0) {
 }
 ```
 
-A função acima tem 
+A função acima tem:
 
-- o nome `soma`
-- os argumentos `x` e `y`
-- o corpo `resposta <- x + y`
-- o valor padrão `0` para o argumento `y` (`y = 0`)
+- o nome `soma`;
+- os argumentos `x` e `y`;
+- o corpo `resposta <- x + y`; e
+- o valor padrão `0` para o argumento `y` (`y = 0`).
 
-Para usá-la é como qualquer outra função:
+Use-a como qualquer outra função:
 
 
 ```r
@@ -864,7 +864,7 @@ soma(2) # soma de 2 + 0
 ## [1] 2
 ```
 
-Atente-se que o argumento `y` possui um valor padrão `0`. Isso quer dizer que ele valerá zero caso o usuário não passe nenhum valor a ele explicitamente.
+O argumento `y` possui o valor padrão `0`. Isso quer dizer que ele valerá zero caso o usuário não passe um valor explicitamente.
 
 O [Advanced-R](http://adv-r.had.co.nz/) é um excelente livro para quem quiser masterizar a arte de se fazer funções. 
 
@@ -872,12 +872,12 @@ O [Advanced-R](http://adv-r.had.co.nz/) é um excelente livro para quem quiser m
 
 
 
-## Gráficos - base
+## Gráficos (base)
 
 O R já vem com funções básicas que fazem gráficos estatísticos de todas as naturezas. 
 
-- Vantagens: São rápidas e simples.
-- Desvantagens: São feias e difíceis para gerar gráficos complexos.
+- Vantagens: são rápidas e simples.
+- Desvantagens: são feias e difíceis para gerar gráficos complexos.
 
 ### Gráfico de dispersão
 
@@ -885,15 +885,15 @@ O R já vem com funções básicas que fazem gráficos estatísticos de todas as
 
 Parâmetros principais (ver `help(hist)` para mais detalhes):
 
-- `x`, `y` Vetores para representarem os eixos x e y.
-- `type` Tipo de gráfico. Pode ser pontos, linhas, escada e etc.
+- `x`, `y` - Vetores para representarem os eixos x e y.
+- `type` -  Tipo de gráfico. Pode ser pontos, linhas, escada etc.
 
 <div class='admonition note'>
 <p class='admonition-title'>
 Atenção!
 </p>
 <p> 
-Além de gerar gráficos de dispersão, tentar chamar a função `plot(objeto_diferentao)` para qualquer tipo de objeto do R geralmente sai um gráfico interessante! Sempre tente fazer isso. A menos que seu objeto seja um `data.frame` com milhares de colunas!!!
+Além de gerar gráficos de dispersão, tentar chamar a função `plot(objeto_diferentao)` para qualquer tipo de objeto do R geralmente sai um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um `data.frame` com milhares de colunas!!!
 </p>
 </div>
 
@@ -922,8 +922,8 @@ plot(x, y, type = "l")
 
 Parâmetros principais (ver `help(hist)` para mais detalhes):
 
-- `x` O vetor numérico pra histogramar.
-- `breaks` O número (aproximado) de retângulos.
+- `x` - O vetor numérico pra histogramar.
+- `breaks` - O número (aproximado) de retângulos.
 
 
 ```r
@@ -947,7 +947,7 @@ boxplot(InsectSprays$count, col = "lightgray")
 
 ![plot of chunk unnamed-chunk-61](figures//unnamed-chunk-61-1.png)
 
-**Duas variáveis** Usamos fórmula e o parâmetro `data`!
+**Duas variáveis** - Usamos fórmula e o parâmetro `data`!
 
 
 ```r
@@ -960,12 +960,14 @@ boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 
 **Função** `table()`, `barplot()`
 
-Primeiro crie uma tabela de contagens (ou qualquer outro sumário) e depois crie o gráfico com `barplot()`.
+Primeiro crie uma tabela de frequências (ou qualquer outro sumário). Então crie o gráfico com `barplot()`.
 
 **Tabela com uma variável** usando `table()`.
 
 
 ```r
+library(ggplot2)
+## Error in library(ggplot2): there is no package called 'ggplot2'
 data(diamonds, package = "ggplot2")
 ## Error in find.package(package, lib.loc, verbose = verbose): there is no package called 'ggplot2'
 tabela <- table(diamonds$color)
@@ -1005,9 +1007,9 @@ class(formula)
 ## [1] "formula"
 ```
 
-Fórmulas são coisas do tipo `y ~ x` e as funções as usam de maneiras diversas, mas o exemplo mais emblemático vem da modelagem estatística.
+Fórmulas são coisas do tipo `y ~ x`. As funções as usam de maneiras diversas, mas o exemplo mais emblemático vem da modelagem estatística.
 
-A função `lm()` é a que ajusta uma regressão linear no R e `lm(y ~ x)` lê-se "regressão linear de y explicada por x".
+A função `lm()` é a que ajusta uma regressão linear no R, e `lm(y ~ x)` lê-se "regressão linear de y explicada por x".
 
 
 ```r
@@ -1026,7 +1028,7 @@ lm(minha_formula, data = iris)
 
 No caso específico das regressões lineares, são nas fórmulas que conseguimos descrever as variáveis explicativas e suas interações. A fórmula `y ~ x1 * x2` significa "y regredido por x1, x2 e a interação entre x1 e x2". Fórmulas aparecem frequentemente em tarefas de modelagem.
 
-Demais usos de fórmulas aparecerão em outras funções (como o `ggplot`) com outros significados e a documentação nos dirá como usá-las.
+Demais usos de fórmulas aparecerão em outras funções (como o `ggplot`) com outros significados, e a documentação nos dirá como usá-las.
 
 --------------------------------------------------------------------------------
 
@@ -1049,15 +1051,15 @@ LETTERS
 ### Operadores aritméticos
 
 
-|Operador      |Descrição                            |
-|:-------------|:------------------------------------|
-|x + y         |Adição de x com y                    |
-|x - y         |Subtração de y em x                  |
-|x \* y        |Multiplicaçăo de x e y               |
-|x / y         |Divisão de x por y                   |
-|x^y ou x\*\*y |x elevado a y-ésima potência         |
-|x%%y          |Resto da divisão de x por y (módulo) |
-|x%/%y         |Parte inteira da divisão de x por y  |
+|Operador      |Descrição                             |
+|:-------------|:-------------------------------------|
+|x + y         |Adição de x com y.                    |
+|x - y         |Subtração de y em x.                  |
+|x \* y        |Multiplicaçăo de x e y.               |
+|x / y         |Divisão de x por y.                   |
+|x^y ou x\*\*y |x elevado a y-ésima potência.         |
+|x%%y          |Resto da divisão de x por y (módulo). |
+|x%/%y         |Parte inteira da divisão de x por y.  |
 
 ### Operadores lógicos
 
@@ -1134,7 +1136,7 @@ x
 
 <div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIDRcbmlmKHggPSA0KSB7XG4gICdpc3NvIGFxdWkgYXBhcmVjZXUnXG59XG54In0=</div>
 
-7. Como você faria para que o código da pergunta anterior fizesse com que `'isso aqui apareceu'` fosse impresso no console mas nenhum erro aparecesse?
+7. Como você faria para que o código da pergunta anterior fizesse com que `'isso aqui apareceu'` fosse impresso no console, mas nenhum erro aparecesse?
 
 <div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIDRcbmlmKHggPSA0KSB7XG4gICdpc3NvIGFxdWkgYXBhcmVjZXUnXG59XG54Iiwic29sdXRpb24iOiJ4IDwtIDRcbmlmKHggPT0gNCkge1xuICAnaXNzbyBhcXVpIGFwYXJlY2V1J1xufVxueCIsInNjdCI6InRlc3Rfb3V0cHV0X2NvbnRhaW5zKFwiaXNzbyBhcXVpIGFwYXJlY2V1XCIsIGluY29ycmVjdF9tc2cgPSBcIlRlbSBjZXJ0ZXphIGRlIHF1ZSBpbmRpY291IGEgZXhwcmVzc1x1MDBlM28gY29ycmV0YW1lbnRlP1wiKVxudGVzdF9lcnJvcigpXG5zdWNjZXNzX21zZyhcIkNvcnJldG8hXCIpIn0=</div>
 
@@ -1163,6 +1165,8 @@ x
 3. 
 
 <div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIE5hTiBcdTAwZTkgbyByZXN1bHRhZG8gZGUgdW1hIG9wZXJhXHUwMGU3XHUwMGUzbyBtYXRlbVx1MDBlMXRpY2EgaW52XHUwMGUxbGlkYS4gU2lnbmlmaWNhIE5vdCBBIE51bWJlclxuMC8wXG4jIE5VTEwgXHUwMGU5IG8gdmF6aW8gZG8gUi4gXHUwMGM5IGNvbW8gc2UgbyBvYmpldG8gblx1MDBlM28gZXhpc3Rpc3NlXG5OVUxMXG5hID0gTlVMTFxuaXMubnVsbChpbnRlZ2VyKGxlbmd0aCA9IDApKSAjIHZlamEgcXVlIHVtIHZldG9yLCBtZXNtbyBzZW0gZWxlbWVudG9zIG5cdTAwZTNvIFx1MDBlOSBOVUxMXG4jIE5BIFx1MDBlOSB1bWEgY29uc3RhbnRlIGxcdTAwZjNnaWNhIGRvIFIuIFNpZ2luaWZpY2EgTm90IEF2YWlsbGFibGUuIE5BIHBvZGUgc2VyIFxuIyBjb252ZXJ0aWRvIHBhcmEgcXVhc2UgdG9kb3Mgb3MgdGlwb3MgZGUgdmV0b3JlcyBkbyBSLiBcdTAwYzkgdXNhZG8gcHJpbmNpcGFsbWVudGUgcGFyYVxuIyBpbmRpY2FyIHZhbG9yZXMgZmFsdGFudGVzLlxuTkFcbiMgSW5mIFx1MDBlOSBzaWduaWZpY2EgaW5maW5pdG8uIFx1MDBjOSBvIHJlc3VsdGFkbyBkZSBvcGVyYVx1MDBlN1x1MDBmNWVzIG1hdGVtXHUwMGUxdGljYXMgY3VqbyBsaW1pdGUgXHUwMGU5IGluZmluaXRvLlxuMS8wXG4xL0luZiJ9</div>
+
+4.
 
 5.
 
