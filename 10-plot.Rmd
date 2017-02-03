@@ -80,7 +80,6 @@ Primeiro crie uma tabela de frequências (ou qualquer outro sumário). Então cr
 **Tabela com uma variável** usando `table()`.
 
 ```{r}
-library(ggplot2)
 data(diamonds, package = "ggplot2")
 tabela <- table(diamonds$color)
 tabela
