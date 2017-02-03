@@ -966,8 +966,6 @@ Primeiro crie uma tabela de frequências (ou qualquer outro sumário). Então cr
 
 
 ```r
-library(ggplot2)
-## Error in library(ggplot2): there is no package called 'ggplot2'
 data(diamonds, package = "ggplot2")
 ## Error in find.package(package, lib.loc, verbose = verbose): there is no package called 'ggplot2'
 tabela <- table(diamonds$color)
