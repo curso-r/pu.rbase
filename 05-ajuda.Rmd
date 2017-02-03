@@ -26,7 +26,7 @@ Cinco dicas:
 
 - Os exemplos no final são particularmente úteis.
 - Atente-se na seção **Usage** para ter noção de como usar.
-- Os parâmetros estăo descritos em **Arguments**. Identifique quais tipos de objetos eles recebem.
+- Os parâmetros estão descritos em **Arguments**. Identifique quais tipos de objetos eles recebem.
 - Caso essa função não atenda às suas necessidades, a seção **See Also** sugere funções relacionadas.
 - Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`.
 
@@ -44,7 +44,7 @@ log("5")
 
 ### Stack Overflow
 
-O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e R é uma delas. Nos EUA, chegam até a usar a reputaçăo dos usuários como diferencial no currículo!
+O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários como diferencial no currículo!
 
 Provavelmente, o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
 
@@ -59,7 +59,7 @@ No site, tem um tutorial com uma lista de boas práticas, [que se encontra aqui]
 
 Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: **exemplinho minimal e reprodutível**.
 
-- Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para gerar o seu problema. Năo precisa de banco de dados de um milhăo de linhas e nem colocar o seu código inteiro para mostrar seu problema.
+- Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para gerar o seu problema. Não precisa de banco de dados de um milhão de linhas e nem colocar o seu código inteiro para mostrar seu problema.
 
 - Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
 

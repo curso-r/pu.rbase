@@ -9,9 +9,9 @@ formula <- y ~ x1 + x2
 class(formula)
 ```
 
-Fórmulas são coisas do tipo `y ~ x` e as funções as usam de maneiras diversas, mas o exemplo mais emblemático vem da modelagem estatística.
+Fórmulas são coisas do tipo `y ~ x`. As funções as usam de maneiras diversas, mas o exemplo mais emblemático vem da modelagem estatística.
 
-A função `lm()` é a que ajusta uma regressão linear no R e `lm(y ~ x)` lê-se "regressão linear de y explicada por x".
+A função `lm()` é a que ajusta uma regressão linear no R, e `lm(y ~ x)` lê-se "regressão linear de y explicada por x".
 
 ```{r}
 minha_formula <- Sepal.Width ~ Petal.Length + Petal.Width
@@ -21,6 +21,6 @@ lm(minha_formula, data = iris)
 
 No caso específico das regressões lineares, são nas fórmulas que conseguimos descrever as variáveis explicativas e suas interações. A fórmula `y ~ x1 * x2` significa "y regredido por x1, x2 e a interação entre x1 e x2". Fórmulas aparecem frequentemente em tarefas de modelagem.
 
-Demais usos de fórmulas aparecerão em outras funções (como o `ggplot`) com outros significados e a documentação nos dirá como usá-las.
+Demais usos de fórmulas aparecerão em outras funções (como o `ggplot`) com outros significados, e a documentação nos dirá como usá-las.
 
 --------------------------------------------------------------------------------

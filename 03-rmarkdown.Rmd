@@ -26,7 +26,7 @@ Este site foi escrito em RMarkdown. Toda vez que aparecer exemplos de código de
 Para produção de relatórios, o RMarkdown possui algumas vantagens, como:
 
 1. **Simplicidade e foco**. Permite ao usuário o foco na análise e não na formatação do documento.
-1. **Versátil**. Pode ser utilizado para gerar documentos em $\LaTeX$, `Word`, `HTML` e apresentaçőes em `beamer`, `pptx` e `HTML` (de vários tipos). Pode ainda gerar sites, livros, dissertaçőes de mestrado e até mesmo dashboards interativos.
+1. **Versátil**. Pode ser utilizado para gerar documentos em $\LaTeX$, `Word`, `HTML` e apresentações em `beamer`, `pptx` e `HTML` (de vários tipos). Pode ainda gerar sites, livros, dissertações de mestrado e até mesmo dashboards interativos.
 1. **Reprodutível**. O RMarkdown nada mais é que um arquivo de texto. Além disso, ele tenta te obrigar a fazer o documento mais autocontido possível. Assim, um documento `.Rmd` é fácil de compartilhar e de ser utilizado pelo receptor. Lembre-se, o receptor pode ser o futuro você! Vale enfatizar que a reprodutibilidade é considerada como um dos princípios fundamentais da ciência. Então, só de usar RMarkdown, você já está colaborando com a ciência. :)
 1. **Flexível**. É possível configurar e criar templates de análises para quaisquer tipos de aplicações e clientes. Os textos podem ser parametrizados por números que variam de versão para versão, mensalmente, por exemplo, tudo escrito somente em R. 
 

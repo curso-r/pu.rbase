@@ -46,9 +46,9 @@ Diferença entre SQL e R nas comparações lógicas
 </p>
 <p>
 <b>Igualdade</b> no SQL é só um sinal de igual: <2 = 1. No R são dois: 2 == 1.
-
+<br>
 <b>Diferença</b> O teste de diferente no R é != ao invés de de <>.
-
+<br>
 <b>Negação</b> ao invés de usar a palavra "not" igual ao SQL, usamos !. Por exemplo, "entidade_id not in ('100515')" fica "!entidade_id %in% c('100515')".
 </p>
 </div>

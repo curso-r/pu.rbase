@@ -67,9 +67,9 @@ vetor2 <- 1:3
 vetor * vetor2
 ```
 
-Agora, o R alinhou os dois vetores e, como eles não possuiam o mesmo tamanho, foi repetindo o vetor menor até completar o vetor maior. 
+Agora o R alinhou os dois vetores. Como eles não possuíam o mesmo tamanho, foi repetindo o vetor menor até completar o vetor maior. 
 
-Esse comportamento é chamado de **reciclagem**. Isso é útil para fazer operações com os vetores elementos por elementos (vetorizadamente), mas às vezes pode ser confuso. Com o tempo, você aprenderá a se aproveitar desse comportamento.
+Esse comportamento é chamado de **reciclagem** e é útil para fazer operações *elemento por elemento* (vetorizadamente), mas às vezes pode ser confuso. Com o tempo, você aprenderá a se aproveitar dele.
 
 ### Misturando objetos
 
@@ -78,7 +78,7 @@ Esse comportamento é chamado de **reciclagem**. Isso é útil para fazer opera�
 Vetores são homogêneos
 </p>
 <p>
-Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character, e assim por diante. Não dá para ter um número e um character no mesmo vetor, por exemplo.
+Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character, ou todos são lógicos etc. Não dá para ter um número e um character no mesmo vetor, por exemplo.
 </p>
 </div>
 
@@ -119,13 +119,13 @@ as.numeric(x)
 Observação
 </p>
 <p>
-O <b>NA</b> tem o mesmo papel que o <b>null</b> do SQL. Porém, há um <b>NULL</b> no R também, com diferenças sutis que vamos abordar mais adiante. Năo confundir!
+O <b>NA</b> tem o mesmo papel que o <b>null</b> do SQL. Porém, há um <b>NULL</b> no R também, com diferenças sutis que vamos abordar mais adiante. Não confundir!
 </p>
 </div>
 
 ### Matrizes
 
-Matrizes săo vetores com duas dimensőes (e por isso só possuem elementos de uma mesma classe).
+Matrizes são vetores com duas dimensões (e por isso só possuem elementos de uma mesma classe).
 
 ```{r}
 m <- matrix(1:6, nrow = 2, ncol = 3)
@@ -133,7 +133,7 @@ m
 dim(m) # funçăo dim() retorna a dimensăo do objeto.
 ```
 
-Repare que os números de 1 a 6 foram dispostos na matriz de coluna a coluna (*column-wise*), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita.
+Repare que os números de 1 a 6 foram dispostos na matriz coluna por coluna (*column-wise*), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita.
 
 **Utilidades**
 
@@ -157,9 +157,9 @@ fator
 as.numeric(fator)
 ```
 
-Eles são úteis para representar uma variável categórica (nominal e ordinal). Em modelagem, eles serão tratados de maneira especial ao utilizarmos funções como `lm()` e `glm()`. 
+Eles são úteis para representar uma variável categórica (nominal e ordinal). Na modelagem, eles serão tratados de maneira especial em funções como `lm()` e `glm()`. 
 
-A funçăo `levels()` retorna os rótulos do fator:
+A função `levels()` retorna os rótulos do fator:
 
 ```{r}
 levels(fator)
@@ -172,7 +172,7 @@ A ordem das categorias de um fator pode importar. Como exemplo, temos as caselas
 Um erro comum e desastroso
 </p>
 <p>
-Quando um vetor de números está como `factor`. Ao tentar transformar o vetor em `numeric`, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
+Quando um vetor de números está como **factor**, ao tentar transformar o vetor em **numeric**, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
 </p>
 </div>
 
@@ -194,12 +194,12 @@ as.numeric(as.character(numeros))
 
 ### Valores especiais
 
-Existem valores reservados para representar dados faltantes, infinitos, e indefiniçőes matemáticas.
+Existem valores reservados para representar dados faltantes, infinitos, e indefinições matemáticas.
 
-- **NA** (Not Available) significa dado faltante/indisponível. É o `null` do SQL ou o `.` do SAS. O `NA` tem uma classe, podemos ter `NA` numeric, `NA` character e etc.
+- **NA** (Not Available) significa dado faltante/indisponível. É o `null` do SQL ou o `.` do SAS. O `NA` tem uma classe, ou seja, podemos ter `NA` numeric, `NA` character etc.
 - **NaN** (Not a Number) representa indefinições matemáticas, como `0/0` e `log(-1)`. Um `NaN` é um `NA`, mas a recíproca não é verdadeira.
 - **Inf** (Infinito) é um número muito grande ou o limite matemático, por exemplo, `1/0` e `10^310`. Aceita sinal negativo `-Inf`. 
-- **NULL** representa a ausęncia de informação. Conceitualmente, a diferença entre `NA` e `NULL` é sutil, mas no R o `NA` está mais alinhado com os conceitos de estatística (ou como gostaríamos que os dados faltantes se comportassem em análise de dados) e o `NULL` está em sintonia com comportamentos de lógica de programação.
+- **NULL** representa a ausência de informação. Conceitualmente, a diferença entre `NA` e `NULL` é sutil, mas, no R, o `NA` está mais alinhado com os conceitos de estatística (ou como gostaríamos que os dados faltantes se comportassem em análise de dados) e o `NULL` está em sintonia com comportamentos de lógica de programação.
 - Use as funções `is.na()`, `is.nan()`, `is.infinite()` e `is.null()` para testar se um objeto é um desses valores.
 
 ```{r}
@@ -217,11 +217,11 @@ x <- list(1:5, "Z", TRUE, c("a", "b"))
 x
 ```
 
-É um dos objetos mais importantes para armazenar dados e vale a pena saber manuseá-los bem. Existem muitas funçães que fazem das listas objetos incrivelmente úteis.
+É um dos objetos mais importantes para armazenar dados e vale a pena saber manuseá-los bem. Existem muitas funções que fazem das listas objetos incrivelmente úteis.
 
-Criamos uma lista pela função `list()`, que aceita um número arbitrário de elementos. Listas aceitam QUALQUER tipo de objeto. Podemos ter listas dentro de listas, por exemplo. Como para quase todos os objetos no R, as funçőes `is.list()` e `as.list()` também existem.
+Criamos uma lista pela função `list()`, que aceita um número arbitrário de elementos. Listas aceitam QUALQUER tipo de objeto. Podemos ter listas dentro de listas, por exemplo. Como para quase todos os objetos no R, as funções `is.list()` e `as.list()` também existem.
 
-Na lista `pedido` abaixo temos `numeric`, `Date`, `character`, vetor de `character` e `list` contida em uma lista:
+Na lista `pedido` abaixo, temos `numeric`, `Date`, `character`, vetor de `character` e `list` contida em uma lista:
 
 ```{r}
 pedido <- list(pedido_id = 8001406,
@@ -258,25 +258,25 @@ pedido[[2]]    # segundo elemento
 pedido["nome"] # nova lista com apenas o elemento chamado 'nome'
 ```
 
-Certamente você se deparará com listas quando for fazer análise de dados com o R, nos tópicos mais aplicados iremos aprofundar sobre o tema. O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
+Certamente você se deparará com listas quando for fazer análise de dados com o R. Nos tópicos mais aplicados, iremos aprofundar sobre o tema. O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
 
-### `data.frame`
+### data.frame
 
 Um `data.frame` é o mesmo que uma tabela do SQL ou um spreadsheet do Excel, por isso são objetos muito importantes. 
 
-Usualmente seus dados serão importados para um objeto `data.frame` e em grande parte do curso os teremos como principal objeto de estudo.
+Usualmente, seus dados serão importados para um objeto `data.frame`. Em grande parte do curso, eles serão o principal objeto de estudo.
 
-`data.frame`s são listas especiais em que todos os seus elementos possuem **o mesmo comprimento**. Cada elemento dessa lista pode ser pensado como uma coluna da tabela e seu comprimento representa o número de linhas. 
+`data.frame`'s são listas especiais em que todos os seus elementos possuem **o mesmo comprimento**. Cada elemento dessa lista pode ser pensado como uma coluna da tabela. Seu comprimento representa o número de linhas. 
 
-Já que são listas, essas colunas podem ser de classes diferentes. Essa é a grande diferença entre `data.frame`s e matrizes. Algumas funções úteis:
+Já que são listas, essas colunas podem ser de classes diferentes. Essa é a grande diferença entre `data.frame`'s e matrizes. Algumas funções úteis:
 
-- `head()` Mostra as primeiras 6 linhas.
-- `tail()` Mostra as últimas 6 linhas.
-- `dim()` Número de linhas e de colunas.
-- `names()` Os nomes das colunas (variáveis).
-- `str()` Estrutura do data.frame. Mostra, entre outras coisas, as classes de cada coluna.
-- `cbind()` Acopla duas tabelas lado a lado.
-- `rbind()` Empilha duas tabelas.
+- `head()` - Mostra as primeiras 6 linhas.
+- `tail()` - Mostra as últimas 6 linhas.
+- `dim()` - Número de linhas e de colunas.
+- `names()` - Os nomes das colunas (variáveis).
+- `str()` - Estrutura do data.frame. Mostra, entre outras coisas, as classes de cada coluna.
+- `cbind()` - Acopla duas tabelas lado a lado.
+- `rbind()` - Empilha duas tabelas.
 
 O exemplo abaixo mostra que uma lista pode virar `data.frame` se todos os elementos tiverem o mesmo comprimento.
 

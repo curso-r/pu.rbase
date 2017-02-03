@@ -2,12 +2,12 @@
 author: "Athos Petri Damiani"
 ---
 
-## Gráficos - base
+## Gráficos (base)
 
 O R já vem com funções básicas que fazem gráficos estatísticos de todas as naturezas. 
 
-- Vantagens: São rápidas e simples.
-- Desvantagens: São feias e difíceis para gerar gráficos complexos.
+- Vantagens: são rápidas e simples.
+- Desvantagens: são feias e difíceis para gerar gráficos complexos.
 
 ### Gráfico de dispersão
 
@@ -15,15 +15,15 @@ O R já vem com funções básicas que fazem gráficos estatísticos de todas as
 
 Parâmetros principais (ver `help(hist)` para mais detalhes):
 
-- `x`, `y` Vetores para representarem os eixos x e y.
-- `type` Tipo de gráfico. Pode ser pontos, linhas, escada e etc.
+- `x`, `y` - Vetores para representarem os eixos x e y.
+- `type` -  Tipo de gráfico. Pode ser pontos, linhas, escada etc.
 
 <div class='admonition note'>
 <p class='admonition-title'>
 Atenção!
 </p>
 <p> 
-Além de gerar gráficos de dispersão, tentar chamar a função `plot(objeto_diferentao)` para qualquer tipo de objeto do R geralmente sai um gráfico interessante! Sempre tente fazer isso. A menos que seu objeto seja um `data.frame` com milhares de colunas!!!
+Além de gerar gráficos de dispersão, tentar chamar a função `plot(objeto_diferentao)` para qualquer tipo de objeto do R geralmente sai um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um `data.frame` com milhares de colunas!!!
 </p>
 </div>
 
@@ -46,8 +46,8 @@ plot(x, y, type = "l")
 
 Parâmetros principais (ver `help(hist)` para mais detalhes):
 
-- `x` O vetor numérico pra histogramar.
-- `breaks` O número (aproximado) de retângulos.
+- `x` - O vetor numérico pra histogramar.
+- `breaks` - O número (aproximado) de retângulos.
 
 ```{r}
 hist(rnorm(1000))
@@ -65,7 +65,7 @@ Parâmetros principais (ver `help(boxplot)` para mais detalhes):
 boxplot(InsectSprays$count, col = "lightgray")
 ```
 
-**Duas variáveis** Usamos fórmula e o parâmetro `data`!
+**Duas variáveis** - Usamos fórmula e o parâmetro `data`!
 
 ```{r}
 boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
@@ -75,11 +75,12 @@ boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 
 **Função** `table()`, `barplot()`
 
-Primeiro crie uma tabela de contagens (ou qualquer outro sumário) e depois crie o gráfico com `barplot()`.
+Primeiro crie uma tabela de frequências (ou qualquer outro sumário). Então crie o gráfico com `barplot()`.
 
 **Tabela com uma variável** usando `table()`.
 
 ```{r}
+library(ggplot2)
 data(diamonds, package = "ggplot2")
 tabela <- table(diamonds$color)
 tabela

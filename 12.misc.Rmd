@@ -18,13 +18,13 @@ op_aritmetico <- data.frame(
   "Operador" = c("x + y", "x - y", "x \\* y", 
                  "x / y", "x^y ou x\\*\\*y", 
                  "x%%y", "x%/%y"),
-  "Descrição" = c("Adição de x com y", 
-                  "Subtração de y em x",
-                  "Multiplicaçăo de x e y", 
-                  "Divisão de x por y", 
-                  "x elevado a y-ésima potência",
-                  "Resto da divisão de x por y (módulo)", 
-                  "Parte inteira da divisão de x por y")
+  "Descrição" = c("Adição de x com y.", 
+                  "Subtração de y em x.",
+                  "Multiplicaçăo de x e y.", 
+                  "Divisão de x por y.", 
+                  "x elevado a y-ésima potência.",
+                  "Resto da divisão de x por y (módulo).", 
+                  "Parte inteira da divisão de x por y.")
 ) 
 
 knitr::kable(op_aritmetico)

@@ -4,13 +4,13 @@ author: "Athos Petri Damiani"
 
 ## Funções
 
-O R vem com muitas funções implementadas com as quais você pode fazer muitas  tarefas complicadas, como gerar números aleatórios. Geralmente o nome das funções é bem intuitivo, por exemplo `mean` é a função que calcula a média, `round` é a função que arredonda um número, etc.
+O R vem com muitas funções implementadas com as quais você pode fazer muitas  tarefas complicadas, como gerar números aleatórios. Geralmente, o nome das funções é bem intuitivo, por exemplo, `mean` é a função que calcula a média, `round` é a função que arredonda um número etc.
 
 ```{r}
 round(5.634)
 ```
 
-Para entender melhor o funcionamento das funções no R considere o seguinte exemplo.
+Para entender melhor o funcionamento das funções no R, considere o seguinte exemplo:
 
 ```{r}
 die <- 1:6
@@ -34,21 +34,21 @@ soma <- function(x, y = 0) {
 }
 ```
 
-A função acima tem 
+A função acima tem:
 
-- o nome `soma`
-- os argumentos `x` e `y`
-- o corpo `resposta <- x + y`
-- o valor padrão `0` para o argumento `y` (`y = 0`)
+- o nome `soma`;
+- os argumentos `x` e `y`;
+- o corpo `resposta <- x + y`; e
+- o valor padrão `0` para o argumento `y` (`y = 0`).
 
-Para usá-la é como qualquer outra função:
+Use-a como qualquer outra função:
 
 ```{r}
 soma(2, 1) # soma de 2 + 1
 soma(2) # soma de 2 + 0
 ```
 
-Atente-se que o argumento `y` possui um valor padrão `0`. Isso quer dizer que ele valerá zero caso o usuário não passe nenhum valor a ele explicitamente.
+O argumento `y` possui o valor padrão `0`. Isso quer dizer que ele valerá zero caso o usuário não passe um valor explicitamente.
 
 O [Advanced-R](http://adv-r.had.co.nz/) é um excelente livro para quem quiser masterizar a arte de se fazer funções. 
 

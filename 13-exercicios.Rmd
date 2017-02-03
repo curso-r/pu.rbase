@@ -114,7 +114,7 @@ if(x = 4) {
 x
 ```
 
-7. Como você faria para que o código da pergunta anterior fizesse com que `'isso aqui apareceu'` fosse impresso no console mas nenhum erro aparecesse?
+7. Como você faria para que o código da pergunta anterior fizesse com que `'isso aqui apareceu'` fosse impresso no console, mas nenhum erro aparecesse?
 
 ```{r ex="exercicio_07", type="sample-code"}
 x <- 4
