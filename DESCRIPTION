@@ -12,9 +12,7 @@ Depends: R (>= 3.2.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Remotes:
-    curso-r/puBuild
-Imports: 
-  puBuild,
+r_github_packages: curso-r/puBuild
+Imports:
   tutorial,
   ggplot2

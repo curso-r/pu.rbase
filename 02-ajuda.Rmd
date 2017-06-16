@@ -1,5 +1,5 @@
 ---
-author: "Athos Petri Damiani"
+author: "Athos Petri Damiani, William Amorim"
 ---
 
 ## Pedindo Ajuda
@@ -7,8 +7,11 @@ author: "Athos Petri Damiani"
 No R, há quatro principais entidades para se pedir ajuda:
 
 - Help/documentação do R (comandos `help(nome_da_funcao)` ou `?nome_da_funcao`)
+
 - Google
+
 - Stack Overflow
+
 - Coleguinha
 
 A busca por ajuda é feita preferencialmente, mas não necessariamente, na ordem acima.
@@ -24,17 +27,17 @@ help(mean)
 
 Cinco dicas:
 
-- Os exemplos no final são particularmente úteis.
-- Atente-se na seção **Usage** para ter noção de como usar.
-- Os parâmetros estão descritos em **Arguments**. Identifique quais tipos de objetos eles recebem.
-- Caso essa função não atenda às suas necessidades, a seção **See Also** sugere funções relacionadas.
-- Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`.
+1. Os exemplos no final são particularmente úteis.
+2. Leia a seção **Usage** para ter noção de como usar.
+3. Os parâmetros estão descritos em **Arguments**. Identifique quais tipos de objetos eles recebem.
+4. Caso essa função não atenda às suas necessidades, a seção **See Also** sugere funções relacionadas.
+5. Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`.
 
 ### Google
 
-Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente jogando o copiar/colar do seu erro no Google. Essa deve ser sua primeira tentativa!
+Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente jogando o seu erro no Google. Essa deve ser sua primeira tentativa! Pesquisas em inglês aumentam consideravelmente a chance de encontrar uma resposta.
 
-Exemplo (repare no 'r' adicionado na busca, também ajuda):
+Exemplo (repare no 'r' adicionado na busca, isso ajuda bastante):
 
 ```{r error = TRUE}
 log("5")
@@ -48,7 +51,7 @@ O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português]
 
 Provavelmente, o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
 
-**Um ponto importante:** como fazer uma **boa** pergunta no Stack Overflow?
+**Um ponto importante**: como fazer uma **boa** pergunta no Stack Overflow?
 
 No site, tem um tutorial com uma lista de boas práticas, [que se encontra aqui](http://pt.stackoverflow.com/help/how-to-ask). Algumas dicas são
 
@@ -59,7 +62,7 @@ No site, tem um tutorial com uma lista de boas práticas, [que se encontra aqui]
 
 Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: **exemplinho minimal e reprodutível**.
 
-- Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para gerar o seu problema. Não precisa de banco de dados de um milhão de linhas e nem colocar o seu código inteiro para mostrar seu problema.
+- Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para apresentar o seu problema. Não precisa de banco de dados de um milhão de linhas e nem colocar o seu código inteiro para descrever a sua dúvida.
 
 - Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
 
