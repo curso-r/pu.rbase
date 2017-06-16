@@ -1,6 +1,6 @@
 ---
 title: "R como calculadora"
-author: "Athos Damiani, Daniel Falbel"
+author: "Athos Damiani, Daniel Falbel, William Amorim"
 date: 2016-11-08
 ---
 
@@ -10,10 +10,9 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 ## Introdução
 
-A linguagem `R` é intuitiva. Muita coisa sai do jeito certo no chute! Para ver um exemplo disso, é interessante começar fazendo do R uma grande calculadora.
+A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da tentativa e erro! Além disso, grande parte do conhecimento é escalável, isto é, quando você aprende a utilizar um certo tipo de função, o aprendizado pode ser replicado para funções parecidas. Essa ideia ficará bem clara quando falarmos dos pacotes do `tidyverse`, como o `dplyr` e o `ggplot2`.
 
-Mas antes disso, vamos aprender a mexer no RStudio!
-
+Quando o aprendizado não for muito intuitivo ou a utilização de uma função for muito complicada, demandando às vezes conhecimento de Estatística ou Programação, você pode acabar precisando de uma forcinha. Felizmente, a comunidade R é bem ativa, e há várias formas de se conseguir ajuda. Nesta seção, vamos listar algumas dessas maneiras. Em seguida, faremos uma introdução ao RStudio, mostrando as suas principais funcionalidades. Então começaremos a conhecer o R, explorando diversos conceitos básicos.
 --------------------------------------------------------------------------------
 
 <!-- ## Exercícios -->
