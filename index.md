@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-02-03'
+date: '2017-06-17'
 ---
 
 
@@ -9,10 +9,9 @@ date: '2017-02-03'
 
 ## Introdução
 
-A linguagem `R` é intuitiva. Muita coisa sai do jeito certo no chute! Para ver um exemplo disso, é interessante começar fazendo do R uma grande calculadora.
+A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da tentativa e erro! Além disso, grande parte do conhecimento é escalável, isto é, quando você aprende a utilizar um certo tipo de função, o aprendizado pode ser replicado para funções parecidas. Essa ideia ficará bem clara quando falarmos dos pacotes do `tidyverse`, como o `dplyr` e o `ggplot2`.
 
-Mas antes disso, vamos aprender a mexer no RStudio!
-
+Quando o aprendizado não for muito intuitivo ou a utilização de uma função for muito complicada, demandando às vezes conhecimento de Estatística ou Programação, você pode acabar precisando de uma forcinha. Felizmente, a comunidade R é bem ativa, e há várias formas de se conseguir ajuda. Nesta seção, vamos listar algumas dessas maneiras. Em seguida, faremos uma introdução ao RStudio, mostrando as suas principais funcionalidades. Então começaremos a conhecer o R, explorando diversos conceitos básicos.
 --------------------------------------------------------------------------------
 
 <!-- ## Exercícios -->
@@ -50,6 +49,77 @@ Mas antes disso, vamos aprender a mexer no RStudio!
 <!-- 15. Crie uma função que simula o lançamento de `n` dados, e devolve a soma de seus resultados. -->
 <!-- 16. **Difícil** Faça um histograma dos resultados da soma de 3 dados. Isto é, crie um vetor com 1000 resultados que aconteceram após somar 3 dados. Em seguida faça o histograma. -->
 <!-- **Esses exercícios possuem resposta [aqui](https://curso-r.github.io/verao2017/r-como-calculadora/respostas)** -->
+
+
+
+## Pedindo Ajuda
+
+No R, há quatro principais entidades para se pedir ajuda:
+
+- Help/documentação do R (comandos `help(nome_da_funcao)` ou `?nome_da_funcao`)
+
+- Google
+
+- Stack Overflow
+
+- Coleguinha
+
+A busca por ajuda é feita preferencialmente, mas não necessariamente, na ordem acima.
+
+### Documentação do R
+
+A documentação do R serve para você aprender a usar uma determinada função.
+
+
+```r
+?mean
+help(mean)
+```
+
+Cinco dicas:
+
+1. Os exemplos no final são particularmente úteis.
+2. Leia a seção **Usage** para ter noção de como usar.
+3. Os parâmetros estão descritos em **Arguments**. Identifique quais tipos de objetos eles recebem.
+4. Caso essa função não atenda às suas necessidades, a seção **See Also** sugere funções relacionadas.
+5. Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`.
+
+### Google
+
+Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente jogando o seu erro no Google. Essa deve ser sua primeira tentativa! Pesquisas em inglês aumentam consideravelmente a chance de encontrar uma resposta.
+
+Exemplo (repare no 'r' adicionado na busca, isso ajuda bastante):
+
+
+```r
+log("5")
+## Error in log("5"): non-numeric argument to mathematical function
+```
+
+![](figures/ajuda_google.png)
+
+### Stack Overflow
+
+O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários como diferencial no currículo!
+
+Provavelmente, o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
+
+**Um ponto importante**: como fazer uma **boa** pergunta no Stack Overflow?
+
+No site, tem um tutorial com uma lista de boas práticas, [que se encontra aqui](http://pt.stackoverflow.com/help/how-to-ask). Algumas dicas são
+
+- ser conciso;
+- ser específico;
+- ter mente aberta; e
+- ser gentil.
+
+Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: **exemplinho minimal e reprodutível**.
+
+- Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para apresentar o seu problema. Não precisa de banco de dados de um milhão de linhas e nem colocar o seu código inteiro para descrever a sua dúvida.
+
+- Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
+
+--------------------------------------------------------------------------------
 
 
 
@@ -148,7 +218,7 @@ Criar um RMarkdown novo no RStudio é fácil. Clique no botão de criar arquivo 
 knitr::include_graphics("figures/criar_rmarkdown.png")
 ```
 
-![plot of chunk unnamed-chunk-20](figures/criar_rmarkdown.png)
+![plot of chunk unnamed-chunk-22](figures/criar_rmarkdown.png)
 
 Para detalhes sobre como utilizar o RMarkdown, leia  [aqui](http://r4ds.had.co.nz/r-markdown.html) e [ aqui](http://rmarkdown.rstudio.com/lesson-1.html).
 
@@ -204,74 +274,6 @@ Error: unexpected input in "5 % 5"
 > 5 - 5
 [1] 0
 ```
-
---------------------------------------------------------------------------------
-
-
-
-## Pedindo Ajuda
-
-No R, há quatro principais entidades para se pedir ajuda:
-
-- Help/documentação do R (comandos `help(nome_da_funcao)` ou `?nome_da_funcao`)
-- Google
-- Stack Overflow
-- Coleguinha
-
-A busca por ajuda é feita preferencialmente, mas não necessariamente, na ordem acima.
-
-### Documentação do R
-
-A documentação do R serve para você aprender a usar uma determinada função.
-
-
-```r
-?mean
-help(mean)
-```
-
-Cinco dicas:
-
-- Os exemplos no final são particularmente úteis.
-- Atente-se na seção **Usage** para ter noção de como usar.
-- Os parâmetros estão descritos em **Arguments**. Identifique quais tipos de objetos eles recebem.
-- Caso essa função não atenda às suas necessidades, a seção **See Also** sugere funções relacionadas.
-- Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`.
-
-### Google
-
-Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente jogando o copiar/colar do seu erro no Google. Essa deve ser sua primeira tentativa!
-
-Exemplo (repare no 'r' adicionado na busca, também ajuda):
-
-
-```r
-log("5")
-## Error in log("5"): non-numeric argument to mathematical function
-```
-
-![](figures/ajuda_google.png)
-
-### Stack Overflow
-
-O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários como diferencial no currículo!
-
-Provavelmente, o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
-
-**Um ponto importante:** como fazer uma **boa** pergunta no Stack Overflow?
-
-No site, tem um tutorial com uma lista de boas práticas, [que se encontra aqui](http://pt.stackoverflow.com/help/how-to-ask). Algumas dicas são
-
-- ser conciso;
-- ser específico;
-- ter mente aberta; e
-- ser gentil.
-
-Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: **exemplinho minimal e reprodutível**.
-
-- Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para gerar o seu problema. Não precisa de banco de dados de um milhão de linhas e nem colocar o seu código inteiro para mostrar seu problema.
-
-- Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
 
 --------------------------------------------------------------------------------
 
