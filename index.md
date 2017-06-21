@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-06-17'
+date: '2017-06-21'
 ---
 
 
@@ -13,6 +13,7 @@ A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da t
 
 Quando o aprendizado não for muito intuitivo ou a utilização de uma função for muito complicada, demandando às vezes conhecimento de Estatística ou Programação, você pode acabar precisando de uma forcinha. Felizmente, a comunidade R é bem ativa, e há várias formas de se conseguir ajuda. Nesta seção, vamos listar algumas dessas maneiras. Em seguida, faremos uma introdução ao RStudio, mostrando as suas principais funcionalidades. Então começaremos a conhecer o R, explorando diversos conceitos básicos.
 
+--------------------------------------------------------------------------------
 
 
 
@@ -64,9 +65,9 @@ log("5")
 
 ### Stack Overflow
 
-O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários como diferencial no currículo!
+O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e o R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários como diferencial no currículo!
 
-Provavelmente, o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
+Provavelmente o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
 
 **Um ponto importante**: como fazer uma **boa** pergunta no Stack Overflow?
 
@@ -83,15 +84,13 @@ Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de t
 
 - Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
 
---------------------------------------------------------------------------------
-
 
 
 ## RStudio
 
-O RStudio é o melhor ambiente de desenvolvimento de R disponível. Você pode [baixá-lo aqui](https://www.rstudio.com/products/rstudio/download/preview/).
+O RStudio é o melhor ambiente de desenvolvimento de códigos em R disponível. Você pode [baixá-lo aqui](https://www.rstudio.com/products/rstudio/download/preview/).
 
-Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo, [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos. Uma estrutura sugerida para a organização de um projeto é:
+Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo, [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e *workspace*. A seguir, apresentamos algumas estruturas para a organização de um projeto.
 
 **Estrutura 1**. Por extensão de arquivo.
 
@@ -139,22 +138,41 @@ Ao abrir o RStudio, você verá 4 quadrantes. Observe a figura abaixo.
 
 ![](figures/rstudio-editor.png)
 
-Esses quadrantes representam o **editor**, o **console**, o **environment** e o **output**.  Eles vêm nesta ordem, e depois você pode organizá-los da forma que preferir. O R vive no quadrante **console**!
+Esses quadrantes representam o **editor**, o **console**, o **environment** e o **output**.  Eles vêm nesta ordem, e depois você pode organizá-los da forma que preferir.
+
+Listamos abaixo as funções dos principais paineis:
+
+- **Editor/Scripts**: é onde escrevemos nossos códigos.
+- **Console**: é onde rodamos o código e recebemos as saídas. O R vive aqui!
+- **Environment**: painel com todos os objetos criados na sessão.
+- **Files**: mostra os arquivos no diretório de trabalho. É possível navegar entre diretórios.
+- **Plots**: painel onde os gráficos serão apresentados.
+- **Help**: janela onde a documentação das funções serão apresentadas.
+- **History**: painel com um histórico dos comandos rodados.
+
+Saber atalhos ajuda bastante quando estamos programando no RStudio. Veja os principais:
+
+- **CTRL+ENTER**: roda a linha selecionada no script. Os atalhos mais utilizado.
+- **ALT+-**: (<-) sinal de atribuição. Você usará o tempo todo.
+- **CTRL+SHIFT+M**: (%>%) operador *pipe*. Guarde esse atalho, você usará bastante.
+- **CTRL+1**: altera cursor para o script.
+- **CTRL+2**: altera cursor para o console.
+- **CTRL+ALT+I**: cria um chunk no R Markdown.
+- **ALT+SHIFT+K**: janela com todos os atalhos disponíveis.
 
 --------------------------------------------------------------------------------
 
 
 
-## RMarkdown
+## R Markdown
 
-O RMarkdown é um tipo de documento especial que contém tanto textos quanto códigos de R, tudo escrito em um mesmo lugar. 
+O R Markdown é um tipo de documento especial que contém tanto textos quanto códigos em R, tudo escrito no mesmo lugar. 
 
 O *markdown* nada mais é do que um documento de texto com alguns padrões básicos de formatação, como negrito, itálico, títulos, subtítulos, itens e referências cruzadas. Já os *chunks* são pedaços de códigos em R encapsulados por três crases (```). Os códigos são executados sempre que o documento é processado.
 
 
 ```
 ## ```{r}
-## 
 ## isto é um chunk. 
 ## ```
 ```
@@ -164,18 +182,18 @@ O *markdown* nada mais é do que um documento de texto com alguns padrões bási
 Nota
 </p>
 <p>
-Este site foi escrito em RMarkdown. Toda vez que aparecer exemplos de código de R é porque havia um chunk no .Rmd original.
+Este site foi escrito em R Markdown. Toda vez que aparecer exemplos de código de R, havia um chunk no .Rmd original.
 </p>
 </div>
 
-Para produção de relatórios, o RMarkdown possui algumas vantagens, como:
+Para produção de relatórios, o R Markdown possui algumas vantagens, como:
 
 1. **Simplicidade e foco**. Permite ao usuário o foco na análise e não na formatação do documento.
 1. **Versátil**. Pode ser utilizado para gerar documentos em $\LaTeX$, `Word`, `HTML` e apresentações em `beamer`, `pptx` e `HTML` (de vários tipos). Pode ainda gerar sites, livros, dissertações de mestrado e até mesmo dashboards interativos.
-1. **Reprodutível**. O RMarkdown nada mais é que um arquivo de texto. Além disso, ele tenta te obrigar a fazer o documento mais autocontido possível. Assim, um documento `.Rmd` é fácil de compartilhar e de ser utilizado pelo receptor. Lembre-se, o receptor pode ser o futuro você! Vale enfatizar que a reprodutibilidade é considerada como um dos princípios fundamentais da ciência. Então, só de usar RMarkdown, você já está colaborando com a ciência. :)
-1. **Flexível**. É possível configurar e criar templates de análises para quaisquer tipos de aplicações e clientes. Os textos podem ser parametrizados por números que variam de versão para versão, mensalmente, por exemplo, tudo escrito somente em R. 
+1. **Reprodutível**. O R Markdown nada mais é que um arquivo de texto. Além disso, ele tenta te obrigar a fazer o documento mais autocontido possível. Assim, um documento `.Rmd` é fácil de compartilhar e de ser utilizado pelo receptor. Lembre-se, o receptor pode ser o futuro você! Vale enfatizar que a reprodutibilidade é considerada como um dos princípios fundamentais da ciência. Então, só de usar R Markdown, você já está colaborando com o método científico. :)
+1. **Flexível**. É possível configurar e criar *templates* de análises para quaisquer tipos de aplicações e clientes. Os textos podem ser parametrizados por números que variam de versão para versão, mensalmente, por exemplo, tudo escrito somente em R. 
 
-Criar um RMarkdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione RMarkdown.
+Criar um R Markdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione R Markdown.
 
 
 ```r
@@ -184,7 +202,7 @@ knitr::include_graphics("figures/criar_rmarkdown.png")
 
 ![plot of chunk unnamed-chunk-22](figures/criar_rmarkdown.png)
 
-Para detalhes sobre como utilizar o RMarkdown, leia  [aqui](http://r4ds.had.co.nz/r-markdown.html) e [ aqui](http://rmarkdown.rstudio.com/lesson-1.html).
+Para detalhes sobre como utilizar o R Markdown, leia o  [r4ds](http://r4ds.had.co.nz/r-markdown.html) e [o tutorial do RStudio](http://rmarkdown.rstudio.com/lesson-1.html).
 
 --------------------------------------------------------------------------------
 
