@@ -11,24 +11,32 @@ Pelo console, é possível executar qualquer comando do R.
 ```
 
 Esse comando é uma forma simplificada de criar um vetor de inteiros de 1 a 30.
-Os números que aparecem entre colchetes ([1] e [24]) indicam o índice do primeiro elemento impresso nessa linha.
+Os números que aparecem entre colchetes ([1] e [24]) indicam o índice do primeiro elemento impresso em cada linha.
 
 <div class='admonition note'>
 <p class='admonition-title'>
 Quando compilamos?
 </p>
 <p>
-Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código de máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
+Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
 </p>
 </div>
 
-Tente jogar no console `2 * 2 - (4 + 4) / 2`. Pronto! Com essa simples expressão você já é capaz de imaginar (certeiramente) como pedir ao R para fazer qualquer tipo de operação aritmética. Lição aprendida!
+Tente jogar no console `2 * 2 - (4 + 4) / 2`. Pronto! Com essa simples expressão você já é capaz de pedir ao R para fazer qualquer uma das quatro operações aritméticas básicas. A seguir, apresentamos uma lista resumindo como fazer as principais operações no R.
+
+```{r}
+1 + 1    # adição
+4 - 2    # subtração
+2 * 3    # multiplicação
+5 / 3    # divisão
+4 ^ 2    # potência
+5 %% 3   # resto da divisão de 5 por 3
+5 %/% 3  # parte inteira da divisão de 5 por 3
+```
 
 Além do mais, as operações e suas precedências são mantidas como na matemática, ou seja, divisão e multiplicação são calculadas antes da adição e subtração. E os parênteses nunca são demais!
 
-Agora que você já conhece o RStudio, digite a expressão `2 * 2 - (4 + 4) / 2` no
-**console** e tecle `Enter`. Uma outra forma de chamar uma expressão é escrever
-o código no **editor** e teclar `Ctrl + Enter` ou `Ctrl + R`. Assim, o comando é enviado para o **console**, onde é diretamente executado.
+Uma outra forma de executar uma expressão é escrever o código no **editor** e teclar `Ctrl + Enter` ou `Ctrl + R`. Assim, o comando é enviado para o **console**, onde é diretamente executado.
 
 Se você digitar um comando incompleto, como `5 + `, e apertar `Enter`, o R mostrará um `+`, o que não tem nada a ver com somar alguma coisa. Isso significa que o R está esperando que você complete o seu comando. Termine o seu comando ou aperte `Esc` para recomeçar.
 
@@ -39,7 +47,11 @@ Se você digitar um comando incompleto, como `5 + `, e apertar `Enter`, o R most
 [1] 0
 ```
 
-Se você digitar um comando que o R não reconhece, ele retornará uma mensagem de erro. NÃO ENTRE EM PÂNICO! Ele só está avisando que não conseguiu interpretar o comando. Você pode digitar outro comando normalmente em seguida.
+Se você digitar um comando que o R não reconhece, ele retornará uma mensagem de erro. 
+
+NÃO ENTRE EM PÂNICO! 
+
+Ele só está avisando que não conseguiu interpretar o comando. Você pode digitar outro comando normalmente em seguida.
 
 ```
 > 5 % 5

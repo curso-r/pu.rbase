@@ -4,7 +4,7 @@ author: "Athos Petri Damiani, William Amorim"
 
 ## RStudio
 
-O RStudio é o melhor ambiente de desenvolvimento de códigos em R disponível. Você pode [baixá-lo aqui](https://www.rstudio.com/products/rstudio/download/preview/).
+O RStudio é o melhor ambiente de desenvolvimento de códigos em R disponível. Você pode baixá-lo [neste link](https://www.rstudio.com/products/rstudio/download/preview/).
 
 Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo, [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e *workspace*. A seguir, apresentamos algumas estruturas para a organização de um projeto.
 
@@ -63,7 +63,7 @@ Listamos abaixo as funções dos principais paineis:
 - **Help**: janela onde a documentação das funções serão apresentadas.
 - **History**: painel com um histórico dos comandos rodados.
 
-Saber atalhos ajuda bastante quando estamos programando no RStudio. Veja os principais:
+Conhecer atalhos ajuda bastante quando estamos programando no RStudio. Veja os principais:
 
 - **CTRL+ENTER**: roda a linha selecionada no script. Os atalhos mais utilizado.
 - **ALT+-**: (<-) sinal de atribuição. Você usará o tempo todo.
