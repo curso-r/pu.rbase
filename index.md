@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-06-21'
+date: '2017-06-22'
 ---
 
 
@@ -84,11 +84,13 @@ Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de t
 
 - Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
 
+--------------------------------------------------------------------------------
+
 
 
 ## RStudio
 
-O RStudio é o melhor ambiente de desenvolvimento de códigos em R disponível. Você pode [baixá-lo aqui](https://www.rstudio.com/products/rstudio/download/preview/).
+O RStudio é o melhor ambiente de desenvolvimento de códigos em R disponível. Você pode baixá-lo [neste link](https://www.rstudio.com/products/rstudio/download/preview/).
 
 Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo, [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e *workspace*. A seguir, apresentamos algumas estruturas para a organização de um projeto.
 
@@ -150,7 +152,7 @@ Listamos abaixo as funções dos principais paineis:
 - **Help**: janela onde a documentação das funções serão apresentadas.
 - **History**: painel com um histórico dos comandos rodados.
 
-Saber atalhos ajuda bastante quando estamos programando no RStudio. Veja os principais:
+Conhecer atalhos ajuda bastante quando estamos programando no RStudio. Veja os principais:
 
 - **CTRL+ENTER**: roda a linha selecionada no script. Os atalhos mais utilizado.
 - **ALT+-**: (<-) sinal de atribuição. Você usará o tempo todo.
@@ -200,9 +202,73 @@ Criar um R Markdown novo no RStudio é fácil. Clique no botão de criar arquivo
 knitr::include_graphics("figures/criar_rmarkdown.png")
 ```
 
-![plot of chunk unnamed-chunk-22](figures/criar_rmarkdown.png)
+![plot of chunk unnamed-chunk-21](figures/criar_rmarkdown.png)
 
 Para detalhes sobre como utilizar o R Markdown, leia o  [r4ds](http://r4ds.had.co.nz/r-markdown.html) e [o tutorial do RStudio](http://rmarkdown.rstudio.com/lesson-1.html).
+
+--------------------------------------------------------------------------------
+
+
+
+## Instalar pacotes
+
+O grande trunfo do R são seus pacotes. Assim, fique bastante à vontade para instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.
+
+Existem três principais maneiras de instalar pacotes. Em ordem de frequência, são:
+
+- Via CRAN (Comprehensive R Archive Network): `install.packages("nome-do-pacote")`.
+- Via Github: `devtools::install_github("nome-do-repo/nome-do-pacote")`.
+- Via arquivo .zip/.tar.gz: `install.packages("C:/caminho/nome-do-pacote.zip", repos = NULL)`.
+
+### Via CRAN
+
+Instale pacotes que não estão na sua biblioteca usando a função `install.packages("nome_do_pacote")`. Por exemplo:
+
+
+```r
+install.packages("magrittr")
+```
+
+
+
+E, de agora em diante, não precisa mais instalar. Basta carregar o pacote com `library(magrittr)`.
+
+<div class='admonition note'>
+<p class='admonition-title'>
+Dica!
+</p>
+<p>
+Escreva nome_do_pacote::nome_da_funcao() se quiser usar apenas uma função de um determinado pacote. O operador :: serve para isso. Essa forma também é útil quando se tem duas funções com o mesmo nome e precisamos garantir que o código vá usar a função do pacote correto.
+</p>
+</div>
+
+### Via Github
+
+Desenvolvedores costumam disponibilizar a última versão de seus pacotes no Github, e alguns deles sequer estão no CRAN. Mesmo assim ainda é possível utilizá-los instalando diretamente pelo github. O comando é igualmente simples:
+
+
+```r
+devtools::install_github("rstudio/shiny")
+```
+
+Apenas será necessário o username e o nome do repositório (que geralmente tem o mesmo nome do pacote). No exemplo, o username foi "rstudio" e o repositório foi "shiny". 
+
+Se você não é familiar com o github, não se preocupe! Os pacotes disponibilizados na plataforma geralmente têm um `README` cuja primeira instrução é sobre a instalação. Se não tiver, provavelmente este pacote não te merece! =)
+
+### Via arquivo .zip/.tar.gz
+
+Se você precisar instalar um pacote que está zipado no seu computador (ou em algum servidor), utilize o seguinte comando:
+
+
+```r
+install.packages("C:/caminho/para/o/arquivo/zipapo/nome-do-pacote.zip", repos = NULL)
+```
+
+É semelhante a instalar pacotes via CRAN, com a diferença que agora o nome do pacote é o caminho inteiro até o arquivo. O parâmetro `repos = NULL` informa que estamos instalando a partir da máquina local.
+
+A aba ***Packages*** do RStudio também ajuda a administrar os seus pacotes.
+
+![](figures/instalar_pacote_rstudio.png)
 
 --------------------------------------------------------------------------------
 
@@ -220,24 +286,40 @@ Pelo console, é possível executar qualquer comando do R.
 ```
 
 Esse comando é uma forma simplificada de criar um vetor de inteiros de 1 a 30.
-Os números que aparecem entre colchetes ([1] e [24]) indicam o índice do primeiro elemento impresso nessa linha.
+Os números que aparecem entre colchetes ([1] e [24]) indicam o índice do primeiro elemento impresso em cada linha.
 
 <div class='admonition note'>
 <p class='admonition-title'>
 Quando compilamos?
 </p>
 <p>
-Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código de máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
+Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
 </p>
 </div>
 
-Tente jogar no console `2 * 2 - (4 + 4) / 2`. Pronto! Com essa simples expressão você já é capaz de imaginar (certeiramente) como pedir ao R para fazer qualquer tipo de operação aritmética. Lição aprendida!
+Tente jogar no console `2 * 2 - (4 + 4) / 2`. Pronto! Com essa simples expressão você já é capaz de pedir ao R para fazer qualquer uma das quatro operações aritméticas básicas. A seguir, apresentamos uma lista resumindo como fazer as principais operações no R.
+
+
+```r
+1 + 1    # adição
+## [1] 2
+4 - 2    # subtração
+## [1] 2
+2 * 3    # multiplicação
+## [1] 6
+5 / 3    # divisão
+## [1] 1.666667
+4 ^ 2    # potência
+## [1] 16
+5 %% 3   # resto da divisão de 5 por 3
+## [1] 2
+5 %/% 3  # parte inteira da divisão de 5 por 3
+## [1] 1
+```
 
 Além do mais, as operações e suas precedências são mantidas como na matemática, ou seja, divisão e multiplicação são calculadas antes da adição e subtração. E os parênteses nunca são demais!
 
-Agora que você já conhece o RStudio, digite a expressão `2 * 2 - (4 + 4) / 2` no
-**console** e tecle `Enter`. Uma outra forma de chamar uma expressão é escrever
-o código no **editor** e teclar `Ctrl + Enter` ou `Ctrl + R`. Assim, o comando é enviado para o **console**, onde é diretamente executado.
+Uma outra forma de executar uma expressão é escrever o código no **editor** e teclar `Ctrl + Enter` ou `Ctrl + R`. Assim, o comando é enviado para o **console**, onde é diretamente executado.
 
 Se você digitar um comando incompleto, como `5 + `, e apertar `Enter`, o R mostrará um `+`, o que não tem nada a ver com somar alguma coisa. Isso significa que o R está esperando que você complete o seu comando. Termine o seu comando ou aperte `Esc` para recomeçar.
 
@@ -248,7 +330,11 @@ Se você digitar um comando incompleto, como `5 + `, e apertar `Enter`, o R most
 [1] 0
 ```
 
-Se você digitar um comando que o R não reconhece, ele retornará uma mensagem de erro. NÃO ENTRE EM PÂNICO! Ele só está avisando que não conseguiu interpretar o comando. Você pode digitar outro comando normalmente em seguida.
+Se você digitar um comando que o R não reconhece, ele retornará uma mensagem de erro. 
+
+NÃO ENTRE EM PÂNICO! 
+
+Ele só está avisando que não conseguiu interpretar o comando. Você pode digitar outro comando normalmente em seguida.
 
 ```
 > 5 % 5
@@ -258,167 +344,6 @@ Error: unexpected input in "5 % 5"
 ```
 
 --------------------------------------------------------------------------------
-
-
-
-## Instalar pacotes
-
-O grande trunfo do R são seus pacotes. Assim, fique bastante à vontade para instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.
-
-Existem três principais maneiras de instalar pacotes. Em ordem de frequência, são:
-
-- Via CRAN (Comprehensive R Archive Network): `install.packages("magrittr")`.
-- Via Github: `devtools::install_github("rstudio/shiny")`.
-- Via arquivo .zip/.tar.gz: `install.packages("C:/caminho/pacote.zip", repos = NULL)`.
-
-### Via CRAN
-
-Instale pacotes que não estão na sua biblioteca usando a função `install.packages("nome_do_pacote")`. Por exemplo:
-
-
-```r
-install.packages("magrittr")
-```
-
-
-
-E, de agora em diante, basta carregar o pacote com `library(magrittr)`. Não precisa mais instalar.
-
-<div class='admonition note'>
-<p class='admonition-title'>
-Dica!
-</p>
-<p>
-Escreva `nome_do_pacote::nome_da_funcao()` se quiser usar apenas uma função de um determinado pacote. O operador `::` serve para isso. Essa forma também é útil quando se tem duas funções com o mesmo nome, e precisamos garantir que o código vá usar a função do pacote correto.
-</p>
-</div>
-
-### Via Github
-
-Desenvolvedores costumam disponibilizar a última versão de seus pacotes no Github, e alguns deles sequer estão no CRAN. Mesmo assim ainda é possível utilizá-los instalando diretamente pelo github. O comando é igualmente simples:
-
-
-```r
-devtools::install_github("rstudio/shiny")
-```
-
-Apenas será necessário o username e o nome do repositório. No exemplo, o username foi "rstudio" e o pacote foi "shiny". 
-
-Não se preocupe! Os pacotes disponibilizados no github geralmente têm um `README` cuja primeira instrução é sobre a instalação. Se não tiver, provavelmente este pacote não te merece! =)
-
-### Via arquivo .zip/.tar.gz
-
-Se você precisar instalar um pacote que está zipado no seu computador (ou em algum servidor), utilize o seguinte comando:
-
-
-```r
-install.packages("C:/caminho/para/o/arquivo/zipapo/pacote.zip", repos = NULL)
-```
-
-É semelhante a instalar pacotes via CRAN, com a diferença que agora o nome do pacote é o caminho inteiro até o arquivo. O parâmetro `repos = NULL` informa que estamos instalando a partir da máquina local.
-
-A aba ***Packages*** do RStudio também ajuda a administrar os seus pacotes.
-
-![](figures/instalar_pacote_rstudio.png)
-
---------------------------------------------------------------------------------
-
-
-
-## Controles de Fluxo
-
-Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else`'s, `for`'s, `while`'s etc. Esses **controles de fluxo** são importantes na hora de programar. 
-
-### IF e ELSE
-
-O seguinte trecho de código só será executado se o objeto `x` for igual a 1.
-
-
-```r
-x <- 2
-if(x == 1) {
-  print("oi")
-}
-```
-
-
-```r
-x <- 1
-if(x == 1) {
-  print("oi")
-}
-## [1] "oi"
-```
-
-O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
-
-A sintaxe com o `else` e o `if else` é
-
-
-```r
-if(<condição1>) {
-  
-} else if (<condição2>) {
-  
-} else if (<condição3>) {
-  
-} else {
-  
-}
-```
-
-<div class='admonition note'>
-<p class='admonition-title'>
-Diferença entre SQL e R nas comparações lógicas
-</p>
-<p>
-<b>Igualdade</b> no SQL é só um sinal de igual: <2 = 1. No R são dois: 2 == 1.
-<br>
-<b>Diferença</b> O teste de diferente no R é != ao invés de de <>.
-<br>
-<b>Negação</b> ao invés de usar a palavra "not" igual ao SQL, usamos !. Por exemplo, "entidade_id not in ('100515')" fica "!entidade_id %in% c('100515')".
-</p>
-</div>
-
-
-### for
-
-Sintaxe do `for`:
-
-
-```r
-for(contador in 1:5){
-  # várias coisas...
-  print(contador)
-}
-## [1] 1
-## [1] 2
-## [1] 3
-## [1] 4
-## [1] 5
-```
-
-Outro exemplo:
-
-
-```r
-vetor <- 30:35
-indices <- seq_along(vetor)
-for(i in indices){
-  print(vetor[1:i] / 2)
-}
-## [1] 15
-## [1] 15.0 15.5
-## [1] 15.0 15.5 16.0
-## [1] 15.0 15.5 16.0 16.5
-## [1] 15.0 15.5 16.0 16.5 17.0
-## [1] 15.0 15.5 16.0 16.5 17.0 17.5
-```
-
-No trecho de código acima, preste atenção no resultado individual de cada uma das operações para entender como o R funciona.
-
---------------------------------------------------------------------------------
-
 
 
 
@@ -794,6 +719,138 @@ str(iris)
 
 
 
+## Controles de Fluxo
+
+Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else`'s, `for`'s, `while`'s etc. Esses **controles de fluxo** são importantes na hora de programar. 
+
+### IF e ELSE
+
+O seguinte trecho de código só será executado se o objeto `x` for igual a 1. Repare que a condição de igualdade é representada por dois iguais (==).
+
+
+```r
+x <- 2
+
+if(x == 1) {         
+  Sys.time()      # Devolve a data/hora no momento da execução.
+}
+```
+
+
+
+```r
+x <- 1
+
+if(x == 1) {
+  Sys.time()
+}
+## [1] "2017-06-22 00:45:40 UTC"
+```
+
+O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
+
+A sintaxe com o `else` e o `if else` é
+
+
+```r
+if(x < 0) {
+  
+  sinal <- "negativo"
+  
+} else if(x == 0) {
+  
+  sinal <- "neutro"
+  
+} else if(x > 0) {
+  
+  sinal <- "positivo"
+}
+
+sinal
+## [1] "positivo"
+```
+
+<div class='admonition note'>
+<p class='admonition-title'>
+Diferença entre SQL e R nas comparações lógicas
+</p>
+<p>
+<b>Igualdade</b>: no SQL é só um sinal de igual: <2 = 1. No R são dois: 2 == 1.
+<br>
+<b>Diferença</b>: teste de diferente no R é != em vez de de <>.
+<br>
+<b>Negação</b>: em vez de usar a palavra "not" igual ao SQL, usamos !. Por exemplo, "entidade_id not in ('100515')" fica "!entidade_id %in% c('100515')".
+</p>
+</div>
+
+
+### for
+
+Vamos usar o `for` para somar todos os elementos de um vetor.
+
+
+```r
+
+x <- 1:10   # Cria um vetor com a sequência 1, 2, ..., 10.
+soma <- 0
+
+for(i in 1:10) {
+  soma <- soma + x[i]
+}
+
+soma
+## [1] 55
+```
+
+De forma equivalente, podemos usar diretamente a função `sum()`.
+
+
+```r
+sum(x)
+## [1] 55
+```
+
+Agora, vamos imprimir na tela o resultado da divisão de cada elemento de um vetor por dois. Para isso, utilizaremos a função `print()`.
+
+
+```r
+vetor <- 30:35
+indices <- seq_along(vetor) # cria o vetor de índices segundo o tamanho 
+                            # do objeto vetor.   
+for(i in indices) {
+  print(vetor[1:i] / 2)
+}
+## [1] 15
+## [1] 15.0 15.5
+## [1] 15.0 15.5 16.0
+## [1] 15.0 15.5 16.0 16.5
+## [1] 15.0 15.5 16.0 16.5 17.0
+## [1] 15.0 15.5 16.0 16.5 17.0 17.5
+```
+
+No trecho de código acima, preste atenção no resultado individual de cada uma das operações para entender como o R funciona.
+
+Para finalizar, listamos na tabela abaixo os principais operadores lógicos.
+
+
+|Operador   |Descrição                                 |
+|:----------|:-----------------------------------------|
+|x < y      |x menor que y?                            |
+|x <= y     |x menor ou igual a y?                     |
+|x > y      |x maior que y?                            |
+|x >= y     |x maior ou igual a y?                     |
+|x == y     |x igual a y?                              |
+|x != y     |x diferente de y?                         |
+|!x         |Negativa de x                             |
+|x &#124; y |x ou y são verdadeiros?                   |
+|x & y      |x e y são verdadeiros?                    |
+|xor(x, y)  |x ou y são verdadeiros (apenas um deles)? |
+
+--------------------------------------------------------------------------------
+
+
+
+
 ## Funções
 
 O R vem com muitas funções implementadas com as quais você pode fazer muitas  tarefas complicadas, como gerar números aleatórios. Geralmente, o nome das funções é bem intuitivo, por exemplo, `mean` é a função que calcula a média, `round` é a função que arredonda um número etc.
@@ -856,131 +913,6 @@ O [Advanced-R](http://adv-r.had.co.nz/) é um excelente livro para quem quiser m
 
 
 
-## Gráficos (base)
-
-O R já vem com funções básicas que fazem gráficos estatísticos de todas as naturezas. 
-
-- Vantagens: são rápidas e simples.
-- Desvantagens: são feias e difíceis para gerar gráficos complexos.
-
-### Gráfico de dispersão
-
-**Funçăo** `plot()`
-
-Parâmetros principais (ver `help(hist)` para mais detalhes):
-
-- `x`, `y` - Vetores para representarem os eixos x e y.
-- `type` -  Tipo de gráfico. Pode ser pontos, linhas, escada etc.
-
-<div class='admonition note'>
-<p class='admonition-title'>
-Atenção!
-</p>
-<p> 
-Além de gerar gráficos de dispersão, tentar chamar a função <b>plot(objeto_diferentao)<b> para qualquer tipo de objeto do R geralmente sai um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um <b>data.frame<b> com milhares de colunas!!!
-</p>
-</div>
-
-
-```r
-n <- 100
-x <- 1:n
-y <- 5 + 2 * x + rnorm(n, sd = 30)
-plot(x, y)
-```
-
-![plot of chunk unnamed-chunk-58](figures//unnamed-chunk-58-1.png)
-
-O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados por linhas.
-
-
-```r
-plot(x, y, type = "l")
-```
-
-![plot of chunk unnamed-chunk-59](figures//unnamed-chunk-59-1.png)
-
-### Histograma
-
-**Funçăo** `hist()`
-
-Parâmetros principais (ver `help(hist)` para mais detalhes):
-
-- `x` - O vetor numérico pra histogramar.
-- `breaks` - O número (aproximado) de retângulos.
-
-
-```r
-hist(rnorm(1000))
-```
-
-![plot of chunk unnamed-chunk-60](figures//unnamed-chunk-60-1.png)
-
-### Boxplot
-
-**Função** `boxplot()`
-
-Parâmetros principais (ver `help(boxplot)` para mais detalhes):
-
-**Uma variável**
-
-
-```r
-boxplot(InsectSprays$count, col = "lightgray")
-```
-
-![plot of chunk unnamed-chunk-61](figures//unnamed-chunk-61-1.png)
-
-**Duas variáveis** - Usamos fórmula e o parâmetro `data`!
-
-
-```r
-boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
-```
-
-![plot of chunk unnamed-chunk-62](figures//unnamed-chunk-62-1.png)
-
-### Gráfico de barras
-
-**Função** `table()`, `barplot()`
-
-Primeiro crie uma tabela de frequências (ou qualquer outro sumário). Então crie o gráfico com `barplot()`.
-
-**Tabela com uma variável** usando `table()`.
-
-
-```r
-data(diamonds, package = "ggplot2")
-tabela <- table(diamonds$color)
-tabela
-## 
-##     D     E     F     G     H     I     J 
-##  6775  9797  9542 11292  8304  5422  2808
-barplot(tabela)
-```
-
-![plot of chunk unnamed-chunk-63](figures//unnamed-chunk-63-1.png)
-
-**Tabela com duas variáveis** em uma tabela de dupla entrada.
-
-
-```r
-VADeaths
-##       Rural Male Rural Female Urban Male Urban Female
-## 50-54       11.7          8.7       15.4          8.4
-## 55-59       18.1         11.7       24.3         13.6
-## 60-64       26.9         20.3       37.0         19.3
-## 65-69       41.0         30.9       54.6         35.1
-## 70-74       66.0         54.3       71.1         50.0
-barplot(VADeaths) 
-```
-
-![plot of chunk unnamed-chunk-64](figures//unnamed-chunk-64-1.png)
-
---------------------------------------------------------------------------------
-
-
-
 ## Fórmulas
 
 
@@ -1017,48 +949,126 @@ Demais usos de fórmulas aparecerão em outras funções (como o `ggplot`) com o
 
 
 
-## Miscelâneas
+## Gráficos (base)
 
-### Vetor de letras do alfabeto
+O R já vem com funções básicas que fazem gráficos estatísticos de todas as naturezas. 
+
+- Vantagens: são rápidas e simples.
+- Desvantagens: são feias e difíceis para gerar gráficos complexos.
+
+### Gráfico de dispersão
+
+**Funçăo** `plot()`
+
+Parâmetros principais (ver `help(hist)` para mais detalhes):
+
+- `x`, `y` - Vetores para representarem os eixos x e y.
+- `type` -  Tipo de gráfico. Pode ser pontos, linhas, escada etc.
+
+<div class='admonition note'>
+<p class='admonition-title'>
+Atenção!
+</p>
+<p> 
+Além de gerar gráficos de dispersão, tentar chamar a função <b>plot(objeto_diferentao)<b> para qualquer tipo de objeto do R geralmente sai um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um <b>data.frame<b> com milhares de colunas!!!
+</p>
+</div>
 
 
 ```r
-letters
-##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q"
-## [18] "r" "s" "t" "u" "v" "w" "x" "y" "z"
-LETTERS
-##  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q"
-## [18] "R" "S" "T" "U" "V" "W" "X" "Y" "Z"
+n <- 100
+x <- 1:n
+y <- 5 + 2 * x + rnorm(n, sd = 30)
+plot(x, y)
 ```
 
-### Operadores aritméticos
+![plot of chunk unnamed-chunk-62](figures//unnamed-chunk-62-1.png)
+
+O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados por linhas.
 
 
-|Operador      |Descrição                             |
-|:-------------|:-------------------------------------|
-|x + y         |Adição de x com y.                    |
-|x - y         |Subtração de y em x.                  |
-|x \* y        |Multiplicaçăo de x e y.               |
-|x / y         |Divisão de x por y.                   |
-|x^y ou x\*\*y |x elevado a y-ésima potência.         |
-|x%%y          |Resto da divisão de x por y (módulo). |
-|x%/%y         |Parte inteira da divisão de x por y.  |
+```r
+plot(x, y, type = "l")
+```
 
-### Operadores lógicos
+![plot of chunk unnamed-chunk-63](figures//unnamed-chunk-63-1.png)
+
+### Histograma
+
+**Funçăo** `hist()`
+
+Parâmetros principais (ver `help(hist)` para mais detalhes):
+
+- `x` - O vetor numérico pra histogramar.
+- `breaks` - O número (aproximado) de retângulos.
 
 
-|Operador   |Descrição                                 |
-|:----------|:-----------------------------------------|
-|x < y      |x menor que y?                            |
-|x <= y     |x menor ou igual a y?                     |
-|x > y      |x maior que y?                            |
-|x >= y     |x maior ou igual a y?                     |
-|x == y     |x igual a y?                              |
-|x != y     |x diferente de y?                         |
-|!x         |Negativa de x                             |
-|x &#124; y |x ou y são verdadeiros?                   |
-|x & y      |x e y são verdadeiros?                    |
-|xor(x, y)  |x ou y são verdadeiros (apenas um deles)? |
+```r
+hist(rnorm(1000))
+```
+
+![plot of chunk unnamed-chunk-64](figures//unnamed-chunk-64-1.png)
+
+### Boxplot
+
+**Função** `boxplot()`
+
+Parâmetros principais (ver `help(boxplot)` para mais detalhes):
+
+**Uma variável**
+
+
+```r
+boxplot(InsectSprays$count, col = "lightgray")
+```
+
+![plot of chunk unnamed-chunk-65](figures//unnamed-chunk-65-1.png)
+
+**Duas variáveis** - Usamos fórmula e o parâmetro `data`!
+
+
+```r
+boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
+```
+
+![plot of chunk unnamed-chunk-66](figures//unnamed-chunk-66-1.png)
+
+### Gráfico de barras
+
+**Função** `table()`, `barplot()`
+
+Primeiro crie uma tabela de frequências (ou qualquer outro sumário). Então crie o gráfico com `barplot()`.
+
+**Tabela com uma variável** usando `table()`.
+
+
+```r
+data(diamonds, package = "ggplot2")
+tabela <- table(diamonds$color)
+tabela
+## 
+##     D     E     F     G     H     I     J 
+##  6775  9797  9542 11292  8304  5422  2808
+barplot(tabela)
+```
+
+![plot of chunk unnamed-chunk-67](figures//unnamed-chunk-67-1.png)
+
+**Tabela com duas variáveis** em uma tabela de dupla entrada.
+
+
+```r
+VADeaths
+##       Rural Male Rural Female Urban Male Urban Female
+## 50-54       11.7          8.7       15.4          8.4
+## 55-59       18.1         11.7       24.3         13.6
+## 60-64       26.9         20.3       37.0         19.3
+## 65-69       41.0         30.9       54.6         35.1
+## 70-74       66.0         54.3       71.1         50.0
+barplot(VADeaths) 
+```
+
+![plot of chunk unnamed-chunk-68](figures//unnamed-chunk-68-1.png)
 
 --------------------------------------------------------------------------------
 
