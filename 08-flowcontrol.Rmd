@@ -1,0 +1,118 @@
+---
+author: "Athos Petri Damiani, William Amorim"
+---
+
+## Controles de Fluxo
+
+Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else`'s, `for`'s, `while`'s etc. Esses **controles de fluxo** são importantes na hora de programar. 
+
+### IF e ELSE
+
+O seguinte trecho de código só será executado se o objeto `x` for igual a 1. Repare que a condição de igualdade é representada por dois iguais (==).
+
+```{r}
+x <- 2
+
+if(x == 1) {         
+  Sys.time()      # Devolve a data/hora no momento da execução.
+}
+```
+
+
+```{r}
+x <- 1
+
+if(x == 1) {
+  Sys.time()
+}
+```
+
+O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
+
+A sintaxe com o `else` e o `if else` é
+
+```{r}
+if(x < 0) {
+  
+  sinal <- "negativo"
+  
+} else if(x == 0) {
+  
+  sinal <- "neutro"
+  
+} else if(x > 0) {
+  
+  sinal <- "positivo"
+}
+
+sinal
+
+```
+
+<div class='admonition note'>
+<p class='admonition-title'>
+Diferença entre SQL e R nas comparações lógicas
+</p>
+<p>
+<b>Igualdade</b>: no SQL é só um sinal de igual: <2 = 1. No R são dois: 2 == 1.
+<br>
+<b>Diferença</b>: teste de diferente no R é != em vez de de <>.
+<br>
+<b>Negação</b>: em vez de usar a palavra "not" igual ao SQL, usamos !. Por exemplo, "entidade_id not in ('100515')" fica "!entidade_id %in% c('100515')".
+</p>
+</div>
+
+
+### for
+
+Vamos usar o `for` para somar todos os elementos de um vetor.
+
+```{r}
+
+x <- 1:10   # Cria um vetor com a sequência 1, 2, ..., 10.
+soma <- 0
+
+for(i in 1:10) {
+  soma <- soma + x[i]
+}
+
+soma
+```
+
+De forma equivalente, podemos usar diretamente a função `sum()`.
+
+```{r}
+sum(x)
+```
+
+Agora, vamos imprimir na tela o resultado da divisão de cada elemento de um vetor por dois. Para isso, utilizaremos a função `print()`.
+
+```{r}
+vetor <- 30:35
+indices <- seq_along(vetor) # cria o vetor de índices segundo o tamanho 
+                            # do objeto vetor.   
+for(i in indices) {
+  print(vetor[1:i] / 2)
+}
+```
+
+No trecho de código acima, preste atenção no resultado individual de cada uma das operações para entender como o R funciona.
+
+Para finalizar, listamos na tabela abaixo os principais operadores lógicos.
+
+```{r, echo=FALSE}
+op_logico <- data.frame(
+  "Operador" = c("x < y", "x <= y", "x > y", "x >= y", 
+                 "x == y", "x != y", "!x", "x | y ", 
+                 "x & y", "xor(x, y)"),
+  "Descrição" = c("x menor que y?", "x menor ou igual a y?", 
+                  "x maior que y?", "x maior ou igual a y?", 
+                  "x igual a y?", "x diferente de y?", 
+                  "Negativa de x", "x ou y são verdadeiros?", 
+                  "x e y são verdadeiros?", 
+                  "x ou y são verdadeiros (apenas um deles)?"))
+knitr::kable(op_logico)
+```
+
+--------------------------------------------------------------------------------
+
