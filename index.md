@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-06-22'
+date: '2017-06-27'
 ---
 
 
@@ -349,6 +349,10 @@ Error: unexpected input in "5 % 5"
 
 ## Objetos
 
+O R te permite salvar dados dentro de um objeto. Para isso, utilizamos o operador `<-`.
+
+No exemplo abaixo, salvamos o valor 1 em `a`. Sempre que o R encontrar o símbolo `a`, ele vai substituí-lo por 1.
+
 
 ```r
 a <- 1
@@ -356,28 +360,91 @@ a
 ## [1] 1
 ```
 
-O R te permite salvar dados dentro de um objeto. 
-
-No exemplo acima, salvamos o valor `1` em `a`, e sempre que o R encontrar o nome `a` ele vai substituir por `1`.
 
 <div class='admonition note'>
 <p class='admonition-title'>
 Atenção!
 </p>
 <p>
-O R entende letras maiúsculas e minúsculas, isto é <b>a</b> é considerado um objeto diferente de <b>A</b>.
+O R diferencia letras maiúsculas e minúsculas, isto é, <b>a</b> é considerado um objeto diferente de <b>A</b>.
 </p>
 </div>
 
 ### Objetos atômicos
 
-Existem cinco classes básicas ou "atômicas" no R:
+Existem cinco classes básicas ou “atômicas” no R:
 
-- character `"UAH!"` (é o varchar do SQL)
-- numeric `0.95` (números reais)
-- integer `100515` (inteiros)
-- complex `2 + 5i` (números complexos, a + bi)
-- logical `TRUE` (booleanos, TRUE/FALSE)
+- character 
+- numeric 
+- integer 
+- complex 
+- logical 
+
+Veja alguns exemplos:
+
+
+```r
+# characters
+
+"a"
+## [1] "a"
+"1"
+## [1] "1"
+"positivo"
+## [1] "positivo"
+"Error: objeto x não encontrado"
+## [1] "Error: objeto x não encontrado"
+
+# numeric
+
+1
+## [1] 1
+0.10
+## [1] 0.1
+0.95
+## [1] 0.95
+pi
+## [1] 3.141593
+
+# integer
+
+1L
+## [1] 1
+5L
+## [1] 5
+10L
+## [1] 10
+
+# complex (raramente utilizado para análise de dados)
+
+2 + 5i
+## [1] 2+5i
+
+# logical
+
+TRUE
+## [1] TRUE
+FALSE
+## [1] FALSE
+```
+
+
+Para saber a classe de um objetivo, você pode usar a função `class()`.
+
+
+```r
+x <- 1
+class(x)
+## [1] "numeric"
+
+y <- "a"
+class(y)
+## [1] "character"
+
+z <- TRUE
+class(z)
+## [1] "logical"
+```
 
 ### Vetores
 
@@ -385,32 +452,46 @@ Vetores no R são os objetos mais simples que podem guardar objetos atômicos.
 
 
 ```r
-vetor <- c(1, 2, 3, 4)
-class(vetor)
+vetor1 <- c(1, 2, 3, 4)
+vetor2 <- c("a", "b", "c")
+
+vetor1
+## [1] 1 2 3 4
+vetor2
+## [1] "a" "b" "c"
+```
+
+Um vetor tem sempre a mesma classe dos objetos que guarda.
+
+
+```r
+class(vetor1)
 ## [1] "numeric"
+class(vetor2)
+## [1] "character"
 ```
 
 De forma bastante intuitiva, você pode fazer operações com vetores.
 
 
 ```r
-vetor - 1
+vetor1 - 1
 ## [1] 0 1 2 3
 ```
 
-Quando você faz `vetor - 1`, o R subtrai `1` de cada um dos elementos do vetor. O mesmo acontece quando você faz qualquer operação aritmética com vetores no R. Tente jogar o código abaixo no console.
+Quando você faz `vetor1 - 1`, o R subtrai `1` de cada um dos elementos do vetor. O mesmo acontece quando você faz qualquer operação aritmética com vetores no R.
 
 
 ```r
-vetor / 2
-vetor * 10
+vetor1 / 2
+vetor1 * 10
 ```
 
 Você também pode fazer operações que envolvem mais de um vetor:
 
 
 ```r
-vetor * vetor
+vetor1 * vetor1
 ## [1]  1  4  9 16
 ```
 
@@ -420,14 +501,10 @@ Neste caso, o R irá alinhar os dois vetores e multiplicar elemento por elemento
 ```r
 vetor2 <- 1:3
 vetor * vetor2
-## Warning in vetor * vetor2: longer object length is not a multiple of
-## shorter object length
-## [1] 1 4 9 4
+## Error in eval(expr, envir, enclos): object 'vetor' not found
 ```
 
-Agora o R alinhou os dois vetores. Como eles não possuíam o mesmo tamanho, foi repetindo o vetor menor até completar o vetor maior. 
-
-Esse comportamento é chamado de **reciclagem** e é útil para fazer operações *elemento por elemento* (vetorizadamente), mas às vezes pode ser confuso. Com o tempo, você aprenderá a se aproveitar dele.
+O R alinhou os dois vetores e, como eles não possuíam o mesmo tamanho, foi repetindo o vetor menor até completar o vetor maior. Esse comportamento é chamado de **reciclagem** e é útil para fazer operações elemento por elemento (vetorizadamente), mas às vezes pode ser confuso. Com o tempo, você aprenderá a se aproveitar dele.
 
 ### Misturando objetos
 
@@ -439,7 +516,6 @@ Vetores são homogêneos
 Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character, ou todos são lógicos etc. Não dá para ter um número e um character no mesmo vetor, por exemplo.
 </p>
 </div>
-
 
 Se colocarmos duas ou mais classes diferentes dentro de um mesmo vetor, o R vai forçar que todos os elementos passem a pertencer à mesma classe. O número `1.7` viraria `"1.7"` se fosse colocado ao lado de um `"a"`.
 
@@ -456,7 +532,7 @@ A ordem de precedência é:
 
 ### Forçando classes explicitamente
 
-Assim como o `convert()` do SQL faz, você pode coagir um objeto a ser de uma classe da sua escolha com as funções `as.character()`, `as.numeric()`, `as.integer()` e `as.logical()`. 
+Você pode coagir um objeto a ser de uma classe específica com as funções `as.character()`, `as.numeric()`, `as.integer()` e `as.logical()`. É equivalente à função `convert()` do SQL. 
 
 
 ```r
@@ -486,7 +562,7 @@ as.numeric(x)
 Observação
 </p>
 <p>
-O <b>NA</b> tem o mesmo papel que o <b>null</b> do SQL. Porém, há um <b>NULL</b> no R também, com diferenças sutis que vamos abordar mais adiante. Não confundir!
+O <b>NA</b> tem o mesmo papel que o <b>null</b> do SQL. Porém, há um <b>NULL</b> no R também, com diferenças sutis que vamos abordar mais adiante.
 </p>
 </div>
 
@@ -507,21 +583,21 @@ dim(m) # funçăo dim() retorna a dimensăo do objeto.
 
 Repare que os números de 1 a 6 foram dispostos na matriz coluna por coluna (*column-wise*), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita.
 
-**Utilidades**
+**Operações úteis**
 
 
 ```r
-m[3,  ]   # seleciona uma linha
-m[ , 2]   # seleciona uma coluna
-m[1, 2]   # seleciona um elemento
+m[3,  ]   # seleciona a terceira linha
+m[ , 2]   # seleciona a segunda coluna
+m[1, 2]   # seleciona o primeiro elemento da segunda coluna
 t(m)      # matriz transposta
 m %*% n   # multiplicação matricial
-solve(m)  # matriz inversa
+solve(m)  # matriz inversa de m
 ```
 
 ### Fatores
 
-Fatores podem ser vistos como vetores de inteiros que possuem rótulos (labels).
+Fatores podem ser vistos como vetores de inteiros que possuem rótulos (levels).
 
 
 ```r
@@ -551,26 +627,27 @@ A ordem das categorias de um fator pode importar. Como exemplo, temos as caselas
 Um erro comum e desastroso
 </p>
 <p>
-Quando um vetor de números está como <b>factor</b>, ao tentar transformar o vetor em <b>numeric</b>, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
+Quando um vetor de números está como <b>factor</b>, ao tentar transformá-lo em <b>numeric</b>, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
 </p>
 </div>
 
 
 ```r
 numeros <- factor(c("10", "55", "55", "12", "10", "-5", "-90"))
-```
 
-```
 as.numeric(numeros)
-## [1] 3 5 5 4 3 1 2    # <-- Por essa eu năo esperava!
+#Por essa eu năo esperava!
 ```
 
 Para evitar isso, use `as.character()` antes de transformar para número.
 
-```
+
+```r
 as.numeric(as.character(numeros))
-## [1]  10  55  55  12  10  -5 -90   # <-- Agora está OK
+## Error in eval(expr, envir, enclos): object 'numeros' not found
+# Agora está OK!
 ```
+
 
 ### Valores especiais
 
@@ -614,14 +691,14 @@ x
 
 É um dos objetos mais importantes para armazenar dados e vale a pena saber manuseá-los bem. Existem muitas funções que fazem das listas objetos incrivelmente úteis.
 
-Criamos uma lista pela função `list()`, que aceita um número arbitrário de elementos. Listas aceitam QUALQUER tipo de objeto. Podemos ter listas dentro de listas, por exemplo. Como para quase todos os objetos no R, as funções `is.list()` e `as.list()` também existem.
+Criamos uma lista com a função `list()`, que aceita um número arbitrário de elementos. Listas aceitam QUALQUER tipo de objeto. Podemos ter listas dentro de listas, por exemplo. Como para quase todas as classes de objetos no R, as funções `is.list()` e `as.list()` também existem.
 
 Na lista `pedido` abaixo, temos `numeric`, `Date`, `character`, vetor de `character` e `list` contida em uma lista:
 
 
 ```r
 pedido <- list(pedido_id = 8001406,
-               pedido_registro = as.Date("2016-12-12"),
+               pedido_registro = as.Date("2017-05-25"),
                nome = "Athos", 
                sobrenome = "Petri Damiani", 
                cpf = "12345678900", 
@@ -645,7 +722,7 @@ pedido <- list(pedido_id = 8001406,
 )
 ```
 
-**Utilidades**
+**Operações úteis**
 
 
 ```r
@@ -663,7 +740,7 @@ Um `data.frame` é o mesmo que uma tabela do SQL ou um spreadsheet do Excel, por
 
 Usualmente, seus dados serão importados para um objeto `data.frame`. Em grande parte do curso, eles serão o principal objeto de estudo.
 
-`data.frame`'s são listas especiais em que todos os seus elementos possuem **o mesmo comprimento**. Cada elemento dessa lista pode ser pensado como uma coluna da tabela. Seu comprimento representa o número de linhas. 
+Os `data.frame`'s são listas especiais em que todos os elementos possuem **o mesmo comprimento**. Cada elemento dessa lista pode ser pensado como uma coluna da tabela. Seu comprimento representa o número de linhas. 
 
 Já que são listas, essas colunas podem ser de classes diferentes. Essa é a grande diferença entre `data.frame`'s e matrizes. Algumas funções úteis:
 
@@ -692,27 +769,6 @@ as.data.frame(minha_lista)
 ## 1 1 a
 ## 2 2 b
 ## 3 3 c
-```
-
-#### Exemplo de data.frame: iris {-}
-
-
-```r
-head(iris)  
-##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa
-str(iris)
-## 'data.frame':	150 obs. of  5 variables:
-##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
-##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
-##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
-##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
-##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
 --------------------------------------------------------------------------------
@@ -744,7 +800,7 @@ x <- 1
 if(x == 1) {
   Sys.time()
 }
-## [1] "2017-06-22 00:45:40 UTC"
+## [1] "2017-06-27 01:21:06 UTC"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
@@ -982,7 +1038,7 @@ y <- 5 + 2 * x + rnorm(n, sd = 30)
 plot(x, y)
 ```
 
-![plot of chunk unnamed-chunk-62](figures//unnamed-chunk-62-1.png)
+![plot of chunk unnamed-chunk-65](figures//unnamed-chunk-65-1.png)
 
 O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados por linhas.
 
@@ -991,7 +1047,7 @@ O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados p
 plot(x, y, type = "l")
 ```
 
-![plot of chunk unnamed-chunk-63](figures//unnamed-chunk-63-1.png)
+![plot of chunk unnamed-chunk-66](figures//unnamed-chunk-66-1.png)
 
 ### Histograma
 
@@ -1007,7 +1063,7 @@ Parâmetros principais (ver `help(hist)` para mais detalhes):
 hist(rnorm(1000))
 ```
 
-![plot of chunk unnamed-chunk-64](figures//unnamed-chunk-64-1.png)
+![plot of chunk unnamed-chunk-67](figures//unnamed-chunk-67-1.png)
 
 ### Boxplot
 
@@ -1022,7 +1078,7 @@ Parâmetros principais (ver `help(boxplot)` para mais detalhes):
 boxplot(InsectSprays$count, col = "lightgray")
 ```
 
-![plot of chunk unnamed-chunk-65](figures//unnamed-chunk-65-1.png)
+![plot of chunk unnamed-chunk-68](figures//unnamed-chunk-68-1.png)
 
 **Duas variáveis** - Usamos fórmula e o parâmetro `data`!
 
@@ -1031,7 +1087,7 @@ boxplot(InsectSprays$count, col = "lightgray")
 boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 ```
 
-![plot of chunk unnamed-chunk-66](figures//unnamed-chunk-66-1.png)
+![plot of chunk unnamed-chunk-69](figures//unnamed-chunk-69-1.png)
 
 ### Gráfico de barras
 
@@ -1052,7 +1108,7 @@ tabela
 barplot(tabela)
 ```
 
-![plot of chunk unnamed-chunk-67](figures//unnamed-chunk-67-1.png)
+![plot of chunk unnamed-chunk-70](figures//unnamed-chunk-70-1.png)
 
 **Tabela com duas variáveis** em uma tabela de dupla entrada.
 
@@ -1068,7 +1124,7 @@ VADeaths
 barplot(VADeaths) 
 ```
 
-![plot of chunk unnamed-chunk-68](figures//unnamed-chunk-68-1.png)
+![plot of chunk unnamed-chunk-71](figures//unnamed-chunk-71-1.png)
 
 --------------------------------------------------------------------------------
 
