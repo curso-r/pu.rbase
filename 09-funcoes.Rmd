@@ -4,10 +4,11 @@ author: "Athos Petri Damiani"
 
 ## Funções
 
-O R vem com muitas funções implementadas com as quais você pode fazer muitas  tarefas complicadas, como gerar números aleatórios. Geralmente, o nome das funções é bem intuitivo, por exemplo, `mean` é a função que calcula a média, `round` é a função que arredonda um número etc.
+O R vem com muitas funções implementadas, com as quais você pode fazer facilmente muitas  tarefas complicadas, como gerar números aleatórios. Em geral, o nome das funções é bem intuitivo, por exemplo, `mean()` é a função que calcula a média e `round()` é a função que arredonda um número.
 
 ```{r}
-round(5.634)
+mean(1:10)
+round(pi) #Note que 'pi' é um objeto pré-definido pelo R.
 ```
 
 Para entender melhor o funcionamento das funções no R, considere o seguinte exemplo:
@@ -25,7 +26,7 @@ Passamos dados para as funções por meio de argumentos. No R, esses argumentos 
 
 ### Criando suas próprias funções
 
-Sintaxe:
+No R, você pode (e deve) criar as suas próprias funções. É uma prática que evita retrabalho, simplifica o código e, eventualmente, diminui o tempo de execução das análises. Veja abaixo um exemplo de como criar uma função.
 
 ```{r}
 soma <- function(x, y = 0) {
@@ -41,15 +42,15 @@ A função acima tem:
 - o corpo `resposta <- x + y`; e
 - o valor padrão `0` para o argumento `y` (`y = 0`).
 
-Use-a como qualquer outra função:
+Após rodar o código anterior, você pode usá-la como qualquer outra função:
 
 ```{r}
 soma(2, 1) # soma de 2 + 1
-soma(2) # soma de 2 + 0
+soma(2) # soma de 2 + 0, pois y = 0 por default.
 ```
 
 O argumento `y` possui o valor padrão `0`. Isso quer dizer que ele valerá zero caso o usuário não passe um valor explicitamente.
 
-O [Advanced-R](http://adv-r.had.co.nz/) é um excelente livro para quem quiser masterizar a arte de se fazer funções. 
+O [Advanced-R](http://adv-r.had.co.nz/) é um excelente livro para quem quiser masterizar a arte de criar funções. 
 
 --------------------------------------------------------------------------------

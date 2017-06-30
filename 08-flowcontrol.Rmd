@@ -8,7 +8,7 @@ Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else
 
 ### IF e ELSE
 
-O seguinte trecho de código só será executado se o objeto `x` for igual a 1. Repare que a condição de igualdade é representada por dois iguais (==).
+O seguinte trecho de código só será executado se o objeto `x` for igual a 1. Repare que a condição de igualdade é representada por dois iguais `==`.
 
 ```{r}
 x <- 2
