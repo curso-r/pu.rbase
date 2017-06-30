@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-06-27'
+date: '2017-06-30'
 ---
 
 
@@ -781,7 +781,7 @@ Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else
 
 ### IF e ELSE
 
-O seguinte trecho de código só será executado se o objeto `x` for igual a 1. Repare que a condição de igualdade é representada por dois iguais (==).
+O seguinte trecho de código só será executado se o objeto `x` for igual a 1. Repare que a condição de igualdade é representada por dois iguais `==`.
 
 
 ```r
@@ -800,7 +800,7 @@ x <- 1
 if(x == 1) {
   Sys.time()
 }
-## [1] "2017-06-27 01:21:06 UTC"
+## [1] "2017-06-30 21:52:43 UTC"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
@@ -909,12 +909,14 @@ Para finalizar, listamos na tabela abaixo os principais operadores lógicos.
 
 ## Funções
 
-O R vem com muitas funções implementadas com as quais você pode fazer muitas  tarefas complicadas, como gerar números aleatórios. Geralmente, o nome das funções é bem intuitivo, por exemplo, `mean` é a função que calcula a média, `round` é a função que arredonda um número etc.
+O R vem com muitas funções implementadas, com as quais você pode fazer facilmente muitas  tarefas complicadas, como gerar números aleatórios. Em geral, o nome das funções é bem intuitivo, por exemplo, `mean()` é a função que calcula a média e `round()` é a função que arredonda um número.
 
 
 ```r
-round(5.634)
-## [1] 6
+mean(1:10)
+## [1] 5.5
+round(pi) #Note que 'pi' é um objeto pré-definido pelo R.
+## [1] 3
 ```
 
 Para entender melhor o funcionamento das funções no R, considere o seguinte exemplo:
@@ -934,7 +936,7 @@ Passamos dados para as funções por meio de argumentos. No R, esses argumentos 
 
 ### Criando suas próprias funções
 
-Sintaxe:
+No R, você pode (e deve) criar as suas próprias funções. É uma prática que evita retrabalho, simplifica o código e, eventualmente, diminui o tempo de execução das análises. Veja abaixo um exemplo de como criar uma função.
 
 
 ```r
@@ -951,25 +953,27 @@ A função acima tem:
 - o corpo `resposta <- x + y`; e
 - o valor padrão `0` para o argumento `y` (`y = 0`).
 
-Use-a como qualquer outra função:
+Após rodar o código anterior, você pode usá-la como qualquer outra função:
 
 
 ```r
 soma(2, 1) # soma de 2 + 1
 ## [1] 3
-soma(2) # soma de 2 + 0
+soma(2) # soma de 2 + 0, pois y = 0 por default.
 ## [1] 2
 ```
 
 O argumento `y` possui o valor padrão `0`. Isso quer dizer que ele valerá zero caso o usuário não passe um valor explicitamente.
 
-O [Advanced-R](http://adv-r.had.co.nz/) é um excelente livro para quem quiser masterizar a arte de se fazer funções. 
+O [Advanced-R](http://adv-r.had.co.nz/) é um excelente livro para quem quiser masterizar a arte de criar funções. 
 
 --------------------------------------------------------------------------------
 
 
 
 ## Fórmulas
+
+Fórmulas são objetos do tipo `y ~ x`. Em geral, elas representam associações entre objetos, como em um modelo de regressão. As funções as usam de diversas maneiras, mas o exemplo mais emblemático vem da modelagem estatística.
 
 
 ```r
@@ -978,9 +982,7 @@ class(formula)
 ## [1] "formula"
 ```
 
-Fórmulas são coisas do tipo `y ~ x`. As funções as usam de maneiras diversas, mas o exemplo mais emblemático vem da modelagem estatística.
-
-A função `lm()` é a que ajusta uma regressão linear no R, e `lm(y ~ x)` lê-se "regressão linear de y explicada por x".
+A função `lm()` é a que ajusta um modelo linear no R, e `lm(y ~ x)` lê-se "regressão linear de y explicada por x".
 
 
 ```r
@@ -997,9 +999,9 @@ lm(minha_formula, data = iris)
 ##       3.5870       -0.2571        0.3640
 ```
 
-No caso específico das regressões lineares, são nas fórmulas que conseguimos descrever as variáveis explicativas e suas interações. A fórmula `y ~ x1 * x2` significa "y regredido por x1, x2 e a interação entre x1 e x2". Fórmulas aparecem frequentemente em tarefas de modelagem.
+No caso específico dos modelos lineares, são nas fórmulas que conseguimos descrever as variáveis explicativas e suas interações. A fórmula `y ~ x1 * x2` significa "y regredido por x1, x2 e a interação entre x1 e x2". Fórmulas aparecem frequentemente em tarefas de modelagem.
 
-Demais usos de fórmulas aparecerão em outras funções (como o `ggplot`) com outros significados, e a documentação nos dirá como usá-las.
+Demais usos de fórmulas aparecerão em outras funções, como o `ggplot`, com outros significados, e a documentação nos dirá como usá-las.
 
 --------------------------------------------------------------------------------
 
