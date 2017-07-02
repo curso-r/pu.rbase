@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-06-30'
+date: '2017-07-02'
 ---
 
 
@@ -92,7 +92,7 @@ Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de t
 
 O RStudio é o melhor ambiente de desenvolvimento de códigos em R disponível. Você pode baixá-lo [neste link](https://www.rstudio.com/products/rstudio/download/preview/).
 
-Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo, [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e *workspace*. A seguir, apresentamos algumas estruturas para a organização de um projeto.
+Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o RStudio na internet (por exemplo, [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e *workspace*. A seguir, apresentamos algumas estruturas para a organização de um projeto.
 
 **Estrutura 1**. Por extensão de arquivo.
 
@@ -142,7 +142,7 @@ Ao abrir o RStudio, você verá 4 quadrantes. Observe a figura abaixo.
 
 Esses quadrantes representam o **editor**, o **console**, o **environment** e o **output**.  Eles vêm nesta ordem, e depois você pode organizá-los da forma que preferir.
 
-Listamos abaixo as funções dos principais paineis:
+Listamos abaixo as funções dos principais painéis:
 
 - **Editor/Scripts**: é onde escrevemos nossos códigos.
 - **Console**: é onde rodamos o código e recebemos as saídas. O R vive aqui!
@@ -800,7 +800,7 @@ x <- 1
 if(x == 1) {
   Sys.time()
 }
-## [1] "2017-06-30 21:52:43 UTC"
+## [1] "2017-07-02 17:33:12 UTC"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
@@ -1001,7 +1001,7 @@ lm(minha_formula, data = iris)
 
 No caso específico dos modelos lineares, são nas fórmulas que conseguimos descrever as variáveis explicativas e suas interações. A fórmula `y ~ x1 * x2` significa "y regredido por x1, x2 e a interação entre x1 e x2". Fórmulas aparecem frequentemente em tarefas de modelagem.
 
-Demais usos de fórmulas aparecerão em outras funções, como o `ggplot`, com outros significados, e a documentação nos dirá como usá-las.
+Demais usos de fórmulas aparecerão em outras funções, como as do pacote `ggplot2`, com outros significados, e a documentação nos dirá como usá-las.
 
 --------------------------------------------------------------------------------
 
@@ -1014,21 +1014,23 @@ O R já vem com funções básicas que fazem gráficos estatísticos de todas as
 - Vantagens: são rápidas e simples.
 - Desvantagens: são feias e difíceis para gerar gráficos complexos.
 
+Nesta seção, mostraremos como construir alguns tipos de gráficos usando as funções base do R, mas [o nosso foco em visualização de dados](http://material.curso-r.com/ggplot/) está nas funções do pacote `ggplot2`.
+
 ### Gráfico de dispersão
 
-**Funçăo** `plot()`
-
-Parâmetros principais (ver `help(hist)` para mais detalhes):
+Para construir um gráfico de dispersão, utilizamos a função `plot()`. Seus principais parâmetros são:
 
 - `x`, `y` - Vetores para representarem os eixos x e y.
-- `type` -  Tipo de gráfico. Pode ser pontos, linhas, escada etc.
+- `type` -  Tipo de gráfico. Pode ser pontos, linhas, escada, entre outros.
+
+Para mais detalhes sobre os argumentos, ver `help(plot)`.
 
 <div class='admonition note'>
 <p class='admonition-title'>
-Atenção!
+Outras formas de utilizar a função plot()
 </p>
 <p> 
-Além de gerar gráficos de dispersão, tentar chamar a função <b>plot(objeto_diferentao)<b> para qualquer tipo de objeto do R geralmente sai um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um <b>data.frame<b> com milhares de colunas!!!
+Além de gerar gráficos de dispersão, tentar chamar a função <b>plot(objeto_diferentao)</b> para qualquer tipo de objeto do R geralmente gera um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um <b>data.frame<b> com milhares de colunas!
 </p>
 </div>
 
@@ -1053,11 +1055,9 @@ plot(x, y, type = "l")
 
 ### Histograma
 
-**Funçăo** `hist()`
+Para construir histogramas, utilizamos a função `hist()`. Os principais parâmetros são:
 
-Parâmetros principais (ver `help(hist)` para mais detalhes):
-
-- `x` - O vetor numérico pra histogramar.
+- `x` - O vetor numérico para o qual o histograma será construído.
 - `breaks` - O número (aproximado) de retângulos.
 
 
@@ -1067,37 +1067,42 @@ hist(rnorm(1000))
 
 ![plot of chunk unnamed-chunk-67](figures//unnamed-chunk-67-1.png)
 
+
+```r
+hist(rnorm(1000), breaks = 6)
+```
+
+![plot of chunk unnamed-chunk-68](figures//unnamed-chunk-68-1.png)
+
 ### Boxplot
 
-**Função** `boxplot()`
+Para construir histogramas, utilizamos a função `boxplot()`. Os principais parâmetros são:
 
-Parâmetros principais (ver `help(boxplot)` para mais detalhes):
-
-**Uma variável**
+- `x` - O vetor numérico para o qual o boxplot será construído.
 
 
 ```r
 boxplot(InsectSprays$count, col = "lightgray")
 ```
 
-![plot of chunk unnamed-chunk-68](figures//unnamed-chunk-68-1.png)
+![plot of chunk unnamed-chunk-69](figures//unnamed-chunk-69-1.png)
 
-**Duas variáveis** - Usamos fórmula e o parâmetro `data`!
+Observe que o argumento `col=` muda a cor da caixa do boxplot.
+
+Para mapear duas variáveis ao gráfico, utilizamos um objeto da classe `formula` e o argumento `data=`.
 
 
 ```r
 boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 ```
 
-![plot of chunk unnamed-chunk-69](figures//unnamed-chunk-69-1.png)
+![plot of chunk unnamed-chunk-70](figures//unnamed-chunk-70-1.png)
 
 ### Gráfico de barras
 
-**Função** `table()`, `barplot()`
+Para construir gráficos de barras, precisamos combinar as funções `table()` e `barplot()`.
 
-Primeiro crie uma tabela de frequências (ou qualquer outro sumário). Então crie o gráfico com `barplot()`.
-
-**Tabela com uma variável** usando `table()`.
+No gráfico abaixo, primeiro criamos uma tabela de frequências com a função `table()` e, em seguida, construímos o gráfico com a função `barplot()`. A função `data()` carrega bases de dados de pacotes instalados. Veja `help(data)` para mais detalhes.
 
 
 ```r
@@ -1110,9 +1115,9 @@ tabela
 barplot(tabela)
 ```
 
-![plot of chunk unnamed-chunk-70](figures//unnamed-chunk-70-1.png)
+![plot of chunk unnamed-chunk-71](figures//unnamed-chunk-71-1.png)
 
-**Tabela com duas variáveis** em uma tabela de dupla entrada.
+Também podemos mapear duas variáveis a um gráfico de barras utilizando tabelas de dupla entrada.
 
 
 ```r
@@ -1123,10 +1128,14 @@ VADeaths
 ## 60-64       26.9         20.3       37.0         19.3
 ## 65-69       41.0         30.9       54.6         35.1
 ## 70-74       66.0         54.3       71.1         50.0
-barplot(VADeaths) 
 ```
 
-![plot of chunk unnamed-chunk-71](figures//unnamed-chunk-71-1.png)
+
+```r
+barplot(VADeaths)
+```
+
+![plot of chunk unnamed-chunk-73](figures//unnamed-chunk-73-1.png)
 
 --------------------------------------------------------------------------------
 
