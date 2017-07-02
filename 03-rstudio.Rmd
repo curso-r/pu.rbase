@@ -6,7 +6,7 @@ author: "Athos Petri Damiani, William Amorim"
 
 O RStudio é o melhor ambiente de desenvolvimento de códigos em R disponível. Você pode baixá-lo [neste link](https://www.rstudio.com/products/rstudio/download/preview/).
 
-Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o Rstudio na internet (por exemplo, [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e *workspace*. A seguir, apresentamos algumas estruturas para a organização de um projeto.
+Muitas das ferramentas são aprendidas conforme o uso, e há bons materiais sobre o RStudio na internet (por exemplo, [esta página](https://csgillespie.github.io/efficientR/set-up.html#rstudio)). Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e *workspace*. A seguir, apresentamos algumas estruturas para a organização de um projeto.
 
 **Estrutura 1**. Por extensão de arquivo.
 
@@ -53,7 +53,7 @@ Ao abrir o RStudio, você verá 4 quadrantes. Observe a figura abaixo.
 
 Esses quadrantes representam o **editor**, o **console**, o **environment** e o **output**.  Eles vêm nesta ordem, e depois você pode organizá-los da forma que preferir.
 
-Listamos abaixo as funções dos principais paineis:
+Listamos abaixo as funções dos principais painéis:
 
 - **Editor/Scripts**: é onde escrevemos nossos códigos.
 - **Console**: é onde rodamos o código e recebemos as saídas. O R vive aqui!

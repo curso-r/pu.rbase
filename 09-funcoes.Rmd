@@ -1,5 +1,5 @@
 ---
-author: "Athos Petri Damiani"
+author: "Athos Petri Damiani, William Amorim"
 ---
 
 ## Funções
