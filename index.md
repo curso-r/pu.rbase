@@ -800,7 +800,7 @@ x <- 1
 if(x == 1) {
   Sys.time()
 }
-## [1] "2017-07-02 17:33:12 UTC"
+## [1] "2017-07-02 17:56:05 UTC"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
@@ -1030,7 +1030,7 @@ Para mais detalhes sobre os argumentos, ver `help(plot)`.
 Outras formas de utilizar a função plot()
 </p>
 <p> 
-Além de gerar gráficos de dispersão, tentar chamar a função <b>plot(objeto_diferentao)</b> para qualquer tipo de objeto do R geralmente gera um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um <b>data.frame<b> com milhares de colunas!
+Além de gerar gráficos de dispersão, tentar chamar a função <b>plot(objeto_diferentao)</b> para qualquer tipo de objeto do R geralmente gera um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um <b>data.frame</b> com milhares de colunas!
 </p>
 </div>
 
