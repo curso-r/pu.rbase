@@ -208,6 +208,7 @@ alea(5, 100, 105)
 ```
 
 Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos *environments*. Para saber mais, confira [este post](http://curso-r.com/blog/2017/06/19/2017-06-19-environments/).
+
 --------------------------------------------------------------------------------
 
 **10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
