@@ -6,7 +6,7 @@ author: "Athos Petri Damiani, Daniel Falbel, William Amorim"
 
 --------------------------------------------------------------------------------
 
-1. Calculo o número de ouro no R.
+**1.** Calculo o número de ouro no R.
 
 Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
@@ -20,7 +20,7 @@ Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
 --------------------------------------------------------------------------------
 
-2. Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
+**2.** Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
 
 **Resposta:**
 
@@ -33,7 +33,7 @@ Infinito e -Infinito.
 
 --------------------------------------------------------------------------------
 
-3. Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados.
+**3.** Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados.
 
 **Resposta:**
 
@@ -69,7 +69,7 @@ as.numeric(c("1", "2", "a"))
 
 --------------------------------------------------------------------------------
 
-4. Sem rodar o código, calcule o que a expressão `5 + 3 * 10 %/% 3 == 15` vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for `TRUE`, faça retornar `FALSE`).
+**4.** Sem rodar o código, calcule o que a expressão `5 + 3 * 10 %/% 3 == 15` vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for `TRUE`, faça retornar `FALSE`).
 
 **Resposta:**
 
@@ -81,7 +81,7 @@ O resultado da parte esquerda é 14, por isso a expressão retornará `FALSE`. P
 
 --------------------------------------------------------------------------------
 
-5. Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
+**5.** Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
 
 ```{r}
 x <- 4
@@ -92,23 +92,66 @@ if(x = 4) {
 
 **Resposta:**
 
-```{r}
+A expressão `x = 4` está tentando atribuir o valor 4 ao objeto `x` dentro do if, o que não é permitido pois o controlador `if` só aceita valores lógicos. Para corrigir o código e fazê-lo retornar `TRUE`, basta trocar `=` por `==`.
 
+```{r}
+x <- 4
+if(x == 4) {
+  TRUE
+}
 ```
 
 --------------------------------------------------------------------------------
 
-6. Usando `if` e `else`, escreva um código que retorne a string "número" caso o valor seja da classe `numeric` ou `integer`; a string "palavra" caso o valor seja da classe `character`; e `NULL` caso contrário.
+**6.** Usando `if` e `else`, escreva um código que retorne a string "número" caso o objeto `x` seja da classe `numeric` ou `integer`; a string "palavra" caso o objeto seja da classe `character`; e `NULL` caso contrário.
  
 **Resposta:**
 
 ```{r}
+x <- 1
+# x <- 1L
+# x <- "1"
+
+if(is.numeric(x)) {
+  "número"
+} else if(is.character(x)) {
+  "palavra"
+} else { 
+  NULL
+}
 
 ```
 
+Note que a função `is.numeric()` retorna `TRUE` para as classes `integer` e `numeric`.
+
 --------------------------------------------------------------------------------
 
-7. Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho.
+**7.** Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho.
+
+**Resposta:**
+
+```{r}
+
+vetor <- c(4, 2, 1, 5, 3)
+minimo <- Inf
+
+for(i in 1:5) {
+  
+  if(minimo > vetor[i]) {
+    minimo <- vetor[i]
+  }
+  
+}
+
+minimo
+
+```
+
+**Observação**: o R já possui a função `min()` para calcular o mínimo de um conjunto de valores.
+
+--------------------------------------------------------------------------------
+
+**8.** Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
 
 **Resposta:**
 
@@ -118,7 +161,7 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-8. Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
+**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
 
 **Resposta:**
 
@@ -128,7 +171,7 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-9. Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
+**10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
 
 **Resposta:**
 
@@ -138,17 +181,7 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-10. Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
-
-**Resposta:**
-
-```{r}
-
-```
-
---------------------------------------------------------------------------------
-
-11. Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
+**11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
 
 **Resposta:**
 

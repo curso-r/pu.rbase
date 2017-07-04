@@ -8,29 +8,29 @@ author: "Athos Petri Damiani, Daniel Falbel, William Amorim"
 
 --------------------------------------------------------------------------------
 
-*1.* Calculo o número de ouro no R.
+**1.** Calculo o número de ouro no R.
 
 Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
 
 --------------------------------------------------------------------------------
 
-*2.* Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
+**2.** Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
 
 
 --------------------------------------------------------------------------------
 
-*3.* Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados.
+**3.** Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados.
 
 
 --------------------------------------------------------------------------------
 
-4. Sem rodar o código, calcule o que a expressão `5 + 3 * 10 %/% 3 == 15` vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for `TRUE`, faça retornar `FALSE`).
+**4.** Sem rodar o código, calcule o que a expressão `5 + 3 * 10 %/% 3 == 15` vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for `TRUE`, faça retornar `FALSE`).
 
 
 --------------------------------------------------------------------------------
 
-5. Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
+**5.** Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
 
 ```{r}
 x <- 4
@@ -42,29 +42,29 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-6. Usando `if` e `else`, escreva um código que retorne a string "número" caso o valor seja da classe `numeric` ou `integer`; a string "palavra" caso o valor seja da classe `character`; e `NULL` caso contrário.
+**6.** Usando `if` e `else`, escreva um código que retorne a string "número" caso o valor seja da classe `numeric` ou `integer`; a string "palavra" caso o valor seja da classe `character`; e `NULL` caso contrário.
  
 
 --------------------------------------------------------------------------------
 
-7. Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho.
+**7.** Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho.
 
 --------------------------------------------------------------------------------
 
-8. Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
+**8.** Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
 
 --------------------------------------------------------------------------------
 
-9. Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
+**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
 
 --------------------------------------------------------------------------------
 
-10. Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
+**10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
 
 
 --------------------------------------------------------------------------------
 
-11. Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
+*11.* Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
 
 --------------------------------------------------------------------------------
 
