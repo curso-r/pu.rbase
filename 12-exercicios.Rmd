@@ -32,7 +32,7 @@ Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
 **5.** Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
 
-```{r}
+```{r, eval = FALSE}
 x <- 4
 if(x = 4) {
   TRUE
@@ -55,7 +55,7 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
+**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive).
 
 --------------------------------------------------------------------------------
 
@@ -64,7 +64,7 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-*11.* Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
+**11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do data frame `mtcars`.
 
 --------------------------------------------------------------------------------
 

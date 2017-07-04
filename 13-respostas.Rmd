@@ -83,7 +83,7 @@ O resultado da parte esquerda é 14, por isso a expressão retornará `FALSE`. P
 
 **5.** Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
 
-```{r}
+```{r, eval = FALSE}
 x <- 4
 if(x = 4) {
   TRUE
@@ -147,7 +147,7 @@ minimo
 
 ```
 
-**Observação**: o R já possui a função `min()` para calcular o mínimo de um conjunto de valores.
+**Lembrete**: o R já possui a função `min()` para calcular o mínimo de um conjunto de valores.
 
 --------------------------------------------------------------------------------
 
@@ -156,19 +156,58 @@ minimo
 **Resposta:**
 
 ```{r}
+media <- function(x) {
+  
+  i <- 1
+  tamanho <- length(x)
+  soma <- 0
+  
+  for(i in 1:tamanho){
+    soma <- soma + x[i]
+  }
+  
+  return(soma/tamanho)
+}
 
+media(1:3)
 ```
 
 --------------------------------------------------------------------------------
 
-**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
+**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive).
 
 **Resposta:**
 
-```{r}
+A função `runif()` gera números reais aleatórios entre um valor mínimo e um valor máximo.
 
+```{r}
+alea <- function() {
+  
+  x <- runif(n = 1, min = 0, max = 10)
+  x <- round(x)
+  
+  return(x)
+}
+
+alea()
 ```
 
+Veja que construímos uma função sem argumentos. Podemos generalizá-la incluindo os argumentos da função `runif()`.
+
+```{r}
+alea <- function(n, min, max) {
+  
+  x <- runif(n = n, min = min, max = max)
+  x <- round(x)
+  
+  return(x)
+}
+
+alea(2, 2, 5)
+alea(5, 100, 105)
+```
+
+Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos *environments*. Para saber mais, confira [este post](http://curso-r.com/blog/2017/06/19/2017-06-19-environments/).
 --------------------------------------------------------------------------------
 
 **10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
@@ -176,20 +215,37 @@ minimo
 **Resposta:**
 
 ```{r}
+matriz <- matrix(runif(20), nrow = 5, ncol = 4)
 
+linha_alea <- function(matriz) {
+  
+  x <- 1:nrow(matriz)
+  
+  linha <- sample(x, size = 1)
+  
+  return(matriz[linha,])
+}
+
+matriz
+linha_alea(matriz)
 ```
 
 --------------------------------------------------------------------------------
 
-**11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
+**11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do data frame `mtcars`.
 
 **Resposta:**
 
 ```{r}
+variaveis <- names(mtcars)
 
+esq <- "mpg ~ "
+dir <- paste(variaveis[-1], collapse = " + ")
+
+formula <- paste0(esq, dir)
+as.formula(formula)
 ```
 
+Observe que a função `paste0()` é equivalente à função `paste()` com o argumento `sep = ""`.
+
 --------------------------------------------------------------------------------
-
-
-
