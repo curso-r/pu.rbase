@@ -1,6 +1,6 @@
 ---
 title: Introdução
-date: '2017-07-03'
+date: '2017-07-04'
 ---
 
 
@@ -202,7 +202,7 @@ Criar um R Markdown novo no RStudio é fácil. Clique no botão de criar arquivo
 knitr::include_graphics("figures/criar_rmarkdown.png")
 ```
 
-![plot of chunk unnamed-chunk-22](figures/criar_rmarkdown.png)
+![plot of chunk unnamed-chunk-21](figures/criar_rmarkdown.png)
 
 Para detalhes sobre como utilizar o R Markdown, leia o  [r4ds](http://r4ds.had.co.nz/r-markdown.html) e [o tutorial do RStudio](http://rmarkdown.rstudio.com/lesson-1.html).
 
@@ -800,7 +800,7 @@ x <- 1
 if(x == 1) {
   Sys.time()
 }
-## [1] "2017-07-03 23:55:01 UTC"
+## [1] "2017-07-04 00:15:27 UTC"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
@@ -1042,7 +1042,7 @@ y <- 5 + 2 * x + rnorm(n, sd = 30)
 plot(x, y)
 ```
 
-![plot of chunk unnamed-chunk-66](figures//unnamed-chunk-66-1.png)
+![plot of chunk unnamed-chunk-65](figures//unnamed-chunk-65-1.png)
 
 O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados por linhas.
 
@@ -1051,7 +1051,7 @@ O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados p
 plot(x, y, type = "l")
 ```
 
-![plot of chunk unnamed-chunk-67](figures//unnamed-chunk-67-1.png)
+![plot of chunk unnamed-chunk-66](figures//unnamed-chunk-66-1.png)
 
 ### Histograma
 
@@ -1065,14 +1065,14 @@ Para construir histogramas, utilizamos a função `hist()`. Os principais parâm
 hist(rnorm(1000))
 ```
 
-![plot of chunk unnamed-chunk-68](figures//unnamed-chunk-68-1.png)
+![plot of chunk unnamed-chunk-67](figures//unnamed-chunk-67-1.png)
 
 
 ```r
 hist(rnorm(1000), breaks = 6)
 ```
 
-![plot of chunk unnamed-chunk-69](figures//unnamed-chunk-69-1.png)
+![plot of chunk unnamed-chunk-68](figures//unnamed-chunk-68-1.png)
 
 ### Boxplot
 
@@ -1085,7 +1085,7 @@ Para construir histogramas, utilizamos a função `boxplot()`. Os principais par
 boxplot(InsectSprays$count, col = "lightgray")
 ```
 
-![plot of chunk unnamed-chunk-70](figures//unnamed-chunk-70-1.png)
+![plot of chunk unnamed-chunk-69](figures//unnamed-chunk-69-1.png)
 
 Observe que o argumento `col=` muda a cor da caixa do boxplot.
 
@@ -1096,7 +1096,7 @@ Para mapear duas variáveis ao gráfico, utilizamos um objeto da classe `formula
 boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 ```
 
-![plot of chunk unnamed-chunk-71](figures//unnamed-chunk-71-1.png)
+![plot of chunk unnamed-chunk-70](figures//unnamed-chunk-70-1.png)
 
 ### Gráfico de barras
 
@@ -1115,7 +1115,7 @@ tabela
 barplot(tabela)
 ```
 
-![plot of chunk unnamed-chunk-72](figures//unnamed-chunk-72-1.png)
+![plot of chunk unnamed-chunk-71](figures//unnamed-chunk-71-1.png)
 
 Também podemos mapear duas variáveis a um gráfico de barras utilizando tabelas de dupla entrada.
 
@@ -1135,7 +1135,7 @@ VADeaths
 barplot(VADeaths)
 ```
 
-![plot of chunk unnamed-chunk-74](figures//unnamed-chunk-74-1.png)
+![plot of chunk unnamed-chunk-73](figures//unnamed-chunk-73-1.png)
 
 --------------------------------------------------------------------------------
 
@@ -1147,29 +1147,29 @@ barplot(VADeaths)
 
 --------------------------------------------------------------------------------
 
-*1.* Calculo o número de ouro no R.
+**1.** Calculo o número de ouro no R.
 
 Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
 
 --------------------------------------------------------------------------------
 
-*2.* Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
+**2.** Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
 
 
 --------------------------------------------------------------------------------
 
-*3.* Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados.
+**3.** Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados.
 
 
 --------------------------------------------------------------------------------
 
-4. Sem rodar o código, calcule o que a expressão `5 + 3 * 10 %/% 3 == 15` vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for `TRUE`, faça retornar `FALSE`).
+**4.** Sem rodar o código, calcule o que a expressão `5 + 3 * 10 %/% 3 == 15` vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for `TRUE`, faça retornar `FALSE`).
 
 
 --------------------------------------------------------------------------------
 
-5. Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
+**5.** Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
 
 
 ```r
@@ -1186,29 +1186,29 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-6. Usando `if` e `else`, escreva um código que retorne a string "número" caso o valor seja da classe `numeric` ou `integer`; a string "palavra" caso o valor seja da classe `character`; e `NULL` caso contrário.
+**6.** Usando `if` e `else`, escreva um código que retorne a string "número" caso o valor seja da classe `numeric` ou `integer`; a string "palavra" caso o valor seja da classe `character`; e `NULL` caso contrário.
  
 
 --------------------------------------------------------------------------------
 
-7. Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho.
+**7.** Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho.
 
 --------------------------------------------------------------------------------
 
-8. Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
+**8.** Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
 
 --------------------------------------------------------------------------------
 
-9. Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
+**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
 
 --------------------------------------------------------------------------------
 
-10. Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
+**10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
 
 
 --------------------------------------------------------------------------------
 
-11. Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
+*11.* Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
 
 --------------------------------------------------------------------------------
 
@@ -1219,7 +1219,7 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-1. Calculo o número de ouro no R.
+**1.** Calculo o número de ouro no R.
 
 Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
@@ -1235,7 +1235,7 @@ Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
 --------------------------------------------------------------------------------
 
-2. Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
+**2.** Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
 
 **Resposta:**
 
@@ -1251,7 +1251,7 @@ Infinito e -Infinito.
 
 --------------------------------------------------------------------------------
 
-3. Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados.
+**3.** Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados.
 
 **Resposta:**
 
@@ -1296,7 +1296,7 @@ as.numeric(c("1", "2", "a"))
 
 --------------------------------------------------------------------------------
 
-4. Sem rodar o código, calcule o que a expressão `5 + 3 * 10 %/% 3 == 15` vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for `TRUE`, faça retornar `FALSE`).
+**4.** Sem rodar o código, calcule o que a expressão `5 + 3 * 10 %/% 3 == 15` vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for `TRUE`, faça retornar `FALSE`).
 
 **Resposta:**
 
@@ -1310,7 +1310,7 @@ O resultado da parte esquerda é 14, por isso a expressão retornará `FALSE`. P
 
 --------------------------------------------------------------------------------
 
-5. Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
+**5.** Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
 
 
 ```r
@@ -1326,242 +1326,101 @@ if(x = 4) {
 
 **Resposta:**
 
-
-
---------------------------------------------------------------------------------
-
-6. Usando `if` e `else`, escreva um código que retorne a string "número" caso o valor seja da classe `numeric` ou `integer`; a string "palavra" caso o valor seja da classe `character`; e `NULL` caso contrário.
- 
-**Resposta:**
-
-
-
---------------------------------------------------------------------------------
-
-7. Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho.
-
-**Resposta:**
-
-
-
---------------------------------------------------------------------------------
-
-8. Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
-
-**Resposta:**
-
-
-
---------------------------------------------------------------------------------
-
-9. Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
-
-**Resposta:**
-
-
-
---------------------------------------------------------------------------------
-
-10. Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
-
-**Resposta:**
-
-
-
---------------------------------------------------------------------------------
-
-11. Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
-
-**Resposta:**
-
-
-
---------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-1. 
-
-
-```r
-(1 + sqrt(5))/2
-## [1] 1.618034
-```
-
-2. 
-
-
-```r
-1/0
-## [1] Inf
--1/0
-## [1] -Inf
-```
-
-3. 
-
-
-```r
-# NaN é o resultado de uma operação matemática inválida. Significa Not A Number
-0/0
-## [1] NaN
-# NULL é o vazio do R. É como se o objeto não existisse
-NULL
-## NULL
-a = NULL
-is.null(integer(length = 0)) # veja que um vetor, mesmo sem elementos não é NULL
-## [1] FALSE
-# NA é uma constante lógica do R. Siginifica Not Availlable. NA pode ser 
-# convertido para quase todos os tipos de vetores do R. É usado principalmente para
-# indicar valores faltantes.
-NA
-## [1] NA
-# Inf é significa infinito. É o resultado de operações matemáticas cujo limite é infinito.
-1/0
-## [1] Inf
-1/Inf
-## [1] 0
-```
-
-4.
-
-5.
-
-
-```r
-5 + (3 * 10) %/% 3 == 15
-## [1] TRUE
-```
-
-6. 
-
-
-```r
-> x <- 4
-> if(x = 4) {
-Erro: '=' inesperado in "if(x ="
->   'isso aqui apareceu'
-[1] "isso aqui apareceu"
-> }
-Erro: '}' inesperado in "}"
-> x
-[1] 4
-```
-
-7.
+A expressão `x = 4` está tentando atribuir o valor 4 ao objeto `x` dentro do if, o que não é permitido pois o controlador `if` só aceita valores lógicos. Para corrigir o código e fazê-lo retornar `TRUE`, basta trocar `=` por `==`.
 
 
 ```r
 x <- 4
 if(x == 4) {
-  'isso aqui apareceu'
+  TRUE
 }
-## [1] "isso aqui apareceu"
-x
-## [1] 4
+## [1] TRUE
 ```
 
-8.
+--------------------------------------------------------------------------------
+
+**6.** Usando `if` e `else`, escreva um código que retorne a string "número" caso o objeto `x` seja da classe `numeric` ou `integer`; a string "palavra" caso o objeto seja da classe `character`; e `NULL` caso contrário.
+ 
+**Resposta:**
 
 
 ```r
-for (i in 1:4){
-  if(i %% 2 == 0){
-    print(paste(i, "elefante(s)", paste(rep("incomoda(m)", times = i), collapse = " "), "muito mais"))
-  } else {
-   print(paste(i, "elefante(s) incomoda(m) muita gente")) 
+x <- 1
+# x <- 1L
+# x <- "1"
+
+if(is.numeric(x)) {
+  "número"
+} else if(is.character(x)) {
+  "palavra"
+} else { 
+  NULL
+}
+## [1] "número"
+```
+
+Note que a função `is.numeric()` retorna `TRUE` para as classes `integer` e `numeric`.
+
+--------------------------------------------------------------------------------
+
+**7.** Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho.
+
+**Resposta:**
+
+
+```r
+
+vetor <- c(4, 2, 1, 5, 3)
+minimo <- Inf
+
+for(i in 1:5) {
+  
+  if(minimo > vetor[i]) {
+    minimo <- vetor[i]
   }
+  
 }
-## [1] "1 elefante(s) incomoda(m) muita gente"
-## [1] "2 elefante(s) incomoda(m) incomoda(m) muito mais"
-## [1] "3 elefante(s) incomoda(m) muita gente"
-## [1] "4 elefante(s) incomoda(m) incomoda(m) incomoda(m) incomoda(m) muito mais"
+
+minimo
+## [1] 1
 ```
 
-9.
+**Observação**: o R já possui a função `min()` para calcular o mínimo de um conjunto de valores.
+
+--------------------------------------------------------------------------------
+
+**8.** Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
+
+**Resposta:**
 
 
-```r
-x <- c(1, 20, 40, 50, 60)
-```
 
-10.
+--------------------------------------------------------------------------------
 
+**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
 
-```r
-x <- runif(100)
-```
-
-11.
+**Resposta:**
 
 
-```r
-mean(x)
-## [1] 0.4983416
-```
 
-12.
+--------------------------------------------------------------------------------
 
+**10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
 
-```r
-x <- c(runif(99), NA)
-mean(x, na.rm = T)
-## [1] 0.4993858
-```
-
-13.
+**Resposta:**
 
 
-```r
-media <- function(x){
-  i <- 1
-  tamanho <- length(x)
-  soma <- 0
-  for(i in 1:tamanho){
-    soma <- soma + x[i]
-  }
-  return(soma/tamanho)
-}
-```
 
-14.
+--------------------------------------------------------------------------------
+
+**11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
+
+**Resposta:**
 
 
-```r
-dado <- function(){
-  sample(1:6, 1)
-}
-```
 
-15.
+--------------------------------------------------------------------------------
 
 
-```r
-soma_dados <- function(n){
-  soma <- 0
-  for(i in 1:n){
-    soma <- soma + sample(1:6, 1)
-  }
-  return(soma)
-}
-```
-
-16.
-
-
-```r
-resultados <- integer(length = 1000)
-for(i in 1:1000){
-  resultados[i] <- soma_dados(3)
-}
-hist(resultados)
-```
-
-![plot of chunk resp16](figures//resp16-1.png)
 
 
