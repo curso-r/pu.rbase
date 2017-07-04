@@ -800,7 +800,7 @@ x <- 1
 if(x == 1) {
   Sys.time()
 }
-## [1] "2017-07-04 00:15:27 UTC"
+## [1] "2017-07-04 00:51:30 UTC"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
@@ -1177,10 +1177,6 @@ x <- 4
 if(x = 4) {
   TRUE
 }
-## Error: <text>:2:6: unexpected '='
-## 1: x <- 4
-## 2: if(x =
-##         ^
 ```
 
 
@@ -1199,7 +1195,7 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
+**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive).
 
 --------------------------------------------------------------------------------
 
@@ -1208,7 +1204,7 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-*11.* Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
+**11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do data frame `mtcars`.
 
 --------------------------------------------------------------------------------
 
@@ -1318,10 +1314,6 @@ x <- 4
 if(x = 4) {
   TRUE
 }
-## Error: <text>:2:6: unexpected '='
-## 1: x <- 4
-## 2: if(x =
-##         ^
 ```
 
 **Resposta:**
@@ -1385,7 +1377,7 @@ minimo
 ## [1] 1
 ```
 
-**Observação**: o R já possui a função `min()` para calcular o mínimo de um conjunto de valores.
+**Lembrete**: o R já possui a função `min()` para calcular o mínimo de um conjunto de valores.
 
 --------------------------------------------------------------------------------
 
@@ -1394,15 +1386,65 @@ minimo
 **Resposta:**
 
 
+```r
+media <- function(x) {
+  
+  i <- 1
+  tamanho <- length(x)
+  soma <- 0
+  
+  for(i in 1:tamanho){
+    soma <- soma + x[i]
+  }
+  
+  return(soma/tamanho)
+}
+
+media(1:3)
+## [1] 2
+```
 
 --------------------------------------------------------------------------------
 
-**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 incluvise).
+**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive).
 
 **Resposta:**
 
+A função `runif()` gera números reais aleatórios entre um valor mínimo e um valor máximo.
 
 
+```r
+alea <- function() {
+  
+  x <- runif(n = 1, min = 0, max = 10)
+  x <- round(x)
+  
+  return(x)
+}
+
+alea()
+## [1] 8
+```
+
+Veja que construímos uma função sem argumentos. Podemos generalizá-la incluindo os argumentos da função `runif()`.
+
+
+```r
+alea <- function(n, min, max) {
+  
+  x <- runif(n = n, min = min, max = max)
+  x <- round(x)
+  
+  return(x)
+}
+
+alea(2, 2, 5)
+## [1] 3 4
+alea(5, 100, 105)
+## [1] 102 102 103 105 103
+```
+
+Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos *environments*. Para saber mais, confira [este post](http://curso-r.com/blog/2017/06/19/2017-06-19-environments/).
 --------------------------------------------------------------------------------
 
 **10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
@@ -1410,17 +1452,49 @@ minimo
 **Resposta:**
 
 
+```r
+matriz <- matrix(runif(20), nrow = 5, ncol = 4)
+
+linha_alea <- function(matriz) {
+  
+  x <- 1:nrow(matriz)
+  
+  linha <- sample(x, size = 1)
+  
+  return(matriz[linha,])
+}
+
+matriz
+##           [,1]       [,2]       [,3]      [,4]
+## [1,] 0.8274948 0.13871499 0.89186148 0.1043002
+## [2,] 0.4535502 0.04222283 0.79385298 0.4146311
+## [3,] 0.8019852 0.89920506 0.37125965 0.6682548
+## [4,] 0.5118321 0.26617929 0.01141879 0.2030476
+## [5,] 0.7075801 0.47893058 0.65452495 0.6868304
+linha_alea(matriz)
+## [1] 0.45355020 0.04222283 0.79385298 0.41463111
+```
 
 --------------------------------------------------------------------------------
 
-**11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do dataframe `mtcars`.
+**11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do data frame `mtcars`.
 
 **Resposta:**
 
 
+```r
+variaveis <- names(mtcars)
+
+esq <- "mpg ~ "
+dir <- paste(variaveis[-1], collapse = " + ")
+
+formula <- paste0(esq, dir)
+as.formula(formula)
+## mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb
+## <environment: 0x3a65790>
+```
+
+Observe que a função `paste0()` é equivalente à função `paste()` com o argumento `sep = ""`.
 
 --------------------------------------------------------------------------------
-
-
-
 
