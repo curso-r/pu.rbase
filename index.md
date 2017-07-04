@@ -800,7 +800,7 @@ x <- 1
 if(x == 1) {
   Sys.time()
 }
-## [1] "2017-07-04 00:51:30 UTC"
+## [1] "2017-07-04 00:57:30 UTC"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
@@ -1423,7 +1423,7 @@ alea <- function() {
 }
 
 alea()
-## [1] 8
+## [1] 4
 ```
 
 Veja que construímos uma função sem argumentos. Podemos generalizá-la incluindo os argumentos da função `runif()`.
@@ -1439,12 +1439,13 @@ alea <- function(n, min, max) {
 }
 
 alea(2, 2, 5)
-## [1] 3 4
+## [1] 5 2
 alea(5, 100, 105)
-## [1] 102 102 103 105 103
+## [1] 105 105 104 100 103
 ```
 
 Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos *environments*. Para saber mais, confira [este post](http://curso-r.com/blog/2017/06/19/2017-06-19-environments/).
+
 --------------------------------------------------------------------------------
 
 **10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
@@ -1465,14 +1466,14 @@ linha_alea <- function(matriz) {
 }
 
 matriz
-##           [,1]       [,2]       [,3]      [,4]
-## [1,] 0.8274948 0.13871499 0.89186148 0.1043002
-## [2,] 0.4535502 0.04222283 0.79385298 0.4146311
-## [3,] 0.8019852 0.89920506 0.37125965 0.6682548
-## [4,] 0.5118321 0.26617929 0.01141879 0.2030476
-## [5,] 0.7075801 0.47893058 0.65452495 0.6868304
+##           [,1]      [,2]      [,3]      [,4]
+## [1,] 0.3892763 0.7633635 0.3707031 0.7381129
+## [2,] 0.7848258 0.6510383 0.1397464 0.8971824
+## [3,] 0.5232812 0.0180222 0.1419734 0.7114565
+## [4,] 0.5092140 0.9650082 0.3545131 0.5984268
+## [5,] 0.4442231 0.6210985 0.1462894 0.4045183
 linha_alea(matriz)
-## [1] 0.45355020 0.04222283 0.79385298 0.41463111
+## [1] 0.7848258 0.6510383 0.1397464 0.8971824
 ```
 
 --------------------------------------------------------------------------------
@@ -1491,7 +1492,7 @@ dir <- paste(variaveis[-1], collapse = " + ")
 formula <- paste0(esq, dir)
 as.formula(formula)
 ## mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb
-## <environment: 0x3a65790>
+## <environment: 0x4327790>
 ```
 
 Observe que a função `paste0()` é equivalente à função `paste()` com o argumento `sep = ""`.
