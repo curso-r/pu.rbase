@@ -1,6 +1,6 @@
 ---
-title: Introdução
-date: '2017-07-04'
+title: 'R básico'
+date: '2017-10-10'
 ---
 
 
@@ -800,7 +800,7 @@ x <- 1
 if(x == 1) {
   Sys.time()
 }
-## [1] "2017-07-04 00:57:30 UTC"
+## [1] "2017-10-10 14:07:25 UTC"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
@@ -1107,15 +1107,14 @@ No gráfico abaixo, primeiro criamos uma tabela de frequências com a função `
 
 ```r
 data(diamonds, package = "ggplot2")
+## Error in find.package(package, lib.loc, verbose = verbose): there is no package called 'ggplot2'
 tabela <- table(diamonds$color)
+## Error in table(diamonds$color): object 'diamonds' not found
 tabela
-## 
-##     D     E     F     G     H     I     J 
-##  6775  9797  9542 11292  8304  5422  2808
+## Error in eval(expr, envir, enclos): object 'tabela' not found
 barplot(tabela)
+## Error in barplot(tabela): object 'tabela' not found
 ```
-
-![plot of chunk unnamed-chunk-71](figures//unnamed-chunk-71-1.png)
 
 Também podemos mapear duas variáveis a um gráfico de barras utilizando tabelas de dupla entrada.
 
@@ -1423,7 +1422,7 @@ alea <- function() {
 }
 
 alea()
-## [1] 4
+## [1] 6
 ```
 
 Veja que construímos uma função sem argumentos. Podemos generalizá-la incluindo os argumentos da função `runif()`.
@@ -1439,9 +1438,9 @@ alea <- function(n, min, max) {
 }
 
 alea(2, 2, 5)
-## [1] 5 2
+## [1] 3 5
 alea(5, 100, 105)
-## [1] 105 105 104 100 103
+## [1] 104 103 101 104 102
 ```
 
 Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos *environments*. Para saber mais, confira [este post](http://curso-r.com/blog/2017/06/19/2017-06-19-environments/).
@@ -1466,14 +1465,14 @@ linha_alea <- function(matriz) {
 }
 
 matriz
-##           [,1]      [,2]      [,3]      [,4]
-## [1,] 0.3892763 0.7633635 0.3707031 0.7381129
-## [2,] 0.7848258 0.6510383 0.1397464 0.8971824
-## [3,] 0.5232812 0.0180222 0.1419734 0.7114565
-## [4,] 0.5092140 0.9650082 0.3545131 0.5984268
-## [5,] 0.4442231 0.6210985 0.1462894 0.4045183
+##           [,1]      [,2]       [,3]      [,4]
+## [1,] 0.8109246 0.9962163 0.80835759 0.1310685
+## [2,] 0.2520388 0.7052223 0.58594063 0.9412787
+## [3,] 0.5012319 0.9612391 0.01833439 0.5330429
+## [4,] 0.8859364 0.7188565 0.80001775 0.6422710
+## [5,] 0.4699226 0.6219051 0.22382126 0.7837047
 linha_alea(matriz)
-## [1] 0.7848258 0.6510383 0.1397464 0.8971824
+## [1] 0.8109246 0.9962163 0.8083576 0.1310685
 ```
 
 --------------------------------------------------------------------------------
@@ -1492,7 +1491,7 @@ dir <- paste(variaveis[-1], collapse = " + ")
 formula <- paste0(esq, dir)
 as.formula(formula)
 ## mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb
-## <environment: 0x4327790>
+## <environment: 0x2c224c8>
 ```
 
 Observe que a função `paste0()` é equivalente à função `paste()` com o argumento `sep = ""`.
